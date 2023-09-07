@@ -1,8 +1,19 @@
 # Main script which you run to do work
 # Feature List
 # TODO
-# ( ): MVP, store one workout routine and have it 
+# (X): MVP, store one workout routine and have it 
 # spit the next excercise at you until you're done
+# ( ): Clear the terminal after every user input to make it more focused 
+# and easier to stay present
+# ( ): make the do_work function return a report of user responses
+# ( ): print post workout feedback based on the report
+# ( ): Add in Mobility Routine to database and to the daily 
+# ( ): Have the workout change based on Day of Week
+# ( ): Change from phase to phase based on calendar days
+
+# BACKLOG
+# ( ): Automate progress across the plan based on compliance and feedback
+# ( ): Build a trailing average compliance metric
 
 # do the imports
 from exercise import Time_Based
@@ -56,7 +67,6 @@ with open('workout_plan.yaml', 'w') as file:
     yaml.dump(routines, file)
 
 # define a function to actually do a routine
-
 def do_work(database,workout_name):
     # function to perform a workout located in the database
     print(workout_name)
@@ -76,4 +86,4 @@ def do_work(database,workout_name):
             user_input = input()
     return
 
-do_work(routines,'Phase One Banded')
+do_work(routines,'Phase One Ramping')
