@@ -1,0 +1,114 @@
+Phase One Banded:
+- !!python/object:exercise.Time_Based
+  load: Bodyweight
+  name: Plank
+  time: 45
+- !!python/object:exercise.Reps_Based
+  load: Bodyweight
+  name: Lying Side Leg Raise, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: Bodyweight
+  name: Lying Side Leg Leg, Right
+  reps: 10
+- !!python/object:exercise.Time_Based
+  load: Medium Band
+  name: Banded Bridge
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Light Band
+  name: Banded Narrow Knees
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Light Band
+  name: Banded Back Neck
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Light Band
+  name: Banded Back Neck Hold
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Light Band
+  name: Banded Front Raise
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Medium Heavy Band
+  name: Banded Deadlift
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Medium Heavy Band
+  name: Banded Chest Press
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Body Weight
+  name: Banded Squat
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Medium Heavy Band
+  name: Banded Row
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Body Weight
+  name: Left Plank
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Body Weight
+  name: Right Plank
+  time: 45
+Phase One Ramping:
+- !!python/object:exercise.Time_Based
+  load: Bodyweight
+  name: Plank
+  time: 45
+- !!python/object:exercise.Reps_Based
+  load: Bodyweight
+  name: Lying Side Leg Raise, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: Bodyweight
+  name: Lying Side Leg Leg, Right
+  reps: 10
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Bridge
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: Hold
+  name: Iso Narrow Knees
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Neck Triceps Extension
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: Hold
+  name: Iso Butterfly Crunch
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Front Raise
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Deadlift
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Chest Press
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Squat
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Row
+- !!python/object:exercise.Time_Based
+  load: Body Weight
+  name: Left Plank
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Body Weight
+  name: Right Plank
+  time: 45
