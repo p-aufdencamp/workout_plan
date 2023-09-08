@@ -2,12 +2,11 @@
 # Main script which you run to do work
 # Feature List
 # TODO
-# (x): Clear the terminal after every user input to make it more focused 
-# and easier to stay present
 # ( ): print post workout feedback based on the report
 # ( ): Add in Mobility Routine to database and to the daily 
 # ( ): Have the workout change based on Day of Week
 # ( ): Change from phase to phase based on calendar days
+# ( ): do some error handling in the do_work function so that if the requested routine isn't in the database, it doesn't get mad
 
 # BACKLOG
 # ( ): Automate progress across the plan based on compliance and feedback
@@ -22,6 +21,37 @@ import os
 from exercise import Time_Based
 from exercise import Reps_Based
 from exercise import Generic
+
+
+def todays_workout(date,plan):
+    # function which will return a routine based on the date provided and the 
+    # plan. Eventually this is where the smarts for progressing and responding
+    # to skipped workouts will
+    return
+
+# define a function to actually do a routine
+def do_work(database,workout_name):
+    # function to perform a workout routine located in the database
+    print(workout_name)
+    todays_routine = database.get(workout_name, None)
+    report = [None] * len(todays_routine)
+    index = 0
+    for each in todays_routine:
+        if isinstance(each,Time_Based):
+            print(f"Do a {each.name} with {each.load} for {each.time} seconds.")
+            print(f" [d] for done, [s] for skipped, [i] for incomplete")
+            report[index] = input()
+        elif isinstance(each,Reps_Based):
+            print(f"Do a {each.name} with {each.load} for {each.reps} reps.")
+            print(f" [d] for done, [s] for skipped, [i] for incomplete")
+            report[index] = input()
+        elif isinstance(each,Generic):
+            print(f"Do {each.name} with {each.load} according to {each.instructions}")
+            print(f" [d] for done, [s] for skipped, [i] for incomplete")
+            report[index] = input()
+        index = index + 1
+        os.system('clear')
+    return report
 
 # define the routines we want to do, put them in a dictionary
 routines = {
@@ -61,35 +91,29 @@ routines = {
                     Generic("Iso Row","BJJ",
                             "20s @50%, 10s @80%, 5s @100%"),
                     Time_Based("Left Plank","Body Weight",45),
-                    Time_Based("Right Plank","Body Weight",45)]
+                    Time_Based("Right Plank","Body Weight",45)],
+    'Phase One Hip Mobility': [Generic("Cycling Recovery","Theragun","See App"),
+                    Generic("Glutes","Theragun","See App"),
+                    Reps_Based("Frog Stretch","Body Weight",8),
+                    Reps_Based("Kneeling Lunge Stretch, Left","Body Weight",10),
+                    Reps_Based("Kneeling Lunge Stretch, Right","Body Weight",10),
+                    Reps_Based("Childs Pose to Up Dog","Body Weight",5),
+                    Reps_Based("Hamstring Stretch, Center->Cross->Out, Left",
+                               "Body Weight",10),
+                    Reps_Based("Hamstring Stretch, Center->Cross->Out, Right",
+                               "Body Weight",10),
+                    Reps_Based("Seated Windshield Wiper, Left","Body Weight",5),
+                    Reps_Based("Seated Windshield Wiper, Right","Body Weight",5),
+                    Reps_Based("Active Leg Lower, Left","Body Weight",5),
+                    Reps_Based("Active Leg Lower, Right","Body Weight",5),
+                    Reps_Based("Toe Touch, Raised Heels","Body Weight",10),
+                    Reps_Based("Toe Touch, Raised Toes","Body Weight",10)]
 }
 
 with open('workout_plan.yaml', 'w') as file:
     yaml.dump(routines, file)
 
-# define a function to actually do a routine
-def do_work(database,workout_name):
-    # function to perform a workout located in the database
-    print(workout_name)
-    todays_routine = database.get(workout_name, None)
-    report = [None] * len(todays_routine)
-    index = 0
-    for each in todays_routine:
-        if isinstance(each,Time_Based):
-            print(f"Do a {each.name} with {each.load} for {each.time} seconds.")
-            print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            report[index] = input()
-        elif isinstance(each,Reps_Based):
-            print(f"Do a {each.name} with {each.load} for {each.reps} reps.")
-            print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            report[index] = input()
-        elif isinstance(each,Generic):
-            print(f"Do {each.name} with {each.load} according to {each.instructions}")
-            print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            report[index] = input()
-        index = index + 1
-        os.system('clear')
-    return report
 
-todays_report = do_work(routines,'Phase One Ramping')
+
+todays_report = do_work(routines,'Phase One Hip Mobility')
 print(todays_report)
