@@ -1,3 +1,4 @@
+# Author: Phil Aufdencamp
 # Main script which you run to do work
 # Feature List
 # TODO
@@ -5,7 +6,7 @@
 # spit the next excercise at you until you're done
 # ( ): Clear the terminal after every user input to make it more focused 
 # and easier to stay present
-# ( ): make the do_work function return a report of user responses
+# (X): make the do_work function return a report of user responses
 # ( ): print post workout feedback based on the report
 # ( ): Add in Mobility Routine to database and to the daily 
 # ( ): Have the workout change based on Day of Week
@@ -14,6 +15,7 @@
 # BACKLOG
 # ( ): Automate progress across the plan based on compliance and feedback
 # ( ): Build a trailing average compliance metric
+# ( ): Incorporate a timer function
 
 # do the imports
 from exercise import Time_Based
@@ -71,19 +73,23 @@ def do_work(database,workout_name):
     # function to perform a workout located in the database
     print(workout_name)
     todays_routine = database.get(workout_name, None)
+    report = [None] * len(todays_routine)
+    index = 0
     for each in todays_routine:
         if isinstance(each,Time_Based):
             print(f"Do a {each.name} with {each.load} for {each.time} seconds.")
             print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            user_input = input()
+            report[index] = input()
         elif isinstance(each,Reps_Based):
             print(f"Do a {each.name} with {each.load} for {each.reps} reps.")
             print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            user_input = input()
+            report[index] = input()
         elif isinstance(each,Generic):
             print(f"Do {each.name} with {each.load} according to {each.instructions}")
             print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            user_input = input()
-    return
+            report[index] = input()
+        index = index + 1
+    return report
 
-do_work(routines,'Phase One Ramping')
+todays_report = do_work(routines,'Phase One Ramping')
+print(todays_report)
