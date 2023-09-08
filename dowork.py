@@ -2,11 +2,8 @@
 # Main script which you run to do work
 # Feature List
 # TODO
-# (X): MVP, store one workout routine and have it 
-# spit the next excercise at you until you're done
-# ( ): Clear the terminal after every user input to make it more focused 
+# (x): Clear the terminal after every user input to make it more focused 
 # and easier to stay present
-# (X): make the do_work function return a report of user responses
 # ( ): print post workout feedback based on the report
 # ( ): Add in Mobility Routine to database and to the daily 
 # ( ): Have the workout change based on Day of Week
@@ -17,12 +14,14 @@
 # ( ): Build a trailing average compliance metric
 # ( ): Incorporate a timer function
 
-# do the imports
+# import from big python libraries
+import yaml
+import os 
+
+# do the imports from other classes i've written
 from exercise import Time_Based
 from exercise import Reps_Based
 from exercise import Generic
-
-import yaml
 
 # define the routines we want to do, put them in a dictionary
 routines = {
@@ -89,6 +88,7 @@ def do_work(database,workout_name):
             print(f" [d] for done, [s] for skipped, [i] for incomplete")
             report[index] = input()
         index = index + 1
+        os.system('clear')
     return report
 
 todays_report = do_work(routines,'Phase One Ramping')
