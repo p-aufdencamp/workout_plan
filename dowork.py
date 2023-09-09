@@ -2,20 +2,22 @@
 # Main script which you run to do work
 # Feature List
 # TODO
-# ( ): print post workout feedback based on the report
-# ( ): Add in Mobility Routine to database and to the daily 
-# ( ): Have the workout change based on Day of Week
+# ( ): print post workout feedback based on the report 
+# (X): Have the workout change based on Day of Week
 # ( ): Change from phase to phase based on calendar days
-# ( ): do some error handling in the do_work function so that if the requested routine isn't in the database, it doesn't get mad
+# ( ): do some error handling in the do_work function so that if the 
+#      requested routine isn't in the database, it doesn't get mad
 
 # BACKLOG
 # ( ): Automate progress across the plan based on compliance and feedback
 # ( ): Build a trailing average compliance metric
 # ( ): Incorporate a timer function
+# ( ): Text based UI for workout browsing, vs doing today's scheduled work
 
 # import from big python libraries
 import yaml
 import os 
+import datetime
 
 # do the imports from other classes i've written
 from exercise import Time_Based
@@ -23,11 +25,24 @@ from exercise import Reps_Based
 from exercise import Generic
 
 
-def todays_workout(date,plan):
+def scheduled_workout(date):
     # function which will return a routine based on the date provided and the 
     # plan. Eventually this is where the smarts for progressing and responding
-    # to skipped workouts will
-    return
+    # to skipped workouts will reside
+
+    #starting with just hard coded plan and will go from there.
+    plan = {datetime.date(2023,9,12):'Phase One Banded',
+            datetime.date(2023,9,14):'Phase One Ramping',
+            datetime.date(2023,9,19):'Phase One Banded',
+            datetime.date(2023,9,21):'Phase One Ramping',
+            datetime.date(2023,9,26):'Phase One Banded',
+            datetime.date(2023,9,28):'Phase One Ramping',
+            datetime.date(2023,10,3):'Phase One Banded',
+            datetime.date(2023,10,5):'Phase One Ramping',
+            datetime.date(2023,10,10):'Phase One Banded',
+            datetime.date(2023,10,12):'Phase One Ramping'
+            }
+    return plan.get(date, None)
 
 # define a function to actually do a routine
 def do_work(database,workout_name):
@@ -113,7 +128,7 @@ routines = {
 with open('workout_plan.yaml', 'w') as file:
     yaml.dump(routines, file)
 
-
-
-todays_report = do_work(routines,'Phase One Hip Mobility')
-print(todays_report)
+# Walk the user through the workout
+todays_workout = scheduled_workout(datetime.date.today())
+todays_report = do_work(routines,todays_workout)
+print(datetime.date.today())
