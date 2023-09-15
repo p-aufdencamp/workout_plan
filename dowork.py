@@ -7,9 +7,13 @@
 # ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
+# (X): For the hard coded scheduled plans, instead of making a date:routine, 
+#      turn it into a date:[routine1,routine2,...,routineN] to make it more 
+#      flexible
 
 # BACKLOG
-# ( ): Automate progress across the plan based on compliance and feedback
+# ( ): Automate progress across the plan based on compliance and feedback,
+#      maybe with an index variable
 # ( ): Build a trailing average compliance metric
 # ( ): Incorporate a timer function
 # ( ): Text based UI for workout browsing, vs doing today's scheduled work
@@ -31,16 +35,29 @@ def scheduled_workout(date):
     # to skipped workouts will reside
 
     #starting with just hard coded plan and will go from there.
-    plan = {datetime.date(2023,9,12):'Phase One Banded',
-            datetime.date(2023,9,14):'Phase One Ramping',
-            datetime.date(2023,9,19):'Phase One Banded',
-            datetime.date(2023,9,21):'Phase One Ramping',
-            datetime.date(2023,9,26):'Phase One Banded',
-            datetime.date(2023,9,28):'Phase One Ramping',
-            datetime.date(2023,10,3):'Phase One Banded',
-            datetime.date(2023,10,5):'Phase One Ramping',
-            datetime.date(2023,10,10):'Phase One Banded',
-            datetime.date(2023,10,12):'Phase One Ramping'
+    plan = {datetime.date(2023,9,12):['Phase One Hip Mobility','Phase One Banded'],
+            datetime.date(2023,9,14):['Phase One Hip Mobility','Phase One Ramping'],
+            datetime.date(2023,9,15):['Phase One Hip Mobility'],
+            datetime.date(2023,9,18):['Phase One Hip Mobility'],
+            datetime.date(2023,9,19):['Phase One Hip Mobility','Phase One Banded'],
+            datetime.date(2023,9,20):['Phase One Hip Mobility'],
+            datetime.date(2023,9,21):['Phase One Hip Mobility','Phase One Ramping'],
+            datetime.date(2023,9,22):['Phase One Hip Mobility'],
+            datetime.date(2023,9,25):['Phase One Hip Mobility'],
+            datetime.date(2023,9,26):['Phase One Hip Mobility','Phase One Banded'],
+            datetime.date(2023,9,27):['Phase One Hip Mobility'],
+            datetime.date(2023,9,28):['Phase One Hip Mobility','Phase One Ramping'],
+            datetime.date(2023,9,29):['Phase One Hip Mobility'],
+            datetime.date(2023,10,2):['Phase One Hip Mobility'],
+            datetime.date(2023,10,3):['Phase One Hip Mobility','Phase One Banded'],
+            datetime.date(2023,10,4):['Phase One Hip Mobility'],
+            datetime.date(2023,10,5):['Phase One Hip Mobility','Phase One Ramping'],
+            datetime.date(2023,10,6):['Phase One Hip Mobility'],
+            datetime.date(2023,10,9):['Phase One Hip Mobility'],
+            datetime.date(2023,10,10):['Phase One Hip Mobility','Phase One Banded'],
+            datetime.date(2023,10,11):['Phase One Hip Mobility'],
+            datetime.date(2023,10,12):['Phase One Hip Mobility','Phase One Ramping'],
+            datetime.date(2023,10,13):['Phase One Hip Mobility']
             }
     return plan.get(date, None)
 
@@ -129,6 +146,9 @@ with open('workout_plan.yaml', 'w') as file:
     yaml.dump(routines, file)
 
 # Walk the user through the workout
-todays_workout = scheduled_workout(datetime.date.today())
-todays_report = do_work(routines,todays_workout)
-print(datetime.date.today())
+todays_workouts = scheduled_workout(datetime.date.today())
+todays_reports = [None] * len(todays_workouts)
+index = 0
+for each in todays_workouts:
+    todays_reports[index] = do_work(routines,each)
+
