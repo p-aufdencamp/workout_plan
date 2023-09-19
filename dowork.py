@@ -3,13 +3,12 @@
 # Feature List
 # TODO
 # ( ): print post workout feedback based on the report 
-# (X): Have the workout change based on Day of Week
 # ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
-# (X): For the hard coded scheduled plans, instead of making a date:routine, 
-#      turn it into a date:[routine1,routine2,...,routineN] to make it more 
-#      flexible
+# (X): Add Shoulder Mobility Routine + Bonus Wrist Work
+# (X): Schedule Wrist Mobility Routine for M/W/F
+# (X): Add Bow Stretch to Hip Routine
 
 # BACKLOG
 # ( ): Automate progress across the plan based on compliance and feedback,
@@ -38,26 +37,36 @@ def scheduled_workout(date):
     plan = {datetime.date(2023,9,12):['Phase One Hip Mobility','Phase One Banded'],
             datetime.date(2023,9,14):['Phase One Hip Mobility','Phase One Ramping'],
             datetime.date(2023,9,15):['Phase One Hip Mobility'],
-            datetime.date(2023,9,18):['Phase One Hip Mobility'],
+            datetime.date(2023,9,18):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
             datetime.date(2023,9,19):['Phase One Hip Mobility','Phase One Banded'],
-            datetime.date(2023,9,20):['Phase One Hip Mobility'],
+            datetime.date(2023,9,20):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
             datetime.date(2023,9,21):['Phase One Hip Mobility','Phase One Ramping'],
-            datetime.date(2023,9,22):['Phase One Hip Mobility'],
-            datetime.date(2023,9,25):['Phase One Hip Mobility'],
+            datetime.date(2023,9,22):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
+            datetime.date(2023,9,25):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
             datetime.date(2023,9,26):['Phase One Hip Mobility','Phase One Banded'],
-            datetime.date(2023,9,27):['Phase One Hip Mobility'],
+            datetime.date(2023,9,27):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
             datetime.date(2023,9,28):['Phase One Hip Mobility','Phase One Ramping'],
-            datetime.date(2023,9,29):['Phase One Hip Mobility'],
-            datetime.date(2023,10,2):['Phase One Hip Mobility'],
+            datetime.date(2023,9,29):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
+            datetime.date(2023,10,2):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
             datetime.date(2023,10,3):['Phase One Hip Mobility','Phase One Banded'],
             datetime.date(2023,10,4):['Phase One Hip Mobility'],
             datetime.date(2023,10,5):['Phase One Hip Mobility','Phase One Ramping'],
-            datetime.date(2023,10,6):['Phase One Hip Mobility'],
-            datetime.date(2023,10,9):['Phase One Hip Mobility'],
+            datetime.date(2023,10,6):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
+            datetime.date(2023,10,9):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility'],
             datetime.date(2023,10,10):['Phase One Hip Mobility','Phase One Banded'],
             datetime.date(2023,10,11):['Phase One Hip Mobility'],
             datetime.date(2023,10,12):['Phase One Hip Mobility','Phase One Ramping'],
-            datetime.date(2023,10,13):['Phase One Hip Mobility']
+            datetime.date(2023,10,13):['Phase One Wrist Mobility',
+                                      'Phase One Shoulder Mobility']
             }
     return plan.get(date, None)
 
@@ -134,12 +143,27 @@ routines = {
                                "Body Weight",10),
                     Reps_Based("Hamstring Stretch, Center->Cross->Out, Right",
                                "Body Weight",10),
+                    Reps_Based("Bow Stretch, Left","Body Weight",5),
+                    Reps_Based("Bow Stretch, Right","Body Weight",5),
                     Reps_Based("Seated Windshield Wiper, Left","Body Weight",5),
                     Reps_Based("Seated Windshield Wiper, Right","Body Weight",5),
                     Reps_Based("Active Leg Lower, Left","Body Weight",5),
                     Reps_Based("Active Leg Lower, Right","Body Weight",5),
                     Reps_Based("Toe Touch, Raised Heels","Body Weight",10),
-                    Reps_Based("Toe Touch, Raised Toes","Body Weight",10)]
+                    Reps_Based("Toe Touch, Raised Toes","Body Weight",10)],
+    'Phase One Wrist Mobility': [Generic("Carpal Tunnel Routine","Theragun","See App")],
+    'Phase One Shoulder Mobility': [Generic("Shoulders","Theragun","See App"),
+                                    Generic("Triceps","Theragun","See App"),
+                                    Reps_Based("Hold the Wall, Left","BW",5),
+                                    Reps_Based("Hold the Wall, Right","BW",5),
+                                    Reps_Based("Overhead Shoulder, Left","BW",5),
+                                    Reps_Based("Overhead Shoulder, Right","BW",5),
+                                    Reps_Based("Lats Stretch, Left","BW",5),
+                                    Reps_Based("Last Stretch, Right","BW",5),
+                                    Reps_Based("Rib Pull, Left","BW",5),
+                                    Reps_Based("Rib Pull, Right","BW",5),
+                                    Reps_Based("Half Kneeling T Spine Twist","BW",5),
+                                    Reps_Based("Half Kneeling T Spine Twist, Right","BW",5)]
 }
 
 with open('workout_plan.yaml', 'w') as file:
@@ -151,4 +175,5 @@ todays_reports = [None] * len(todays_workouts)
 index = 0
 for each in todays_workouts:
     todays_reports[index] = do_work(routines,each)
+    index = index + 1
 

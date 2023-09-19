@@ -90,6 +90,14 @@ Phase One Hip Mobility:
   reps: 10
 - !!python/object:exercise.Reps_Based
   load: Body Weight
+  name: Bow Stretch, Left
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: Body Weight
+  name: Bow Stretch, Right
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: Body Weight
   name: Seated Windshield Wiper, Left
   reps: 5
 - !!python/object:exercise.Reps_Based
@@ -169,3 +177,57 @@ Phase One Ramping:
   load: Body Weight
   name: Right Plank
   time: 45
+Phase One Shoulder Mobility:
+- !!python/object:exercise.Generic
+  instructions: See App
+  load: Theragun
+  name: Shoulders
+- !!python/object:exercise.Generic
+  instructions: See App
+  load: Theragun
+  name: Triceps
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Hold the Wall, Left
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Hold the Wall, Right
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Overhead Shoulder, Left
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Overhead Shoulder, Right
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Lats Stretch, Left
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Last Stretch, Right
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Rib Pull, Left
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Rib Pull, Right
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Half Kneeling T Spine Twist
+  reps: 5
+- !!python/object:exercise.Reps_Based
+  load: BW
+  name: Half Kneeling T Spine Twist, Right
+  reps: 5
+Phase One Wrist Mobility:
+- !!python/object:exercise.Generic
+  instructions: See App
+  load: Theragun
+  name: Carpal Tunnel Routine
