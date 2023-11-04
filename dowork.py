@@ -6,13 +6,15 @@
 # ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
-# ( ): Text based UI for workout browsing, vs doing today's scheduled work
+# (X): Text based UI for workout browsing, vs doing today's scheduled work
 
 # BACKLOG
 # ( ): Automate progress across the plan based on compliance and feedback,
 #      maybe with an index variable
 # ( ): Build a trailing average compliance metric
 # ( ): Incorporate a timer function
+# ( ): Do some error handling in the scheduled workout function so that if 
+#       today doesn't have a scheduled workout, it doesn't get mad
 
 
 # import from big python libraries
@@ -103,28 +105,31 @@ def scheduled_workout(date):
 
 # define a function to actually do a routine
 def do_work(database,workout_name):
-    # function to perform a workout routine located in the database
-    print(workout_name)
-    todays_routine = database.get(workout_name, None)
-    report = [None] * len(todays_routine)
-    index = 0
-    for each in todays_routine:
-        if isinstance(each,Time_Based):
-            print(f"Do a {each.name} with {each.load} for {each.time} seconds.")
-            print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            report[index] = input()
-        elif isinstance(each,Reps_Based):
-            print(f"Do a {each.name} with {each.load} pounds for {each.reps} reps.")
-            print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            report[index] = input()
-        elif isinstance(each,Generic):
-            print(f"Do {each.name} with {each.load} according to {each.instructions}")
-            print(f" [d] for done, [s] for skipped, [i] for incomplete")
-            report[index] = input()
-        index = index + 1
-        os.system('clear')
-    return report
+     # function to perform a workout routine located in the database
+     os.system('clear')
+     print(workout_name)
+     todays_routine = database.get(workout_name, None)
+     report = [None] * len(todays_routine)
+     index = 0
+     for each in todays_routine:
+          if isinstance(each,Time_Based):
+               print(f"Do a {each.name} with {each.load} for {each.time} seconds.")
+               print(f" [d] for done, [s] for skipped, [i] for incomplete")
+               report[index] = input()
 
+          elif isinstance(each,Reps_Based):
+               print(f"Do a {each.name} with {each.load} pounds for {each.reps} reps.")
+               print(f" [d] for done, [s] for skipped, [i] for incomplete")
+               report[index] = input()
+
+          elif isinstance(each,Generic):
+               print(f"Do {each.name} with {each.load} according to {each.instructions}")
+               print(f" [d] for done, [s] for skipped, [i] for incomplete")
+               report[index] = input()
+          index = index + 1
+          os.system('clear')
+     return report
+    
 # define the routines we want to do, put them in a dictionary
 routines = {
      'Phase One Banded': [Time_Based("Plank","Bodyweight",45),
@@ -238,13 +243,38 @@ routines = {
                             "20s @50%, 10s @80%, 5s @100%")]
 }
 
-with open('workout_plan.yaml', 'w') as file:
-    yaml.dump(routines, file)
+# Where the magic happens
+#this makes it so that this code only runs when this is the main method
+if __name__ == "__main__": 
+     with open('workout_plan.yaml', 'w') as file:
+          yaml.dump(routines, file)
 
-# Walk the user through the workout
-todays_workouts = scheduled_workout(datetime.date.today())
-todays_reports = [None] * len(todays_workouts)
-index = 0
-for each in todays_workouts:
-    todays_reports[index] = do_work(routines,each)
-    index = index + 1
+     #index variable is used regardless of wht the user selecs
+     index = 0
+     # prompt the user to do what is currently scheduled vs selecting one from the 
+     # routines which are available
+     print("[s] for scheduled")
+     print("[a] for ala carte")
+     choice = input("select an option: ")
+     if choice == "s":
+          todays_workouts = scheduled_workout(datetime.date.today())
+          todays_reports = [None] * len(todays_workouts)
+          for each in todays_workouts:
+               todays_reports[index] = do_work(routines,each)
+               index = index + 1
+
+     elif choice == "a":
+          os.system('clear')
+          #print("select a routine from the options below")
+          routine_keys = [None] * len(routines)
+          for key in routines.keys():
+               print(f"[{index}] {key}")
+               routine_keys[index] = key
+               index = index + 1
+          user_input = input("select a routine from the library")
+          selected_index = int(user_input)
+          todays_workout_name = routine_keys[selected_index]
+          print(todays_workout_name)
+          report = do_work(routines,todays_workout_name)
+     else:
+          print ("come on, ya gotta do something today")
