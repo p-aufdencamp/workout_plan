@@ -6,15 +6,19 @@
 # ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
-# (X): Text based UI for workout browsing, vs doing today's scheduled work
+# ( ): Update the recovery routine to include the exercises with the latest 
+#         guidance from the PT
 
 # BACKLOG
+# ( ): Set up a "test" mode so that I can test the code without affecting the 
+#    tracking compliance or other reported metrics
 # ( ): Automate progress across the plan based on compliance and feedback,
 #      maybe with an index variable
 # ( ): Build a trailing average compliance metric
-# ( ): Incorporate a timer function
+# ( ): Incorporate a timer function for the straight time based exercises
 # ( ): Do some error handling in the scheduled workout function so that if 
 #       today doesn't have a scheduled workout, it doesn't get mad
+# ( ): Add a "rest" exercise type
 
 
 # import from big python libraries
@@ -87,19 +91,19 @@ def scheduled_workout(date):
         datetime.date(2023,11,6):['P1 Recovery','P1 Banded, Modified'],
         datetime.date(2023,11,7):['P1 Recovery'],
         datetime.date(2023,11,8):['P1 Recovery','P1 Ramping, Modified'],
-        datetime.date(2023,11,9):['P1 Recovery'], 
-        datetime.date(2023,11,10):['P1 Recovery','P1 Banded, Modified'],
-        datetime.date(2023,11,11):['P1 Recovery'],
-        datetime.date(2023,11,12):['P1 Recovery'],
-        datetime.date(2023,11,13):['P1 Recovery','P1 Ramping, Modified'],
-        datetime.date(2023,11,14):['P1 Recovery'],
-        datetime.date(2023,11,15):['P1 Recovery','P1 Banded, Modified'],
-        datetime.date(2023,11,16):['P1 Recovery'],
-        datetime.date(2023,11,17):['P1 Recovery','P1 Ramping, Modified'],
-        datetime.date(2023,11,18):['P1 Recovery'],
-        datetime.date(2023,11,19):['P1 Recovery'],
-        datetime.date(2023,11,20):['P1 Recovery','P1 Banded, Modified'],
-        datetime.date(2023,11,21):['P1 Recovery']
+        datetime.date(2023,11,9):['P1.1 Recovery'], 
+        datetime.date(2023,11,10):['P1.1 Recovery','P1 Banded, Modified'],
+        datetime.date(2023,11,11):['P1.1 Recovery'],
+        datetime.date(2023,11,12):['P1.1 Recovery'],
+        datetime.date(2023,11,13):['P1.1 Recovery','P1 Ramping, Modified'],
+        datetime.date(2023,11,14):['P1.1 Recovery'],
+        datetime.date(2023,11,15):['P1.1 Recovery','P1 Banded, Modified'],
+        datetime.date(2023,11,16):['P1.1 Recovery'],
+        datetime.date(2023,11,17):['P1.1 Recovery','P1 Ramping, Modified'],
+        datetime.date(2023,11,18):['P1.1 Recovery'],
+        datetime.date(2023,11,19):['P1.1 Recovery'],
+        datetime.date(2023,11,20):['P1.1 Recovery','P1 Banded, Modified'],
+        datetime.date(2023,11,21):['P1.1 Recovery']
         }
     return plan.get(date, None)
 
@@ -132,7 +136,7 @@ def do_work(database,workout_name):
     
 # define the routines we want to do, put them in a dictionary
 routines = {
-     'Phase One Banded': [Time_Based("Plank","Bodyweight",45),
+     'P1 Banded': [Time_Based("Plank","Bodyweight",45),
                   Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
                   Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
                   Time_Based("Banded Bridge","Medium Band",45),
@@ -146,7 +150,7 @@ routines = {
                   Time_Based("Banded Row","Medium Heavy Band",45),
                   Time_Based("Left Plank","Body Weight",45),
                   Time_Based("Right Plank","Body Weight",45)],
-     'Phase One Ramping': [Time_Based("Plank","Bodyweight",45),
+     'P1 Ramping': [Time_Based("Plank","Bodyweight",45),
                    Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
                    Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
                    Generic("Iso Bridge","BJJ",
@@ -169,7 +173,7 @@ routines = {
                             "20s @50%, 10s @80%, 5s @100%"),
                     Time_Based("Left Plank","Body Weight",45),
                     Time_Based("Right Plank","Body Weight",45)],
-     'Phase One Hip Mobility': [Generic("Cycling Recovery","Theragun","See App"),
+     'P1 Hip Mobility': [Generic("Cycling Recovery","Theragun","See App"),
                     Generic("Glutes","Theragun","See App"),
                     Reps_Based("Frog Stretch","Body Weight",8),
                     Reps_Based("Kneeling Lunge Stretch, Left","Body Weight",10),
@@ -187,8 +191,8 @@ routines = {
                     Reps_Based("Active Leg Lower, Right","Body Weight",5),
                     Reps_Based("Toe Touch, Raised Heels","Body Weight",10),
                     Reps_Based("Toe Touch, Raised Toes","Body Weight",10)],
-     'Phase One Wrist Mobility': [Generic("Carpal Tunnel Routine","Theragun","See App")],
-     'Phase One Shoulder Mobility': [Generic("Shoulders","Theragun","See App"),
+     'P1 One Wrist Mobility': [Generic("Carpal Tunnel Routine","Theragun","See App")],
+     'P1 Shoulder Mobility': [Generic("Shoulders","Theragun","See App"),
                                     Generic("Triceps","Theragun","See App"),
                                     Reps_Based("Hold the Wall, Left","BW",5),
                                     Reps_Based("Hold the Wall, Right","BW",5),
@@ -200,15 +204,31 @@ routines = {
                                     Reps_Based("Rib Pull, Right","BW",5),
                                     Reps_Based("Half Kneeling T Spine Twist","BW",5),
                                     Reps_Based("Half Kneeling T Spine Twist, Right","BW",5)],
-     'P1 Recovery': [Reps_Based("Ankle Vertical Flexion, Right",0,10),
+     'P1.1 Recovery': [Reps_Based("Ankle Vertical Flexion, Right",0,30),
                         Reps_Based("Ankle Circles, Right, CW",0,30),
                         Reps_Based("Ankle Circles, Right, CCW",0,30),
-                        Time_Based("Ankle Dorsiflexion, Right",0,60),
-                        Reps_Based("Ankle Vertical Flexion, Left",0,10),
+                        Time_Based("Ankle Dorsiflexion Hold, Right",0,60),
+                        Reps_Based("Toe Towel Scrunches, Right",0,30),
+                        Reps_Based("Seated Heel Raise, Right",0,20),
+                        Reps_Based("Toe Towel Scrunches, Right",0,30),
+                        Reps_Based("Seated Heel Raise, Right",0,20),
+                        Reps_Based("Ankle Vertical Flexion, Left",0,30),
                         Reps_Based("Ankle Circles, Left, CW",0,30),
                         Reps_Based("Ankle Circles, Left, CCW",0,30),
-                        Time_Based("Ankle Dorsiflexion, Left",0,60),
+                        Time_Based("Ankle Dorsiflexion Hold, Left",0,60),
                         Time_Based("Forward Fold",0,60),
+                        Reps_Based("Ankle Plantar Flexion, Right",
+                                   "Very Light Band",15),
+                        Reps_Based("Ankle Eversion, Right","Very Light Band",
+                                   15),
+                        Reps_Based("Ankle Inversion, Right","Very Light Band",
+                                   15),
+                        Reps_Based("Ankle Plantar Flexion, Right",
+                                   "Very Light Band",15),
+                        Reps_Based("Ankle Eversion, Right","Very Light Band",
+                                   15),
+                        Reps_Based("Ankle Inversion, Right","Very Light Band",
+                                   15),
                         Reps_Based("Mackenzie Extensions",0,15),
                         Time_Based("Bow Stretch, Left",0,60),
                         Time_Based("Bow Stretch, Right",0,60),
