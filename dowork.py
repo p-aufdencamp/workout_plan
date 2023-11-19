@@ -6,8 +6,11 @@
 # ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
-# ( ): Update the recovery routine to include the exercises with the latest 
+# (X): Update the recovery routine to include the exercises with the latest 
 #         guidance from the PT
+# (X): Separated out the floor work from the seated ankle work to make the 
+#    vibes better and minimize the sit to stand transitions
+# (X): Delete the old routines which are scheduled for the past
 
 # BACKLOG
 # ( ): Set up a "test" mode so that I can test the code without affecting the 
@@ -18,8 +21,9 @@
 # ( ): Incorporate a timer function for the straight time based exercises
 # ( ): Do some error handling in the scheduled workout function so that if 
 #       today doesn't have a scheduled workout, it doesn't get mad
-# ( ): Add a "rest" exercise type
-
+# ( ): Add a "rest" exercise type to wait between sets
+# ( ): refactor the time_based exercise type to utilize a list of times to 
+#    prepare for interval training later
 
 # import from big python libraries
 import yaml
@@ -38,72 +42,40 @@ def scheduled_workout(date):
     # to skipped workouts will reside
 
     #starting with just hard coded plan and will go from there.
-    plan = {datetime.date(2023,9,12):['Phase One Hip Mobility',
-                                      'Phase One Banded'],
-        datetime.date(2023,9,14):['Phase One Hip Mobility',
-                                      'Phase One Ramping'],
-        datetime.date(2023,9,15):['Phase One Hip Mobility'],
-        datetime.date(2023,9,18):['Phase One Wrist Mobility',
-                                  'Phase One Shoulder Mobility'],
-        datetime.date(2023,9,19):['Phase One Hip Mobility',
-                                      'Phase One Banded'],
-        datetime.date(2023,9,20):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,9,21):['Phase One Hip Mobility',
-                                      'Phase One Ramping'],
-        datetime.date(2023,9,22):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,9,25):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,9,26):['Phase One Hip Mobility',
-                                      'Phase One Banded'],
-        datetime.date(2023,9,27):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,9,28):['Phase One Hip Mobility',
-                                      'Phase One Ramping'],
-        datetime.date(2023,9,29):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,10,2):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,10,3):['Phase One Hip Mobility',
-                                      'Phase One Banded'],
-        datetime.date(2023,10,4):['Phase One Hip Mobility'],
-        datetime.date(2023,10,5):['Phase One Hip Mobility',
-                                      'Phase One Ramping'],
-        datetime.date(2023,10,6):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,10,9):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,10,10):['Phase One Hip Mobility',
-                                       'Phase One Banded'],
-        datetime.date(2023,10,11):['Phase One Hip Mobility'],
-        datetime.date(2023,10,12):['Phase One Hip Mobility',
-                                       'Phase One Ramping'],
-        datetime.date(2023,10,13):['Phase One Wrist Mobility',
-                                      'Phase One Shoulder Mobility'],
-        datetime.date(2023,10,30):['P1 Recovery'],
-        datetime.date(2023,10,31):['P1 Recovery'],
-        datetime.date(2023,11,1):['P1 Recovery','P1 Banded, Modified'],
-        datetime.date(2023,11,2):['P1 Recovery'],
-        datetime.date(2023,11,3):['P1 Recovery','P1 Ramping, Modified'],
-        datetime.date(2023,11,4):['P1 Recovery'],
-        datetime.date(2023,11,5):['P1 Recovery'],
-        datetime.date(2023,11,6):['P1 Recovery','P1 Banded, Modified'],
-        datetime.date(2023,11,7):['P1 Recovery'],
-        datetime.date(2023,11,8):['P1 Recovery','P1 Ramping, Modified'],
-        datetime.date(2023,11,9):['P1.1 Recovery'], 
-        datetime.date(2023,11,10):['P1.1 Recovery','P1 Banded, Modified'],
-        datetime.date(2023,11,11):['P1.1 Recovery'],
-        datetime.date(2023,11,12):['P1.1 Recovery'],
-        datetime.date(2023,11,13):['P1.1 Recovery','P1 Ramping, Modified'],
-        datetime.date(2023,11,14):['P1.1 Recovery'],
-        datetime.date(2023,11,15):['P1.1 Recovery','P1 Banded, Modified'],
-        datetime.date(2023,11,16):['P1.1 Recovery'],
+    plan = {
         datetime.date(2023,11,17):['P1.1 Recovery','P1 Ramping, Modified'],
-        datetime.date(2023,11,18):['P1.1 Recovery'],
-        datetime.date(2023,11,19):['P1.1 Recovery'],
-        datetime.date(2023,11,20):['P1.1 Recovery','P1 Banded, Modified'],
-        datetime.date(2023,11,21):['P1.1 Recovery']
+        datetime.date(2023,11,18):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Sat
+        datetime.date(2023,11,19):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Sun
+        datetime.date(2023,11,20):['P1.2 Ankle Mobility',
+          'P1.2 Recovery Floor Work','P0.2 Banded, Modified'],#Mon
+        datetime.date(2023,11,21):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Tue
+        datetime.date(2023,11,22):['P1.2 Ankle Mobility',
+          'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Wed
+        datetime.date(2023,11,23):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Thu
+        datetime.date(2023,11,24):['P1.2 Ankle Mobility',
+          'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
+        datetime.date(2023,11,25):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Sat
+        datetime.date(2023,11,26):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Sun
+        datetime.date(2023,11,27):['P1.2 Ankle Mobility',
+          'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Mon
+        datetime.date(2023,11,28):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Tue
+        datetime.date(2023,11,29):['P1.2 Ankle Mobility',
+          'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Wed
+        datetime.date(2023,11,30):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Thu
+        datetime.date(2023,12,1):['P1.2 Ankle Mobility',
+          'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Fri
+        datetime.date(2023,12,2):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], # Sat
+        datetime.date(2023,12,2):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'] # Sun
         }
     return plan.get(date, None)
 
@@ -151,28 +123,20 @@ routines = {
                   Time_Based("Left Plank","Body Weight",45),
                   Time_Based("Right Plank","Body Weight",45)],
      'P1 Ramping': [Time_Based("Plank","Bodyweight",45),
-                   Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
-                   Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
-                   Generic("Iso Bridge","BJJ",
-                           "20s @50%, 10s @80%, 5s @100%"),
-                   Generic("Iso Narrow Knees","Hold",
-                           "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Neck Triceps Extension","BJJ",
-                           "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Butterfly Crunch","Hold",
-                            "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Front Raise","BJJ",
-                            "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Deadlift","BJJ",
-                            "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Chest Press","BJJ",
-                            "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Squat","BJJ",
-                            "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Row","BJJ",
-                            "20s @50%, 10s @80%, 5s @100%"),
-                    Time_Based("Left Plank","Body Weight",45),
-                    Time_Based("Right Plank","Body Weight",45)],
+          Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
+          Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
+          Generic("Iso Bridge","BJJ", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Narrow Knees","Hold", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Neck Triceps Extension","BJJ",
+               "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Butterfly Crunch","Hold", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Front Raise","BJJ", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Deadlift","BJJ", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Chest Press","BJJ", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Squat","BJJ", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Row","BJJ", "20s @50%, 10s @80%, 5s @100%"),
+          Time_Based("Left Plank","Body Weight",45),
+          Time_Based("Right Plank","Body Weight",45)],
      'P1 Hip Mobility': [Generic("Cycling Recovery","Theragun","See App"),
                     Generic("Glutes","Theragun","See App"),
                     Reps_Based("Frog Stretch","Body Weight",8),
@@ -191,7 +155,8 @@ routines = {
                     Reps_Based("Active Leg Lower, Right","Body Weight",5),
                     Reps_Based("Toe Touch, Raised Heels","Body Weight",10),
                     Reps_Based("Toe Touch, Raised Toes","Body Weight",10)],
-     'P1 One Wrist Mobility': [Generic("Carpal Tunnel Routine","Theragun","See App")],
+     'P1 One Wrist Mobility': [Generic("Carpal Tunnel Routine",
+          "Theragun","See App")],
      'P1 Shoulder Mobility': [Generic("Shoulders","Theragun","See App"),
                                     Generic("Triceps","Theragun","See App"),
                                     Reps_Based("Hold the Wall, Left","BW",5),
@@ -242,25 +207,87 @@ routines = {
                         Reps_Based("Lying Glute Raise, Left",10,10),
                         Reps_Based("Lying Knee Flexion, Left",10,10),
                         Reps_Based("Lying Side Leg Raise, Left",10,10)],
+     'P1.2 Ankle Mobility': [Reps_Based("Ankle Vertical Flexion, Right",0,30),
+          Reps_Based("Ankle Circles, Right, CW",0,30),
+          Reps_Based("Ankle Circles, Right, CCW",0,30),
+          Reps_Based("Seated Heel Raise, Right",0,20),
+          Reps_Based("Banded Plantar Flexion, Right","vLight",15),
+          Reps_Based("Banded Ankle Eversion, Right","vLight",15),
+          Reps_Based("Banded Ankle Inversion, Right","vLight",15),
+          Reps_Based("Seated Heel Raise, Right",0,20),
+          Reps_Based("Banded Plantar Flexion, Right","vLight",15),
+          Reps_Based("Banded Ankle Eversion, Right","vLight",15),
+          Reps_Based("Banded Ankle Inversion, Right","vLight",15),
+          Time_Based("Seated Pen Pickups",0,30),
+          Time_Based("Seated Toe Spread",0,30),
+          Time_Based("Big Toe/Small Toe Separation",0,30),
+          Time_Based("Plantar Fascia Mobilization",0,30),
+          Time_Based("Seated Pen Pickups",0,30),
+          Time_Based("Seated Toe Spread",0,30),
+          Reps_Based("Ankle Vertical Flexion, Left",0,30),
+          Reps_Based("Ankle Circles, Left, CW",0,30),
+          Reps_Based("Ankle Circles, Left, CCW",0,30),
+          Time_Based("Ankle Dorsiflexion Hold, Right",0,60),
+          Time_Based("Ankle Dorsiflexion Hold, Left",0,60)],
+     'P1.2 Recovery Floor Work': [Time_Based("Forward Fold",0,60),
+          Reps_Based("Mackenzie Extensions",0,15),
+          Time_Based("Bow Stretch, Left",0,60),
+          Time_Based("Bow Stretch, Right",0,60),
+          Time_Based("Lying Spine Twist, Left",0,60),
+          Time_Based("Lying Spine Twist, Right",0,60),
+          Reps_Based("Lying Vertical Leg Raise, Right",10,10),
+          Reps_Based("Lying Vertical Leg Raise, Left",10,10),
+          Reps_Based("Lying Side Leg Raise, Right",10,10),
+          Reps_Based("Lying Glute Raise, Right",10,10),
+          Reps_Based("Lying Glute Raise, Left",10,10),
+          Reps_Based("Lying Side Leg Raise, Left",10,10)],
      'P1 Banded, Modified': [Time_Based("Kneeling Plank",0,45),
                   Reps_Based("Bicycle Crunch",0,10),
                   Time_Based("Lying Banded Front Raise","Light Band",45),
                   Time_Based("Lying Banded Chest Press","Medium Heavy Band",45),
                   Time_Based("Banded Row, Single Foot","Medium Heavy Band",45)],
      'P1 Ramping, Modified': [Time_Based("Kneeling Plank",0,45),
-                   Reps_Based("Bicycle Crunch",0,10),
-                   Generic("Iso Narrow Knees","Hold",
+          Reps_Based("Bicycle Crunch",0,10),
+          Generic("Iso Narrow Knees","Hold", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Neck Triceps Extension","BJJ", 
+               "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Butterfly Crunch","Hold",
+               "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Lying Front Raise","BJJ",
+               "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Lying Chest Press","BJJ",
+               "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Single Foot Row","BJJ",
+               "20s @50%, 10s @80%, 5s @100%")],
+     'P0.2 Banded, Modified': [Time_Based("Kneeling Plank",0,45),
+                  Reps_Based("Bicycle Crunch",0,10),
+                  Time_Based("Banded Bridge","Medium Band",45),
+                  Time_Based("Lying Banded Front Raise","Light Band",45),
+                  Time_Based("Lying Banded Chest Press","Medium Heavy Band",45),
+                  Time_Based("Banded Row, Single Foot","Medium Heavy Band",45)],
+     'P0.2 Ramping, Modified': [Time_Based("Kneeling Plank",0,45),
+               Reps_Based("Bicycle Crunch",0,10),
+               Generic("Iso Bridge","BJJ",
                            "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Neck Triceps Extension","BJJ",
+               Generic("Iso Narrow Knees","Hold",
                            "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Butterfly Crunch","Hold",
+               Generic("Iso Neck Triceps Extension","BJJ",
+                           "20s @50%, 10s @80%, 5s @100%"),
+               Generic("Iso Butterfly Crunch","Hold",
                             "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Lying Front Raise","BJJ",
+               Generic("Iso Lying Front Raise","BJJ",
                             "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Lying Chest Press","BJJ",
-                            "20s @50%, 10s @80%, 5s @100%"),
-                    Generic("Iso Single Foot Row","BJJ",
-                            "20s @50%, 10s @80%, 5s @100%")]
+               Generic("Iso Lying Chest Press","BJJ",
+                    "20s @50%, 10s @80%, 5s @100%"),
+               Generic("Iso Single Foot Row","BJJ",
+                    "20s @50%, 10s @80%, 5s @100%")],
+     'P1.2 Off Day': [Reps_Based("Sit to Stand Squats",0,15),
+          Reps_Based("Sit to Stand Squats",0,15),
+          Reps_Based("Sit to Stand Squats",0,15),
+          Reps_Based("Supine Bridge",0,15),
+          Reps_Based("Supine Bridge",0,15),
+          Reps_Based("Supine Bridge",0,15),
+          ]
 }
 
 # Where the magic happens
