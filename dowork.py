@@ -2,15 +2,11 @@
 # Main script which you run to do work
 # Feature List
 # TODO
+# ( ): Incorporate a timer function for the straight time based exercises
 # ( ): print post workout feedback based on the report 
 # ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
-# (X): Update the recovery routine to include the exercises with the latest 
-#         guidance from the PT
-# (X): Separated out the floor work from the seated ankle work to make the 
-#    vibes better and minimize the sit to stand transitions
-# (X): Delete the old routines which are scheduled for the past
 
 # BACKLOG
 # ( ): Set up a "test" mode so that I can test the code without affecting the 
@@ -18,7 +14,7 @@
 # ( ): Automate progress across the plan based on compliance and feedback,
 #      maybe with an index variable
 # ( ): Build a trailing average compliance metric
-# ( ): Incorporate a timer function for the straight time based exercises
+
 # ( ): Do some error handling in the scheduled workout function so that if 
 #       today doesn't have a scheduled workout, it doesn't get mad
 # ( ): Add a "rest" exercise type to wait between sets
