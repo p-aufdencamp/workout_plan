@@ -1,6 +1,7 @@
 # Author: Phil Aufdencamp
 # Main script which you run to do work
 # Feature List
+# Git test
 # TODO
 # ( ): Incorporate a timer function for the straight time based exercises
 # ( ): print post workout feedback based on the report 
