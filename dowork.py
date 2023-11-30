@@ -5,7 +5,7 @@
 # (X): Update the workout plan to consolidate muscular groups, moved
 #    pulled lying leg raises and will rely on banded+ramping for
 #    hip flexor strength. Removing lying side leg raise and introduced 
-#    banded & ramping 
+#    banded & ramping L+R Clamshells
 # (X): Pull backdated workouts for brevity
 # ( ): Incorporate a timer function for the straight time based exercises
 # ( ): print post workout feedback based on the report 
@@ -217,13 +217,7 @@ routines = {
           Time_Based("Bow Stretch, Left",0,60),
           Time_Based("Bow Stretch, Right",0,60),
           Time_Based("Lying Spine Twist, Left",0,60),
-          Time_Based("Lying Spine Twist, Right",0,60),
-          Reps_Based("Lying Vertical Leg Raise, Right",10,10),
-          Reps_Based("Lying Vertical Leg Raise, Left",10,10),
-          Reps_Based("Lying Side Leg Raise, Right",10,10),
-          Reps_Based("Lying Glute Raise, Right",10,10),
-          Reps_Based("Lying Glute Raise, Left",10,10),
-          Reps_Based("Lying Side Leg Raise, Left",10,10)],
+          Time_Based("Lying Spine Twist, Right",0,60)],
      'P1 Banded, Modified': [Time_Based("Kneeling Plank",0,45),
                   Reps_Based("Bicycle Crunch",0,10),
                   Time_Based("Lying Banded Front Raise","Light Band",45),
@@ -244,6 +238,7 @@ routines = {
                "20s @50%, 10s @80%, 5s @100%")],
      'P0.2 Banded, Modified': [Time_Based("Kneeling Plank",0,45),
                   Reps_Based("Bicycle Crunch",0,10),
+                  Time_Based("Banded Bridge Abduction","Light",45),
                   Time_Based("Banded Bridge","Medium Band",45),
                   Time_Based("Lying Banded Front Raise","Light Band",45),
                   Time_Based("Lying Banded Chest Press","Medium Heavy Band",45),
@@ -252,6 +247,7 @@ routines = {
                Reps_Based("Bicycle Crunch",0,10),
                Generic("Iso Bridge","BJJ",
                            "20s @50%, 10s @80%, 5s @100%"),
+               Generic("Iso Banded Bridge Abduction","BJJ","20s@ 50%, 10s@ 80%, 5s @100%"),
                Generic("Iso Narrow Knees","Hold",
                            "20s @50%, 10s @80%, 5s @100%"),
                Generic("Iso Neck Triceps Extension","BJJ",
@@ -269,7 +265,7 @@ routines = {
           Reps_Based("Sit to Stand Squats",0,15),
           Reps_Based("Supine Bridge",0,15),
           Reps_Based("Supine Bridge",0,15),
-          Reps_Based("Supine Bridge",0,15),
+          Reps_Based("Supine Bridge",0,15)
           ]
 }
 
