@@ -1,4 +1,4 @@
-P1 Banded, Modified:
+P0.2 Banded, Modified:
 - !!python/object:exercise.Time_Based
   load: 0
   name: Kneeling Plank
@@ -7,6 +7,10 @@ P1 Banded, Modified:
   load: 0
   name: Bicycle Crunch
   reps: 10
+- !!python/object:exercise.Time_Based
+  load: Medium Band
+  name: Banded Bridge
+  time: 45
 - !!python/object:exercise.Time_Based
   load: Light Band
   name: Lying Banded Front Raise
@@ -19,7 +23,7 @@ P1 Banded, Modified:
   load: Medium Heavy Band
   name: Banded Row, Single Foot
   time: 45
-P1 Ramping, Modified:
+P0.2 Ramping, Modified:
 - !!python/object:exercise.Time_Based
   load: 0
   name: Kneeling Plank
@@ -28,6 +32,10 @@ P1 Ramping, Modified:
   load: 0
   name: Bicycle Crunch
   reps: 10
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Bridge
 - !!python/object:exercise.Generic
   instructions: 20s @50%, 10s @80%, 5s @100%
   load: Hold
@@ -52,104 +60,7 @@ P1 Ramping, Modified:
   instructions: 20s @50%, 10s @80%, 5s @100%
   load: BJJ
   name: Iso Single Foot Row
-P1 Recovery:
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Vertical Flexion, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Right, CW
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Right, CCW
-  reps: 30
-- !!python/object:exercise.Time_Based
-  load: 0
-  name: Ankle Dorsiflexion, Right
-  time: 60
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Vertical Flexion, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Left, CW
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Left, CCW
-  reps: 30
-- !!python/object:exercise.Time_Based
-  load: 0
-  name: Ankle Dorsiflexion, Left
-  time: 60
-- !!python/object:exercise.Time_Based
-  load: 0
-  name: Forward Fold
-  time: 60
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Mackenzie Extensions
-  reps: 25
-- !!python/object:exercise.Time_Based
-  load: 0
-  name: Bow Stretch, Left
-  time: 60
-- !!python/object:exercise.Time_Based
-  load: 0
-  name: Bow Stretch, Right
-  time: 60
-- !!python/object:exercise.Time_Based
-  load: 0
-  name: Lying Spine Twist, Left
-  time: 60
-- !!python/object:exercise.Time_Based
-  load: 0
-  name: Lying Spine Twist, Right
-  time: 60
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Up Dog to Childs Pose Cycle
-  reps: 5
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Cat Cow Circles
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Vertical Leg Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Vertidcal Leg Raise, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Side Leg Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Knee Flexion, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Glute Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Glute Raise, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Knee Flexion, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Side Leg Raise, Left
-  reps: 10
-Phase One Banded:
+P1 Banded:
 - !!python/object:exercise.Time_Based
   load: Bodyweight
   name: Plank
@@ -206,7 +117,28 @@ Phase One Banded:
   load: Body Weight
   name: Right Plank
   time: 45
-Phase One Hip Mobility:
+P1 Banded, Modified:
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Kneeling Plank
+  time: 45
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Bicycle Crunch
+  reps: 10
+- !!python/object:exercise.Time_Based
+  load: Light Band
+  name: Lying Banded Front Raise
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Medium Heavy Band
+  name: Lying Banded Chest Press
+  time: 45
+- !!python/object:exercise.Time_Based
+  load: Medium Heavy Band
+  name: Banded Row, Single Foot
+  time: 45
+P1 Hip Mobility:
 - !!python/object:exercise.Generic
   instructions: See App
   load: Theragun
@@ -271,7 +203,12 @@ Phase One Hip Mobility:
   load: Body Weight
   name: Toe Touch, Raised Toes
   reps: 10
-Phase One Ramping:
+P1 One Wrist Mobility:
+- !!python/object:exercise.Generic
+  instructions: See App
+  load: Theragun
+  name: Carpal Tunnel Routine
+P1 Ramping:
 - !!python/object:exercise.Time_Based
   load: Bodyweight
   name: Plank
@@ -328,7 +265,40 @@ Phase One Ramping:
   load: Body Weight
   name: Right Plank
   time: 45
-Phase One Shoulder Mobility:
+P1 Ramping, Modified:
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Kneeling Plank
+  time: 45
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Bicycle Crunch
+  reps: 10
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: Hold
+  name: Iso Narrow Knees
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Neck Triceps Extension
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: Hold
+  name: Iso Butterfly Crunch
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Lying Front Raise
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Lying Chest Press
+- !!python/object:exercise.Generic
+  instructions: 20s @50%, 10s @80%, 5s @100%
+  load: BJJ
+  name: Iso Single Foot Row
+P1 Shoulder Mobility:
 - !!python/object:exercise.Generic
   instructions: See App
   load: Theragun
@@ -377,8 +347,295 @@ Phase One Shoulder Mobility:
   load: BW
   name: Half Kneeling T Spine Twist, Right
   reps: 5
-Phase One Wrist Mobility:
-- !!python/object:exercise.Generic
-  instructions: See App
-  load: Theragun
-  name: Carpal Tunnel Routine
+P1.1 Recovery:
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Vertical Flexion, Right
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Circles, Right, CW
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Circles, Right, CCW
+  reps: 30
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Ankle Dorsiflexion Hold, Right
+  time: 60
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Toe Towel Scrunches, Right
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Seated Heel Raise, Right
+  reps: 20
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Toe Towel Scrunches, Right
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Seated Heel Raise, Right
+  reps: 20
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Vertical Flexion, Left
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Circles, Left, CW
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Circles, Left, CCW
+  reps: 30
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Ankle Dorsiflexion Hold, Left
+  time: 60
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Forward Fold
+  time: 60
+- !!python/object:exercise.Reps_Based
+  load: Very Light Band
+  name: Ankle Plantar Flexion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: Very Light Band
+  name: Ankle Eversion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: Very Light Band
+  name: Ankle Inversion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: Very Light Band
+  name: Ankle Plantar Flexion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: Very Light Band
+  name: Ankle Eversion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: Very Light Band
+  name: Ankle Inversion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Mackenzie Extensions
+  reps: 15
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Bow Stretch, Left
+  time: 60
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Bow Stretch, Right
+  time: 60
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Lying Spine Twist, Left
+  time: 60
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Lying Spine Twist, Right
+  time: 60
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Vertical Leg Raise, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Vertidcal Leg Raise, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Side Leg Raise, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Knee Flexion, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Glute Raise, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Glute Raise, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Knee Flexion, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Side Leg Raise, Left
+  reps: 10
+P1.2 Ankle Mobility:
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Vertical Flexion, Right
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Circles, Right, CW
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Circles, Right, CCW
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Seated Heel Raise, Right
+  reps: 20
+- !!python/object:exercise.Reps_Based
+  load: vLight
+  name: Banded Plantar Flexion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: vLight
+  name: Banded Ankle Eversion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: vLight
+  name: Banded Ankle Inversion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Seated Heel Raise, Right
+  reps: 20
+- !!python/object:exercise.Reps_Based
+  load: vLight
+  name: Banded Plantar Flexion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: vLight
+  name: Banded Ankle Eversion, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: vLight
+  name: Banded Ankle Inversion, Right
+  reps: 15
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Seated Pen Pickups
+  time: 30
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Seated Toe Spread
+  time: 30
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Big Toe/Small Toe Separation
+  time: 30
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Plantar Fascia Mobilization
+  time: 30
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Seated Pen Pickups
+  time: 30
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Seated Toe Spread
+  time: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Vertical Flexion, Left
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Circles, Left, CW
+  reps: 30
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Ankle Circles, Left, CCW
+  reps: 30
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Ankle Dorsiflexion Hold, Right
+  time: 60
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Ankle Dorsiflexion Hold, Left
+  time: 60
+P1.2 Off Day:
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Sit to Stand Squats
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Sit to Stand Squats
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Sit to Stand Squats
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Supine Bridge
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Supine Bridge
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Supine Bridge
+  reps: 15
+P1.2 Recovery Floor Work:
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Forward Fold
+  time: 60
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Mackenzie Extensions
+  reps: 15
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Bow Stretch, Left
+  time: 60
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Bow Stretch, Right
+  time: 60
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Lying Spine Twist, Left
+  time: 60
+- !!python/object:exercise.Time_Based
+  load: 0
+  name: Lying Spine Twist, Right
+  time: 60
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Vertical Leg Raise, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Vertical Leg Raise, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Side Leg Raise, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Glute Raise, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Glute Raise, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 10
+  name: Lying Side Leg Raise, Left
+  reps: 10

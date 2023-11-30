@@ -1,8 +1,12 @@
 # Author: Phil Aufdencamp
 # Main script which you run to do work
 # Feature List
-# Git test
 # TODO
+# (X): Update the workout plan to consolidate muscular groups, moved
+#    pulled lying leg raises and will rely on banded+ramping for
+#    hip flexor strength. Removing lying side leg raise and introduced 
+#    banded & ramping 
+# (X): Pull backdated workouts for brevity
 # ( ): Incorporate a timer function for the straight time based exercises
 # ( ): print post workout feedback based on the report 
 # ( ): Change from phase to phase based on calendar days
@@ -32,7 +36,6 @@ from exercise import Time_Based
 from exercise import Reps_Based
 from exercise import Generic
 
-
 def scheduled_workout(date):
     # function which will return a routine based on the date provided and the 
     # plan. Eventually this is where the smarts for progressing and responding
@@ -40,25 +43,6 @@ def scheduled_workout(date):
 
     #starting with just hard coded plan and will go from there.
     plan = {
-        datetime.date(2023,11,17):['P1.1 Recovery','P1 Ramping, Modified'],
-        datetime.date(2023,11,18):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Sat
-        datetime.date(2023,11,19):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Sun
-        datetime.date(2023,11,20):['P1.2 Ankle Mobility',
-          'P1.2 Recovery Floor Work','P0.2 Banded, Modified'],#Mon
-        datetime.date(2023,11,21):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Tue
-        datetime.date(2023,11,22):['P1.2 Ankle Mobility',
-          'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Wed
-        datetime.date(2023,11,23):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Thu
-        datetime.date(2023,11,24):['P1.2 Ankle Mobility',
-          'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
-        datetime.date(2023,11,25):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Sat
-        datetime.date(2023,11,26):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Sun
         datetime.date(2023,11,27):['P1.2 Ankle Mobility',
           'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Mon
         datetime.date(2023,11,28):['P1.2 Ankle Mobility','P1.2 Off Day',
@@ -71,8 +55,12 @@ def scheduled_workout(date):
           'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Fri
         datetime.date(2023,12,2):['P1.2 Ankle Mobility','P1.2 Off Day',
           'P1.2 Recovery Floor Work'], # Sat
-        datetime.date(2023,12,2):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'] # Sun
+        datetime.date(2023,12,3):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], # Sun
+          datetime.date(2023,12,4):['P1.2 Ankle Mobility',
+               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Mon
+        datetime.date(2023,12,5):['P1.2 Ankle Mobility','P1.2 Off Day',
+          'P1.2 Recovery Floor Work'], #Tue
         }
     return plan.get(date, None)
 
@@ -196,8 +184,6 @@ routines = {
                         Time_Based("Bow Stretch, Right",0,60),
                         Time_Based("Lying Spine Twist, Left",0,60),
                         Time_Based("Lying Spine Twist, Right",0,60),
-                        Reps_Based("Lying Vertical Leg Raise, Right",10,10),
-                        Reps_Based("Lying Vertidcal Leg Raise, Left",10,10),
                         Reps_Based("Lying Side Leg Raise, Right",10,10),
                         Reps_Based("Lying Knee Flexion, Right",10,10),
                         Reps_Based("Lying Glute Raise, Right",10,10),
