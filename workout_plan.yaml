@@ -8,6 +8,10 @@ P0.2 Banded, Modified:
   name: Bicycle Crunch
   reps: 10
 - !!python/object:exercise.Time_Based
+  load: Light
+  name: Banded Bridge Abduction
+  time: 45
+- !!python/object:exercise.Time_Based
   load: Medium Band
   name: Banded Bridge
   time: 45
@@ -36,6 +40,10 @@ P0.2 Ramping, Modified:
   instructions: 20s @50%, 10s @80%, 5s @100%
   load: BJJ
   name: Iso Bridge
+- !!python/object:exercise.Generic
+  instructions: 20s@ 50%, 10s@ 80%, 5s @100%
+  load: BJJ
+  name: Iso Banded Bridge Abduction
 - !!python/object:exercise.Generic
   instructions: 20s @50%, 10s @80%, 5s @100%
   load: Hold
@@ -446,14 +454,6 @@ P1.1 Recovery:
   time: 60
 - !!python/object:exercise.Reps_Based
   load: 10
-  name: Lying Vertical Leg Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Vertidcal Leg Raise, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
   name: Lying Side Leg Raise, Right
   reps: 10
 - !!python/object:exercise.Reps_Based
@@ -615,27 +615,3 @@ P1.2 Recovery Floor Work:
   load: 0
   name: Lying Spine Twist, Right
   time: 60
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Vertical Leg Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Vertical Leg Raise, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Side Leg Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Glute Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Glute Raise, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Side Leg Raise, Left
-  reps: 10

@@ -2,11 +2,6 @@
 # Main script which you run to do work
 # Feature List
 # TODO
-# (X): Update the workout plan to consolidate muscular groups, moved
-#    pulled lying leg raises and will rely on banded+ramping for
-#    hip flexor strength. Removing lying side leg raise and introduced 
-#    banded & ramping L+R Clamshells
-# (X): Pull backdated workouts for brevity
 # ( ): Incorporate a timer function for the straight time based exercises
 # ( ): print post workout feedback based on the report 
 # ( ): Change from phase to phase based on calendar days
@@ -19,7 +14,6 @@
 # ( ): Automate progress across the plan based on compliance and feedback,
 #      maybe with an index variable
 # ( ): Build a trailing average compliance metric
-
 # ( ): Do some error handling in the scheduled workout function so that if 
 #       today doesn't have a scheduled workout, it doesn't get mad
 # ( ): Add a "rest" exercise type to wait between sets
@@ -30,11 +24,25 @@
 import yaml
 import os 
 import datetime
+from pydub import AudioSegment as aseg
+from pydub.generators import Sine
+import time
+import subprocess
+
 
 # do the imports from other classes i've written
 from exercise import Time_Based
 from exercise import Reps_Based
 from exercise import Generic
+
+#define a function play a tone of arbitrary frequency (Hz) and duration (sec)
+def play_tone(freq,duration):
+     #Generate a sine wave of the specified frequency and duration
+     sine_wave = Sine(freq).to_audio_segment(duration=duration*1000) 
+
+     #Play the generated sine wave
+     sine_wave.export("temp.wav",format="wav")
+     subprocess.run(["afplay","temp.wave"])
 
 def scheduled_workout(date):
     # function which will return a routine based on the date provided and the 
@@ -279,6 +287,8 @@ if __name__ == "__main__":
      index = 0
      # prompt the user to do what is currently scheduled vs selecting one from the 
      # routines which are available
+     # demo beep
+     play_tone(440, 0.5)
      print("[s] for scheduled")
      print("[a] for ala carte")
      choice = input("select an option: ")
