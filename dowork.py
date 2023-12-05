@@ -1,8 +1,10 @@
 # Author: Phil Aufdencamp
 # Main script which you run to do work
 # Feature List
-# TODO
+# IN PROGRESS
+# ( ): Alphabetize my imports list
 # ( ): Incorporate a timer function for the straight time based exercises
+# TODO
 # ( ): print post workout feedback based on the report 
 # ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
@@ -21,13 +23,22 @@
 #    prepare for interval training later
 
 # import from big python libraries
-import yaml
-import os 
+
+
 import datetime
-from pydub import AudioSegment as aseg
+import os
+import numpy
+import pyaudio
+import pydub
+from pydub import AudioSegment
 from pydub.generators import Sine
-import time
 import subprocess
+import time
+import yaml
+
+
+#set the path to FFmpeg executable
+pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
 
 
 # do the imports from other classes i've written
@@ -36,13 +47,13 @@ from exercise import Reps_Based
 from exercise import Generic
 
 #define a function play a tone of arbitrary frequency (Hz) and duration (sec)
-def play_tone(freq,duration):
+def play_tone(frequency,duration):
      #Generate a sine wave of the specified frequency and duration
-     sine_wave = Sine(freq).to_audio_segment(duration=duration*1000) 
+     sine_wave = Sine(frequency).to_audio_segment(duration=duration*1000) 
 
      #Play the generated sine wave
      sine_wave.export("temp.wav",format="wav")
-     subprocess.run(["afplay","temp.wave"])
+     subprocess.run(["afplay", "temp.wav"], check=True)
 
 def scheduled_workout(date):
     # function which will return a routine based on the date provided and the 
