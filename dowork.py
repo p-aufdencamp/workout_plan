@@ -2,8 +2,6 @@
 # Main script which you run to do work
 # Feature List
 # IN PROGRESS
-# (X): Alphabetize my imports list
-# (X): Incorporate a timer function for the straight time based exercises
 
 # TODO
 # ( ): print post workout feedback based on the report 
@@ -99,6 +97,7 @@ def do_work(database,workout_name):
      for each in todays_routine:
           if isinstance(each,Time_Based):
                print(f"Do a {each.name} with {each.load} for {each.duration} seconds.")
+               time.sleep(15)
                count_down()
                time.sleep(each.duration)
                count_down()
