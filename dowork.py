@@ -4,14 +4,15 @@
 # IN PROGRESS
 
 # TODO
-# ( ): print post workout feedback based on the report 
-# ( ): Change from phase to phase based on calendar days
-# ( ): do some error handling in the do_work function so that if the 
-#      requested routine isn't in the database, it doesn't get mad
+# ( ): add a visual count down to go with the counter running in the background
 # ( ): refactor the time_based exercise type to utilize a list of times to 
 #    prepare for interval training later
 
 # BACKLOG
+# ( ): print post workout feedback based on the report 
+# ( ): Change from phase to phase based on calendar days
+# ( ): do some error handling in the do_work function so that if the 
+#      requested routine isn't in the database, it doesn't get mad
 # ( ): Set up a "test" mode so that I can test the code without affecting the 
 #    tracking compliance or other reported metrics
 # ( ): Automate progress across the plan based on compliance and feedback,
