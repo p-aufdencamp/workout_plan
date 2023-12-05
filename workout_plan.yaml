@@ -1,37 +1,37 @@
 P0.2 Banded, Modified:
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: 0
   name: Kneeling Plank
-  time: 45
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Bicycle Crunch
   reps: 10
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Light
   name: Banded Bridge Abduction
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Band
   name: Banded Bridge
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Light Band
   name: Lying Banded Front Raise
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Heavy Band
   name: Lying Banded Chest Press
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Heavy Band
   name: Banded Row, Single Foot
-  time: 45
 P0.2 Ramping, Modified:
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: 0
   name: Kneeling Plank
-  time: 45
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Bicycle Crunch
@@ -70,9 +70,9 @@ P0.2 Ramping, Modified:
   name: Iso Single Foot Row
 P1 Banded:
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Bodyweight
   name: Plank
-  time: 45
 - !!python/object:exercise.Reps_Based
   load: Bodyweight
   name: Lying Side Leg Raise, Left
@@ -82,70 +82,70 @@ P1 Banded:
   name: Lying Side Leg Leg, Right
   reps: 10
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Band
   name: Banded Bridge
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Light Band
   name: Banded Narrow Knees
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Light Band
   name: Banded Back Neck
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Light Band
   name: Banded Back Neck Hold
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Light Band
   name: Banded Front Raise
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Heavy Band
   name: Banded Deadlift
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Heavy Band
   name: Banded Chest Press
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Body Weight
   name: Banded Squat
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Heavy Band
   name: Banded Row
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Body Weight
   name: Left Plank
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Body Weight
   name: Right Plank
-  time: 45
 P1 Banded, Modified:
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: 0
   name: Kneeling Plank
-  time: 45
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Bicycle Crunch
   reps: 10
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Light Band
   name: Lying Banded Front Raise
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Heavy Band
   name: Lying Banded Chest Press
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Medium Heavy Band
   name: Banded Row, Single Foot
-  time: 45
 P1 Hip Mobility:
 - !!python/object:exercise.Generic
   instructions: See App
@@ -218,9 +218,9 @@ P1 One Wrist Mobility:
   name: Carpal Tunnel Routine
 P1 Ramping:
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Bodyweight
   name: Plank
-  time: 45
 - !!python/object:exercise.Reps_Based
   load: Bodyweight
   name: Lying Side Leg Raise, Left
@@ -266,18 +266,18 @@ P1 Ramping:
   load: BJJ
   name: Iso Row
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Body Weight
   name: Left Plank
-  time: 45
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: Body Weight
   name: Right Plank
-  time: 45
 P1 Ramping, Modified:
 - !!python/object:exercise.Time_Based
+  duration: 45
   load: 0
   name: Kneeling Plank
-  time: 45
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Bicycle Crunch
@@ -369,9 +369,9 @@ P1.1 Recovery:
   name: Ankle Circles, Right, CCW
   reps: 30
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Ankle Dorsiflexion Hold, Right
-  time: 60
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Toe Towel Scrunches, Right
@@ -401,13 +401,13 @@ P1.1 Recovery:
   name: Ankle Circles, Left, CCW
   reps: 30
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Ankle Dorsiflexion Hold, Left
-  time: 60
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Forward Fold
-  time: 60
 - !!python/object:exercise.Reps_Based
   load: Very Light Band
   name: Ankle Plantar Flexion, Right
@@ -437,21 +437,21 @@ P1.1 Recovery:
   name: Mackenzie Extensions
   reps: 15
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Bow Stretch, Left
-  time: 60
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Bow Stretch, Right
-  time: 60
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Lying Spine Twist, Left
-  time: 60
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Lying Spine Twist, Right
-  time: 60
 - !!python/object:exercise.Reps_Based
   load: 10
   name: Lying Side Leg Raise, Right
@@ -522,29 +522,29 @@ P1.2 Ankle Mobility:
   name: Banded Ankle Inversion, Right
   reps: 15
 - !!python/object:exercise.Time_Based
+  duration: 30
   load: 0
   name: Seated Pen Pickups
-  time: 30
 - !!python/object:exercise.Time_Based
+  duration: 30
   load: 0
   name: Seated Toe Spread
-  time: 30
 - !!python/object:exercise.Time_Based
+  duration: 30
   load: 0
   name: Big Toe/Small Toe Separation
-  time: 30
 - !!python/object:exercise.Time_Based
+  duration: 30
   load: 0
   name: Plantar Fascia Mobilization
-  time: 30
 - !!python/object:exercise.Time_Based
+  duration: 30
   load: 0
   name: Seated Pen Pickups
-  time: 30
 - !!python/object:exercise.Time_Based
+  duration: 30
   load: 0
   name: Seated Toe Spread
-  time: 30
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Ankle Vertical Flexion, Left
@@ -558,13 +558,13 @@ P1.2 Ankle Mobility:
   name: Ankle Circles, Left, CCW
   reps: 30
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Ankle Dorsiflexion Hold, Right
-  time: 60
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Ankle Dorsiflexion Hold, Left
-  time: 60
 P1.2 Off Day:
 - !!python/object:exercise.Reps_Based
   load: 0
@@ -592,26 +592,26 @@ P1.2 Off Day:
   reps: 15
 P1.2 Recovery Floor Work:
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Forward Fold
-  time: 60
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Mackenzie Extensions
   reps: 15
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Bow Stretch, Left
-  time: 60
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Bow Stretch, Right
-  time: 60
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Lying Spine Twist, Left
-  time: 60
 - !!python/object:exercise.Time_Based
+  duration: 60
   load: 0
   name: Lying Spine Twist, Right
-  time: 60

@@ -2,13 +2,17 @@
 # Main script which you run to do work
 # Feature List
 # IN PROGRESS
-# ( ): Alphabetize my imports list
-# ( ): Incorporate a timer function for the straight time based exercises
+# (X): Alphabetize my imports list
+# (X): Incorporate a timer function for the straight time based exercises
+
 # TODO
 # ( ): print post workout feedback based on the report 
 # ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
+# ( ): refactor the time_based exercise type to utilize a list of times to 
+#    prepare for interval training later
+# ( ): Add a "rest" exercise type to wait between sets
 
 # BACKLOG
 # ( ): Set up a "test" mode so that I can test the code without affecting the 
@@ -18,13 +22,8 @@
 # ( ): Build a trailing average compliance metric
 # ( ): Do some error handling in the scheduled workout function so that if 
 #       today doesn't have a scheduled workout, it doesn't get mad
-# ( ): Add a "rest" exercise type to wait between sets
-# ( ): refactor the time_based exercise type to utilize a list of times to 
-#    prepare for interval training later
 
 # import from big python libraries
-
-
 import datetime
 import os
 import numpy
@@ -36,17 +35,15 @@ import subprocess
 import time
 import yaml
 
-
-#set the path to FFmpeg executable
+# set the path to FFmpeg executable -> this may not actually be needed, will try deleting it later
 pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
-
 
 # do the imports from other classes i've written
 from exercise import Time_Based
 from exercise import Reps_Based
 from exercise import Generic
 
-#define a function play a tone of arbitrary frequency (Hz) and duration (sec)
+# define a function play a tone of arbitrary frequency (Hz) and duration (sec)
 def play_tone(frequency,duration):
      #Generate a sine wave of the specified frequency and duration
      sine_wave = Sine(frequency).to_audio_segment(duration=duration*1000) 
@@ -83,6 +80,14 @@ def scheduled_workout(date):
         }
     return plan.get(date, None)
 
+def count_down():
+     # plays a 3-2-1 type tone
+     for i in range(3):
+          play_tone(440, 0.5)
+          time.sleep(0.125)
+     play_tone(880,0.5)
+
+
 # define a function to actually do a routine
 def do_work(database,workout_name):
      # function to perform a workout routine located in the database
@@ -93,7 +98,10 @@ def do_work(database,workout_name):
      index = 0
      for each in todays_routine:
           if isinstance(each,Time_Based):
-               print(f"Do a {each.name} with {each.load} for {each.time} seconds.")
+               print(f"Do a {each.name} with {each.load} for {each.duration} seconds.")
+               count_down()
+               time.sleep(each.duration)
+               count_down()
                print(f" [d] for done, [s] for skipped, [i] for incomplete")
                report[index] = input()
 
@@ -289,7 +297,7 @@ routines = {
 }
 
 # Where the magic happens
-#this makes it so that this code only runs when this is the main method
+# this makes it so that this code only runs when this is the main method
 if __name__ == "__main__": 
      with open('workout_plan.yaml', 'w') as file:
           yaml.dump(routines, file)
@@ -299,7 +307,7 @@ if __name__ == "__main__":
      # prompt the user to do what is currently scheduled vs selecting one from the 
      # routines which are available
      # demo beep
-     play_tone(440, 0.5)
+     
      print("[s] for scheduled")
      print("[a] for ala carte")
      choice = input("select an option: ")

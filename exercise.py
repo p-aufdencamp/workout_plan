@@ -9,9 +9,9 @@ class Exercise:
 class Time_Based(Exercise):
     # subclass of exercise for time based exercises, like planks or 
     # banded holds
-    def __init__(self,name,load,time):
+    def __init__(self,name,load,duration):
         super().__init__(name,load)
-        self.time = time
+        self.duration = duration
 
 class Reps_Based(Exercise):
     # subclass of exercise for reps based exercises, such as pushups
