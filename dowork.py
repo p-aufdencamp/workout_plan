@@ -10,7 +10,6 @@
 #      requested routine isn't in the database, it doesn't get mad
 # ( ): refactor the time_based exercise type to utilize a list of times to 
 #    prepare for interval training later
-# ( ): Add a "rest" exercise type to wait between sets
 
 # BACKLOG
 # ( ): Set up a "test" mode so that I can test the code without affecting the 
@@ -20,6 +19,7 @@
 # ( ): Build a trailing average compliance metric
 # ( ): Do some error handling in the scheduled workout function so that if 
 #       today doesn't have a scheduled workout, it doesn't get mad
+# ( ): Add a "rest" exercise type to wait between sets
 
 # import from big python libraries
 import datetime
@@ -50,10 +50,8 @@ def play_tone(frequency,duration):
      sine_wave.export("temp.wav",format="wav")
      subprocess.run(["afplay", "temp.wav"], check=True)
 
+# define a function to return the workout for today based on a schedule, hard coded for now
 def scheduled_workout(date):
-    # function which will return a routine based on the date provided and the 
-    # plan. Eventually this is where the smarts for progressing and responding
-    # to skipped workouts will reside
 
     #starting with just hard coded plan and will go from there.
     plan = {
@@ -78,13 +76,12 @@ def scheduled_workout(date):
         }
     return plan.get(date, None)
 
+# plays a 3-2-1 type tone
 def count_down():
-     # plays a 3-2-1 type tone
      for i in range(3):
           play_tone(440, 0.5)
           time.sleep(0.125)
      play_tone(880,0.5)
-
 
 # define a function to actually do a routine
 def do_work(database,workout_name):
