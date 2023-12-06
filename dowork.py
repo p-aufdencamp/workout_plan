@@ -4,15 +4,15 @@
 # IN PROGRESS
 
 # TODO
-# (X): add a visual count down to go with the counter running in the background
+# (X): update the routines to include the latest workouts from Katy
 # ( ): refactor the time_based exercise type to utilize a list of times to 
 #    prepare for interval training later
 # ( ): implement a pause function
+# ( ): Change from phase to phase based on calendar days
 
 
 # BACKLOG
 # ( ): print post workout feedback based on the report 
-# ( ): Change from phase to phase based on calendar days
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
 # ( ): Set up a "test" mode so that I can test the code without affecting the 
@@ -76,6 +76,13 @@ def scheduled_workout(date):
                'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Mon
         datetime.date(2023,12,5):['P1.2 Ankle Mobility','P1.2 Off Day',
           'P1.2 Recovery Floor Work'], #Tue
+          datetime.date(2023,12,6):['P1.2 Ankle Mobility',
+               'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Wed
+          datetime.date(2023,12,7):['P1.2 Ankle Mobility','P1.2 Off Day',
+               'P1.2 Recovery Floor Work'], #Thu
+          datetime.date(2023,12,8):['P1.2 Ankle Mobility',
+               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
+          
         }
     return plan.get(date, None)
 
@@ -184,42 +191,6 @@ routines = {
                                     Reps_Based("Rib Pull, Right","BW",5),
                                     Reps_Based("Half Kneeling T Spine Twist","BW",5),
                                     Reps_Based("Half Kneeling T Spine Twist, Right","BW",5)],
-     'P1.1 Recovery': [Reps_Based("Ankle Vertical Flexion, Right",0,30),
-                        Reps_Based("Ankle Circles, Right, CW",0,30),
-                        Reps_Based("Ankle Circles, Right, CCW",0,30),
-                        Time_Based("Ankle Dorsiflexion Hold, Right",0,60),
-                        Reps_Based("Toe Towel Scrunches, Right",0,30),
-                        Reps_Based("Seated Heel Raise, Right",0,20),
-                        Reps_Based("Toe Towel Scrunches, Right",0,30),
-                        Reps_Based("Seated Heel Raise, Right",0,20),
-                        Reps_Based("Ankle Vertical Flexion, Left",0,30),
-                        Reps_Based("Ankle Circles, Left, CW",0,30),
-                        Reps_Based("Ankle Circles, Left, CCW",0,30),
-                        Time_Based("Ankle Dorsiflexion Hold, Left",0,60),
-                        Time_Based("Forward Fold",0,60),
-                        Reps_Based("Ankle Plantar Flexion, Right",
-                                   "Very Light Band",15),
-                        Reps_Based("Ankle Eversion, Right","Very Light Band",
-                                   15),
-                        Reps_Based("Ankle Inversion, Right","Very Light Band",
-                                   15),
-                        Reps_Based("Ankle Plantar Flexion, Right",
-                                   "Very Light Band",15),
-                        Reps_Based("Ankle Eversion, Right","Very Light Band",
-                                   15),
-                        Reps_Based("Ankle Inversion, Right","Very Light Band",
-                                   15),
-                        Reps_Based("Mackenzie Extensions",0,15),
-                        Time_Based("Bow Stretch, Left",0,60),
-                        Time_Based("Bow Stretch, Right",0,60),
-                        Time_Based("Lying Spine Twist, Left",0,60),
-                        Time_Based("Lying Spine Twist, Right",0,60),
-                        Reps_Based("Lying Side Leg Raise, Right",10,10),
-                        Reps_Based("Lying Knee Flexion, Right",10,10),
-                        Reps_Based("Lying Glute Raise, Right",10,10),
-                        Reps_Based("Lying Glute Raise, Left",10,10),
-                        Reps_Based("Lying Knee Flexion, Left",10,10),
-                        Reps_Based("Lying Side Leg Raise, Left",10,10)],
      'P1.2 Ankle Mobility': [Reps_Based("Ankle Vertical Flexion, Right",0,30),
           Reps_Based("Ankle Circles, Right, CW",0,30),
           Reps_Based("Ankle Circles, Right, CCW",0,30),
@@ -247,25 +218,8 @@ routines = {
           Time_Based("Bow Stretch, Left",0,60),
           Time_Based("Bow Stretch, Right",0,60),
           Time_Based("Lying Spine Twist, Left",0,60),
-          Time_Based("Lying Spine Twist, Right",0,60)],
-     'P1 Banded, Modified': [Time_Based("Kneeling Plank",0,45),
-                  Reps_Based("Bicycle Crunch",0,10),
-                  Time_Based("Lying Banded Front Raise","Light Band",45),
-                  Time_Based("Lying Banded Chest Press","Medium Heavy Band",45),
-                  Time_Based("Banded Row, Single Foot","Medium Heavy Band",45)],
-     'P1 Ramping, Modified': [Time_Based("Kneeling Plank",0,45),
-          Reps_Based("Bicycle Crunch",0,10),
-          Generic("Iso Narrow Knees","Hold", "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Neck Triceps Extension","BJJ", 
-               "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Butterfly Crunch","Hold",
-               "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Lying Front Raise","BJJ",
-               "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Lying Chest Press","BJJ",
-               "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Single Foot Row","BJJ",
-               "20s @50%, 10s @80%, 5s @100%")],
+          Time_Based("Lying Spine Twist, Right",0,60),
+          ],
      'P0.2 Banded, Modified': [Time_Based("Kneeling Plank",0,45),
                   Reps_Based("Bicycle Crunch",0,10),
                   Time_Based("Banded Bridge Abduction","Light",45),
@@ -293,10 +247,12 @@ routines = {
      'P1.2 Off Day': [Reps_Based("Sit to Stand Squats",0,15),
           Reps_Based("Sit to Stand Squats",0,15),
           Reps_Based("Sit to Stand Squats",0,15),
-          Reps_Based("Supine Bridge",0,15),
-          Reps_Based("Supine Bridge",0,15),
-          Reps_Based("Supine Bridge",0,15)
-          ]
+          Reps_Based("Single Leg Bridge, Left",0,15),
+          Reps_Based("Single Leg Bridge, Right",0,15),
+          Reps_Based("Single Leg Bridge, Left",0,15),
+          Reps_Based("Single Leg Bridge, Right",0,15),
+          Reps_Based("Single Leg Bridge, Left",0,15),
+          Reps_Based("Single Leg Bridge, Right",0,15)]
 }
 
 # Where the magic happens

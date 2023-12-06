@@ -125,27 +125,6 @@ P1 Banded:
   duration: 45
   load: Body Weight
   name: Right Plank
-P1 Banded, Modified:
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: 0
-  name: Kneeling Plank
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Bicycle Crunch
-  reps: 10
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Light Band
-  name: Lying Banded Front Raise
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Medium Heavy Band
-  name: Lying Banded Chest Press
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Medium Heavy Band
-  name: Banded Row, Single Foot
 P1 Hip Mobility:
 - !!python/object:exercise.Generic
   instructions: See App
@@ -273,39 +252,6 @@ P1 Ramping:
   duration: 45
   load: Body Weight
   name: Right Plank
-P1 Ramping, Modified:
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: 0
-  name: Kneeling Plank
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Bicycle Crunch
-  reps: 10
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: Hold
-  name: Iso Narrow Knees
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
-  name: Iso Neck Triceps Extension
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: Hold
-  name: Iso Butterfly Crunch
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
-  name: Iso Lying Front Raise
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
-  name: Iso Lying Chest Press
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
-  name: Iso Single Foot Row
 P1 Shoulder Mobility:
 - !!python/object:exercise.Generic
   instructions: See App
@@ -355,127 +301,6 @@ P1 Shoulder Mobility:
   load: BW
   name: Half Kneeling T Spine Twist, Right
   reps: 5
-P1.1 Recovery:
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Vertical Flexion, Right
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Right, CW
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Right, CCW
-  reps: 30
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Ankle Dorsiflexion Hold, Right
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Toe Towel Scrunches, Right
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Seated Heel Raise, Right
-  reps: 20
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Toe Towel Scrunches, Right
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Seated Heel Raise, Right
-  reps: 20
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Vertical Flexion, Left
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Left, CW
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Left, CCW
-  reps: 30
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Ankle Dorsiflexion Hold, Left
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Forward Fold
-- !!python/object:exercise.Reps_Based
-  load: Very Light Band
-  name: Ankle Plantar Flexion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: Very Light Band
-  name: Ankle Eversion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: Very Light Band
-  name: Ankle Inversion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: Very Light Band
-  name: Ankle Plantar Flexion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: Very Light Band
-  name: Ankle Eversion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: Very Light Band
-  name: Ankle Inversion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Mackenzie Extensions
-  reps: 15
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Bow Stretch, Left
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Bow Stretch, Right
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Lying Spine Twist, Left
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Lying Spine Twist, Right
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Side Leg Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Knee Flexion, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Glute Raise, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Glute Raise, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Knee Flexion, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 10
-  name: Lying Side Leg Raise, Left
-  reps: 10
 P1.2 Ankle Mobility:
 - !!python/object:exercise.Reps_Based
   load: 0
@@ -580,15 +405,27 @@ P1.2 Off Day:
   reps: 15
 - !!python/object:exercise.Reps_Based
   load: 0
-  name: Supine Bridge
+  name: Single Leg Bridge, Left
   reps: 15
 - !!python/object:exercise.Reps_Based
   load: 0
-  name: Supine Bridge
+  name: Single Leg Bridge, Right
   reps: 15
 - !!python/object:exercise.Reps_Based
   load: 0
-  name: Supine Bridge
+  name: Single Leg Bridge, Left
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Single Leg Bridge, Right
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Single Leg Bridge, Left
+  reps: 15
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Single Leg Bridge, Right
   reps: 15
 P1.2 Recovery Floor Work:
 - !!python/object:exercise.Time_Based
