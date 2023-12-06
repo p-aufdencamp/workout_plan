@@ -4,9 +4,11 @@
 # IN PROGRESS
 
 # TODO
-# ( ): add a visual count down to go with the counter running in the background
+# (X): add a visual count down to go with the counter running in the background
 # ( ): refactor the time_based exercise type to utilize a list of times to 
 #    prepare for interval training later
+# ( ): implement a pause function
+
 
 # BACKLOG
 # ( ): print post workout feedback based on the report 
@@ -97,8 +99,12 @@ def do_work(database,workout_name):
                print(f"Do a {each.name} with {each.load} for {each.duration} seconds.")
                time.sleep(15)
                count_down()
-               time.sleep(each.duration)
+               for i in range(each.duration-3):
+                    os.system('clear')
+                    print(each.duration-i)
+                    time.sleep(1)
                count_down()
+               print(each.name)
                print(f" [d] for done, [s] for skipped, [i] for incomplete")
                report[index] = input()
 
