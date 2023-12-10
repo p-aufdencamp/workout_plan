@@ -301,141 +301,11 @@ P1 Shoulder Mobility:
   load: BW
   name: Half Kneeling T Spine Twist, Right
   reps: 5
-P1.2 Ankle Mobility:
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Vertical Flexion, Right
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Right, CW
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Right, CCW
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Seated Heel Raise, Right
-  reps: 20
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Plantar Flexion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Ankle Eversion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Ankle Inversion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Seated Heel Raise, Right
-  reps: 20
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Plantar Flexion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Ankle Eversion, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Ankle Inversion, Right
-  reps: 15
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Seated Pen Pickups
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Seated Toe Spread
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Big Toe/Small Toe Separation
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Plantar Fascia Mobilization
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Seated Pen Pickups
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Seated Toe Spread
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Vertical Flexion, Left
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Left, CW
-  reps: 30
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Ankle Circles, Left, CCW
-  reps: 30
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Ankle Dorsiflexion Hold, Right
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Ankle Dorsiflexion Hold, Left
-P1.2 Off Day:
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Sit to Stand Squats
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Sit to Stand Squats
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Sit to Stand Squats
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Bridge, Left
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Bridge, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Bridge, Left
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Bridge, Right
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Bridge, Left
-  reps: 15
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Bridge, Right
-  reps: 15
 P1.2 Recovery Floor Work:
 - !!python/object:exercise.Time_Based
   duration: 60
   load: 0
   name: Forward Fold
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Mackenzie Extensions
-  reps: 15
 - !!python/object:exercise.Time_Based
   duration: 60
   load: 0
@@ -452,3 +322,56 @@ P1.2 Recovery Floor Work:
   duration: 60
   load: 0
   name: Lying Spine Twist, Right
+P3 Rehab:
+- !!python/object:exercise.Time_Based
+  duration: 60
+  load: 0
+  name: ' Seated Toe Curl, Right'
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Plantar Fascia Mobilization
+- !!python/object:exercise.Time_Based
+  duration: 60
+  load: 0
+  name: Elevated Ankle Dorsiflexion, Right
+- !!python/object:exercise.Time_Based
+  duration: 60
+  load: 0
+  name: Elevated Ankle Dorsiflextion, Left
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Heel Raises w/ Counter Support
+  reps: 15
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Single Leg Stance, Right
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Single Leg Sit to Stand, High Surface, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Heel Raises w/ Counter Support
+  reps: 15
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Single Leg Stance, Right
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Single Leg Sit to Stand, High Surface, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Heel Raises w/ Counter Support
+  reps: 15
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Single Leg Stance, Right
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Single Leg Sit to Stand, High Surface, Right
+  reps: 10

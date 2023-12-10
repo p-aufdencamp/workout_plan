@@ -4,7 +4,10 @@
 # IN PROGRESS
 
 # TODO
-# (X): update the routines to include the latest workouts from Katy
+# (X): update the routines to include the latest workouts from Katy (again)
+# (X): Delete outdated workouts from the schedule
+# (X): Populate the upcoming week worth of workouts
+# (X): Add the 3,2,1 display to the countdown function
 # ( ): refactor the time_based exercise type to utilize a list of times to 
 #    prepare for interval training later
 # ( ): implement a pause function
@@ -58,29 +61,21 @@ def scheduled_workout(date):
 
     #starting with just hard coded plan and will go from there.
     plan = {
-        datetime.date(2023,11,27):['P1.2 Ankle Mobility',
-          'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Mon
-        datetime.date(2023,11,28):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Tue
-        datetime.date(2023,11,29):['P1.2 Ankle Mobility',
-          'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Wed
-        datetime.date(2023,11,30):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Thu
-        datetime.date(2023,12,1):['P1.2 Ankle Mobility',
-          'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Fri
-        datetime.date(2023,12,2):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], # Sat
-        datetime.date(2023,12,3):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], # Sun
-          datetime.date(2023,12,4):['P1.2 Ankle Mobility',
+          datetime.date(2023,12,8):['P3 Rehab',
+               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
+          datetime.date(2023,12,9):['P3 Rehab',
+               'P1.2 Recovery Floor Work'], # Sat
+          datetime.date(2023,12,10):['P3 Rehab',
+               'P1.2 Recovery Floor Work'], # Sun
+          datetime.date(2023,12,11):['P3 Rehab',
                'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Mon
-        datetime.date(2023,12,5):['P1.2 Ankle Mobility','P1.2 Off Day',
-          'P1.2 Recovery Floor Work'], #Tue
-          datetime.date(2023,12,6):['P1.2 Ankle Mobility',
+          datetime.date(2023,12,12):['P3 Rehab',
+               'P1.2 Recovery Floor Work'], #Tue
+          datetime.date(2023,12,13):['P3 Rehab',
                'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Wed
-          datetime.date(2023,12,7):['P1.2 Ankle Mobility','P1.2 Off Day',
+          datetime.date(2023,12,14):['P3 Rehab',
                'P1.2 Recovery Floor Work'], #Thu
-          datetime.date(2023,12,8):['P1.2 Ankle Mobility',
+          datetime.date(2023,12,15):['P3 Rehab',
                'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
           
         }
@@ -89,6 +84,8 @@ def scheduled_workout(date):
 # plays a 3-2-1 type tone
 def count_down():
      for i in range(3):
+          os.system('clear')
+          print(3-i)
           play_tone(440, 0.5)
           time.sleep(0.125)
      play_tone(880,0.5)
@@ -104,7 +101,7 @@ def do_work(database,workout_name):
      for each in todays_routine:
           if isinstance(each,Time_Based):
                print(f"Do a {each.name} with {each.load} for {each.duration} seconds.")
-               time.sleep(15)
+               time.sleep(7)
                count_down()
                for i in range(each.duration-3):
                     os.system('clear')
@@ -191,35 +188,24 @@ routines = {
                                     Reps_Based("Rib Pull, Right","BW",5),
                                     Reps_Based("Half Kneeling T Spine Twist","BW",5),
                                     Reps_Based("Half Kneeling T Spine Twist, Right","BW",5)],
-     'P1.2 Ankle Mobility': [Reps_Based("Ankle Vertical Flexion, Right",0,30),
-          Reps_Based("Ankle Circles, Right, CW",0,30),
-          Reps_Based("Ankle Circles, Right, CCW",0,30),
-          Reps_Based("Seated Heel Raise, Right",0,20),
-          Reps_Based("Banded Plantar Flexion, Right","vLight",15),
-          Reps_Based("Banded Ankle Eversion, Right","vLight",15),
-          Reps_Based("Banded Ankle Inversion, Right","vLight",15),
-          Reps_Based("Seated Heel Raise, Right",0,20),
-          Reps_Based("Banded Plantar Flexion, Right","vLight",15),
-          Reps_Based("Banded Ankle Eversion, Right","vLight",15),
-          Reps_Based("Banded Ankle Inversion, Right","vLight",15),
-          Time_Based("Seated Pen Pickups",0,30),
-          Time_Based("Seated Toe Spread",0,30),
-          Time_Based("Big Toe/Small Toe Separation",0,30),
+     'P3 Rehab': [Time_Based(" Seated Toe Curl, Right",0,60),
           Time_Based("Plantar Fascia Mobilization",0,30),
-          Time_Based("Seated Pen Pickups",0,30),
-          Time_Based("Seated Toe Spread",0,30),
-          Reps_Based("Ankle Vertical Flexion, Left",0,30),
-          Reps_Based("Ankle Circles, Left, CW",0,30),
-          Reps_Based("Ankle Circles, Left, CCW",0,30),
-          Time_Based("Ankle Dorsiflexion Hold, Right",0,60),
-          Time_Based("Ankle Dorsiflexion Hold, Left",0,60)],
+          Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
+          Time_Based("Elevated Ankle Dorsiflextion, Left",0,60),
+          Reps_Based("Heel Raises w/ Counter Support",0,15),
+          Time_Based("Single Leg Stance, Right",0,30),
+          Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
+          Reps_Based("Heel Raises w/ Counter Support",0,15),
+          Time_Based("Single Leg Stance, Right",0,30),
+          Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
+          Reps_Based("Heel Raises w/ Counter Support",0,15),
+          Time_Based("Single Leg Stance, Right",0,30),
+          Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10)],
      'P1.2 Recovery Floor Work': [Time_Based("Forward Fold",0,60),
-          Reps_Based("Mackenzie Extensions",0,15),
           Time_Based("Bow Stretch, Left",0,60),
           Time_Based("Bow Stretch, Right",0,60),
           Time_Based("Lying Spine Twist, Left",0,60),
-          Time_Based("Lying Spine Twist, Right",0,60),
-          ],
+          Time_Based("Lying Spine Twist, Right",0,60)],
      'P0.2 Banded, Modified': [Time_Based("Kneeling Plank",0,45),
                   Reps_Based("Bicycle Crunch",0,10),
                   Time_Based("Banded Bridge Abduction","Light",45),
@@ -243,16 +229,7 @@ routines = {
                Generic("Iso Lying Chest Press","BJJ",
                     "20s @50%, 10s @80%, 5s @100%"),
                Generic("Iso Single Foot Row","BJJ",
-                    "20s @50%, 10s @80%, 5s @100%")],
-     'P1.2 Off Day': [Reps_Based("Sit to Stand Squats",0,15),
-          Reps_Based("Sit to Stand Squats",0,15),
-          Reps_Based("Sit to Stand Squats",0,15),
-          Reps_Based("Single Leg Bridge, Left",0,15),
-          Reps_Based("Single Leg Bridge, Right",0,15),
-          Reps_Based("Single Leg Bridge, Left",0,15),
-          Reps_Based("Single Leg Bridge, Right",0,15),
-          Reps_Based("Single Leg Bridge, Left",0,15),
-          Reps_Based("Single Leg Bridge, Right",0,15)]
+                    "20s @50%, 10s @80%, 5s @100%")]
 }
 
 # Where the magic happens
