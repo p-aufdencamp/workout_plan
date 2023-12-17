@@ -59,21 +59,21 @@ def scheduled_workout(date):
 
     #starting with just hard coded plan and will go from there.
     plan = {
-          datetime.date(2023,12,8):['P3 Rehab',
-               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
-          datetime.date(2023,12,9):['P3 Rehab',
-               'P1.2 Recovery Floor Work'], # Sat
-          datetime.date(2023,12,10):['P3 Rehab',
-               'P1.2 Recovery Floor Work'], # Sun
-          datetime.date(2023,12,11):['P3 Rehab',
-               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Mon
-          datetime.date(2023,12,12):['P3 Rehab',
-               'P1.2 Recovery Floor Work'], #Tue
-          datetime.date(2023,12,13):['P3 Rehab',
-               'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Wed
-          datetime.date(2023,12,14):['P3 Rehab',
-               'P1.2 Recovery Floor Work'], #Thu
           datetime.date(2023,12,15):['P3 Rehab',
+               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
+          datetime.date(2023,12,16):['P3 Rehab',
+               'P1.2 Recovery Floor Work'], # Sat
+          datetime.date(2023,12,17):['P3 Rehab',
+               'P1.2 Recovery Floor Work'], # Sun
+          datetime.date(2023,12,18):['P3 Rehab',
+               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Mon
+          datetime.date(2023,12,19):['P3 Rehab',
+               'P1.2 Recovery Floor Work'], #Tue
+          datetime.date(2023,12,20):['P3 Rehab',
+               'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Wed
+          datetime.date(2023,12,21):['P3 Rehab',
+               'P1.2 Recovery Floor Work'], #Thu
+          datetime.date(2023,12,22):['P3 Rehab',
                'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
           
         }
