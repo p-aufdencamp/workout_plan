@@ -4,15 +4,18 @@
 # IN PROGRESS
 
 # TODO
-# (X): update the routines to include the latest workouts from Katy
-# ( ): Push the workouts forward in time
+# (X): Rewrite the "scheduled_workout" function so that instead of requiring hardcoded
+#    workout definitions for each date, I use a weekday plan (for only one week at 
+#    first) If we end up doing recurrences that are longer than 1 week in period then 
+#    we will have 
+
+
+
+# BACKLOG
 # ( ): refactor the time_based exercise type to utilize a list of times to 
 #    prepare for interval training later
 # ( ): implement a pause function
 # ( ): Change from phase to phase based on calendar days
-
-
-# BACKLOG
 # ( ): print post workout feedback based on the report 
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
@@ -37,7 +40,8 @@ import subprocess
 import time
 import yaml
 
-# set the path to FFmpeg executable -> this may not actually be needed, will try deleting it later
+# set the path to FFmpeg executable -> this may not actually be needed, will try 
+# deleting it later
 pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
 
 # do the imports from other classes i've written
@@ -54,30 +58,30 @@ def play_tone(frequency,duration):
      sine_wave.export("temp.wav",format="wav")
      subprocess.run(["afplay", "temp.wav"], check=True)
 
-# define a function to return the workout for today based on a schedule, hard coded for now
-def scheduled_workout(date):
+# define a function to return the workout for today based on a schedule
+def scheduled_workout():
 
-    #starting with just hard coded plan and will go from there.
-    plan = {
-          datetime.date(2023,12,15):['P3 Rehab',
-               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
-          datetime.date(2023,12,16):['P3 Rehab',
-               'P1.2 Recovery Floor Work'], # Sat
-          datetime.date(2023,12,17):['P3 Rehab',
-               'P1.2 Recovery Floor Work'], # Sun
-          datetime.date(2023,12,18):['P3 Rehab',
-               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Mon
-          datetime.date(2023,12,19):['P3 Rehab',
-               'P1.2 Recovery Floor Work'], #Tue
-          datetime.date(2023,12,20):['P3 Rehab',
-               'P1.2 Recovery Floor Work','P0.2 Ramping, Modified'], #Wed
-          datetime.date(2023,12,21):['P3 Rehab',
-               'P1.2 Recovery Floor Work'], #Thu
-          datetime.date(2023,12,22):['P3 Rehab',
-               'P1.2 Recovery Floor Work','P0.2 Banded, Modified'], #Fri
-          
-        }
-    return plan.get(date, None)
+     # Get the current date and time
+     current_datetime = datetime.datetime.now()
+
+     # Get the day of the week as a string
+     day_of_week_string = current_datetime.strftime('%A') #Returns as "Wednesday" ie
+     print(day_of_week_string)
+
+     weekly_plan = {
+          'Sunday':['P3 Rehab','P1.2 Recovery Floor Work',
+               'P0.2 Banded, Modified'],
+          'Monday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work'],
+          'Tuesday':['P3 Rehab','P1.2 Recovery Floor Work',
+               'P0.2 Banded, Modified'],
+          'Wednesday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work'],
+          'Thursday':['P3 Rehab','P1.2 Recovery Floor Work',
+               'P0.2 Ramping, Modified'],
+          'Friday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work'],
+          'Saturday':['P3 Rehab','P1.2 Recovery Floor Work',
+               'P0.2 Banded, Modified']
+               } 
+     return weekly_plan.get(day_of_week_string, None)
 
 # plays a 3-2-1 type tone
 def count_down():
@@ -250,7 +254,7 @@ if __name__ == "__main__":
      print("[a] for ala carte")
      choice = input("select an option: ")
      if choice == "s":
-          todays_workouts = scheduled_workout(datetime.date.today())
+          todays_workouts = scheduled_workout()
           todays_reports = [None] * len(todays_workouts)
           for each in todays_workouts:
                todays_reports[index] = do_work(routines,each)
