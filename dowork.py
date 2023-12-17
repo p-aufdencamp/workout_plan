@@ -4,10 +4,8 @@
 # IN PROGRESS
 
 # TODO
-# (X): update the routines to include the latest workouts from Katy (again)
-# (X): Delete outdated workouts from the schedule
-# (X): Populate the upcoming week worth of workouts
-# (X): Add the 3,2,1 display to the countdown function
+# (X): update the routines to include the latest workouts from Katy
+# ( ): Push the workouts forward in time
 # ( ): refactor the time_based exercise type to utilize a list of times to 
 #    prepare for interval training later
 # ( ): implement a pause function
@@ -188,19 +186,23 @@ routines = {
                                     Reps_Based("Rib Pull, Right","BW",5),
                                     Reps_Based("Half Kneeling T Spine Twist","BW",5),
                                     Reps_Based("Half Kneeling T Spine Twist, Right","BW",5)],
-     'P3 Rehab': [Time_Based(" Seated Toe Curl, Right",0,60),
-          Time_Based("Plantar Fascia Mobilization",0,30),
-          Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
-          Time_Based("Elevated Ankle Dorsiflextion, Left",0,60),
-          Reps_Based("Heel Raises w/ Counter Support",0,15),
+     'P3 Rehab': [Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
+          Time_Based("Plantar Fascia Mobilization",0,60),
+          Reps_Based("Heel Raises w/ Counter Support",0,20), #Set 1
           Time_Based("Single Leg Stance, Right",0,30),
           Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
-          Reps_Based("Heel Raises w/ Counter Support",0,15),
+          Reps_Based("Banded Side Step","vLight",20),
+          Reps_Based("4-Way Reach",0,5),
+          Reps_Based("Heel Raises w/ Counter Support",0,20), #Set 2
           Time_Based("Single Leg Stance, Right",0,30),
           Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
-          Reps_Based("Heel Raises w/ Counter Support",0,15),
+          Reps_Based("Banded Side Step","vLight",20),
+          Reps_Based("4-Way Reach",0,5),
+          Reps_Based("Heel Raises w/ Counter Support",0,20), #Set 3
           Time_Based("Single Leg Stance, Right",0,30),
-          Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10)],
+          Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
+          Reps_Based("Banded Side Step","vLight",20),
+          Reps_Based("4-Way Reach",0,5)],
      'P1.2 Recovery Floor Work': [Time_Based("Forward Fold",0,60),
           Time_Based("Bow Stretch, Left",0,60),
           Time_Based("Bow Stretch, Right",0,60),
