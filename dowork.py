@@ -4,16 +4,11 @@
 # IN PROGRESS
 
 # TODO
-# (X): Rewrite the "scheduled_workout" function so that instead of requiring hardcoded
-#    workout definitions for each date, I use a weekday plan (for only one week at 
-#    first) If we end up doing recurrences that are longer than 1 week in period then 
-#    we will have 
-
-
-
-# BACKLOG
 # ( ): refactor the time_based exercise type to utilize a list of times to 
 #    prepare for interval training later
+
+# BACKLOG
+
 # ( ): implement a pause function
 # ( ): Change from phase to phase based on calendar days
 # ( ): print post workout feedback based on the report 
