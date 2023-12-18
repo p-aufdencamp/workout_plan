@@ -8,11 +8,11 @@
 #    called interval. 
 # ( ): Upate routines of the ramping / HIIT work that contains multiple timers to 
 #    be time based
-# ( ): Update the time_based portion of the "Do work" function to read the list of 
+# (X): Update the time_based portion of the "Do work" function to read the list of 
 #    times rather than the int time
 # ( ): Update existing routines of the time_based class to use a list of length 1 
 #    rather than an int
-# ( ): Define a routine for the trainer workout to avoid throwing errors
+# (X): Define a routine for the trainer workout to avoid throwing errors
 
 
 # BACKLOG
