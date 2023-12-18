@@ -4,8 +4,15 @@
 # IN PROGRESS
 
 # TODO
-# ( ): refactor the time_based exercise type to utilize a list of times to 
-#    prepare for interval training later
+# ( ): After messing around with it, I think i'm going to introduce a new exercise type
+#    called interval. 
+# ( ): Upate routines of the ramping / HIIT work that contains multiple timers to 
+#    be time based
+# ( ): Update the time_based portion of the "Do work" function to read the list of 
+#    times rather than the int time
+# ( ): Update existing routines of the time_based class to use a list of length 1 
+#    rather than an int
+
 
 # BACKLOG
 

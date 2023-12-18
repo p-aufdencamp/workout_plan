@@ -21,8 +21,17 @@ class Reps_Based(Exercise):
 
 class Generic(Exercise):
     # subclass of exercise for weird exercises that are not strictly time or 
-    # strictly reps, such as ramping isometric holds. they take a generic 
-    # "instruction" string
+    # strictly reps, such as referencing predefined, external routines such as theragun 
+    # routines or trainer work. they take a generic "instruction" string
     def __init__(self,name,load,instructions):
         super().__init__(name,load)
         self.instructions = instructions
+
+class Interval(Exercise):
+    # subclass of exercise for interval based exercises, such as ramping, holds.
+    # These intervals don't have to be equal
+    # Instuctions and times are both lists of equal length
+    def __init__(self,name,instructions,times):
+        super().__init__(name,load)
+        self.instructions = instructions
+        self.times = times
