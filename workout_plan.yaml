@@ -406,6 +406,11 @@ P3 Rehab:
   load: 0
   name: 4-Way Reach
   reps: 5
+Timer Test:
+- !!python/object:exercise.Time_Based
+  duration: 15
+  load: 0
+  name: Timer_Test
 Trainer Work:
 - !!python/object:exercise.Generic
   instructions: Open the TR Apo

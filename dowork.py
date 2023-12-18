@@ -4,7 +4,7 @@
 # IN PROGRESS
 
 # TODO
-# ( ): After messing around with it, I think i'm going to introduce a new exercise type
+# (X): After messing around with it, I think i'm going to introduce a new exercise type
 #    called interval. 
 # ( ): Upate routines of the ramping / HIIT work that contains multiple timers to 
 #    be time based
@@ -89,14 +89,36 @@ def scheduled_workout():
                } 
      return weekly_plan.get(day_of_week_string, None)
 
-# plays a 3-2-1 type tone
-def count_down():
+# plays a 3-2-1 type tone to start
+def ready_set_go():
      for i in range(3):
           os.system('clear')
           print(3-i)
           play_tone(440, 0.5)
           time.sleep(0.125)
      play_tone(880,0.5)
+
+# waits the duration of the time, then 
+# counts down via 3-2-1 again
+def count_down(timespan):
+     if(timespan>3):
+          time.sleep(timespan-3)
+          for i in range(3):
+               os.system('clear')
+               print(3-i)
+               play_tone(440, 0.5)
+               time.sleep(0.125)
+          play_tone(880,0.5)
+     else:
+          for i in range(3):
+               os.system('clear')
+               print(3-i)
+               play_tone(440, 0.5)
+               time.sleep(0.125)
+          play_tone(880,0.5)
+
+
+
 
 # define a function to actually do a routine
 def do_work(database,workout_name):
@@ -110,12 +132,8 @@ def do_work(database,workout_name):
           if isinstance(each,Time_Based):
                print(f"Do a {each.name} with {each.load} for {each.duration} seconds.")
                time.sleep(7)
-               count_down()
-               for i in range(each.duration-3):
-                    os.system('clear')
-                    print(each.duration-i)
-                    time.sleep(1)
-               count_down()
+               ready_set_go()
+               count_down(each.duration)
                print(each.name)
                print(f" [d] for done, [s] for skipped, [i] for incomplete")
                report[index] = input()
@@ -131,13 +149,15 @@ def do_work(database,workout_name):
                report[index] = input()
 
           elif isinstance(each,Interval):
-               print("test point reached")
                print(f"Do {each.name}")
+               time.sleep(7)
+               ready_set_go()
                interval_index = 0
                for element in each.instructions:
                     print(f"Do {each.instructions[interval_index]} @ "
                          f"{each.load[interval_index]} for "
                          f"{each.times[interval_index]} seconds")
+                    count_down(each.times[interval_index])
                     interval_index = interval_index + 1
 
           index = index + 1
@@ -255,7 +275,8 @@ routines = {
                     "20s @50%, 10s @80%, 5s @100%")],
      'Interval Test': [Interval("Ramping Squat",
           ["Press ","Press ","Press "],["50%","80%","100%"],[20,10,5])],
-     'Trainer Work': [Generic("Trainer Road Workout","Bike","Open the TR Apo")]
+     'Trainer Work': [Generic("Trainer Road Workout","Bike","Open the TR Apo")],
+     'Timer Test': [Time_Based("Timer_Test",0,15)]
 }
 
 # Where the magic happens
