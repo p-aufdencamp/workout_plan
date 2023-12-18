@@ -1,3 +1,18 @@
+Interval Test:
+- !!python/object:exercise.Interval
+  instructions:
+  - 'Press '
+  - 'Press '
+  - 'Press '
+  load:
+  - 50%
+  - 80%
+  - 100%
+  name: Ramping Squat
+  times:
+  - 20
+  - 10
+  - 5
 P0.2 Banded, Modified:
 - !!python/object:exercise.Time_Based
   duration: 45
@@ -391,3 +406,8 @@ P3 Rehab:
   load: 0
   name: 4-Way Reach
   reps: 5
+Trainer Work:
+- !!python/object:exercise.Generic
+  instructions: Open the TR Apo
+  load: Bike
+  name: Trainer Road Workout

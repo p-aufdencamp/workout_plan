@@ -12,10 +12,11 @@
 #    times rather than the int time
 # ( ): Update existing routines of the time_based class to use a list of length 1 
 #    rather than an int
+# ( ): Define a routine for the trainer workout to avoid throwing errors
 
 
 # BACKLOG
-
+# ( ): Create functionality for circuit sets
 # ( ): implement a pause function
 # ( ): Change from phase to phase based on calendar days
 # ( ): print post workout feedback based on the report 
@@ -47,9 +48,12 @@ import yaml
 pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
 
 # do the imports from other classes i've written
-from exercise import Time_Based
-from exercise import Reps_Based
 from exercise import Generic
+from exercise import Interval
+from exercise import Reps_Based
+from exercise import Time_Based
+
+
 
 # define a function play a tone of arbitrary frequency (Hz) and duration (sec)
 def play_tone(frequency,duration):
@@ -125,8 +129,19 @@ def do_work(database,workout_name):
                print(f"Do {each.name} with {each.load} according to {each.instructions}")
                print(f" [d] for done, [s] for skipped, [i] for incomplete")
                report[index] = input()
+
+          elif isinstance(each,Interval):
+               print("test point reached")
+               print(f"Do {each.name}")
+               interval_index = 0
+               for element in each.instructions:
+                    print(f"Do {each.instructions[interval_index]} @ "
+                         f"{each.load[interval_index]} for "
+                         f"{each.times[interval_index]} seconds")
+                    interval_index = interval_index + 1
+
           index = index + 1
-          os.system('clear')
+          # os.system('clear')
      return report
     
 # define the routines we want to do, put them in a dictionary
@@ -237,7 +252,10 @@ routines = {
                Generic("Iso Lying Chest Press","BJJ",
                     "20s @50%, 10s @80%, 5s @100%"),
                Generic("Iso Single Foot Row","BJJ",
-                    "20s @50%, 10s @80%, 5s @100%")]
+                    "20s @50%, 10s @80%, 5s @100%")],
+     'Interval Test': [Interval("Ramping Squat",
+          ["Press ","Press ","Press "],["50%","80%","100%"],[20,10,5])],
+     'Trainer Work': [Generic("Trainer Road Workout","Bike","Open the TR Apo")]
 }
 
 # Where the magic happens

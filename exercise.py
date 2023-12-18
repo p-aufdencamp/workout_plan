@@ -30,8 +30,8 @@ class Generic(Exercise):
 class Interval(Exercise):
     # subclass of exercise for interval based exercises, such as ramping, holds.
     # These intervals don't have to be equal
-    # Instuctions and times are both lists of equal length
-    def __init__(self,name,instructions,times):
+    # Loads, Instuctions and times are both lists of equal length
+    def __init__(self,name,instructions,load,times):
         super().__init__(name,load)
         self.instructions = instructions
         self.times = times
