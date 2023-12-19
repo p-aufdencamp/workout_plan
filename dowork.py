@@ -9,6 +9,10 @@
 # ( ): Add a description text including a text to display along with the countdown, 
 #    just gonna use the name of the workout rather than a special string which modifies 
 #    the exercise class
+#         (X): Modify every call of "countdown" and "ready_set_go" methods to include
+#              a one liner pass through
+#         ( ): Use customized per interval one_liners
+#         ( ): Make the countdown clear screen between numbers
 
 # BACKLOG
 # ( ): Show a workout preview which lists the scheduled routines
@@ -131,8 +135,8 @@ def do_work(database,workout_name):
           if isinstance(each,Time_Based):
                print(f"Do a {each.name} with {each.load} for {each.duration} seconds.")
                time.sleep(7)
-               ready_set_go()
-               count_down(each.duration)
+               ready_set_go(each.name)
+               count_down(each.duration, each.name)
                print(each.name)
                print(f" [d] for done, [s] for skipped, [i] for incomplete")
                report[index] = input()
@@ -157,13 +161,13 @@ def do_work(database,workout_name):
                          f"{each.times[interval_index]} seconds")
                     interval_index = interval_index + 1
                time.sleep(7)
-               ready_set_go()
+               ready_set_go(each.name)
                interval_index = 0
                for element in each.instructions:
                     print(f"Do {each.instructions[interval_index]} @ "
                          f"{each.load[interval_index]} for "
                          f"{each.times[interval_index]} seconds")
-                    count_down(each.times[interval_index])
+                    count_down(each.times[interval_index],each.name)
                     interval_index = interval_index + 1
 
           index = index + 1
