@@ -6,9 +6,9 @@
 # TODO
 # ( ): Upate routines of the ramping / HIIT work that contains multiple timers to 
 #    be time based
-# ( ): Update existing generic exercises which are ramping to interval schedules
-# (X): Add a visual countdown element to the count_down function including a text to 
-#    display along with it
+# ( ): Add a description text including a text to display along with the countdown, 
+#    just gonna use the name of the workout rather than a special string which modifies 
+#    the exercise class
 
 # BACKLOG
 # ( ): Show a workout preview which lists the scheduled routines
@@ -88,9 +88,10 @@ def scheduled_workout():
      return weekly_plan.get(day_of_week_string, None)
 
 # plays a 3-2-1 type tone to start
-def ready_set_go():
+def ready_set_go(one_liner):
      for i in range(3):
           os.system('clear')
+          print(f"get ready to do {one_liner}")
           print(3-i)
           play_tone(440, 0.5)
           time.sleep(0.125)
@@ -98,10 +99,10 @@ def ready_set_go():
 
 # waits the duration of the time, then 
 # counts down via 3-2-1 again
-def count_down(timespan):
+def count_down(timespan, one_liner):
      if(timespan>3):
           for i in range(timespan-3):
-               print(timespan-i)
+               print(f"{timespan-i} remaining for {one_liner}")
                time.sleep(1)
           
           for i in range(3):
@@ -117,9 +118,6 @@ def count_down(timespan):
                play_tone(440, 0.5)
                time.sleep(0.125)
           play_tone(880,0.5)
-
-
-
 
 # define a function to actually do a routine
 def do_work(database,workout_name):
