@@ -4,16 +4,12 @@
 # IN PROGRESS
 
 # TODO
-# (X): After messing around with it, I think i'm going to introduce a new exercise type
-#    called interval. 
 # ( ): Upate routines of the ramping / HIIT work that contains multiple timers to 
 #    be time based
-# (X): Update the time_based portion of the "Do work" function to read the list of 
-#    times rather than the int time
 # ( ): Update existing generic exercises which are ramping to interval schedules
-# (X): Define a routine for the trainer workout to avoid throwing errors
 # ( ): get the mid-workout countdown working again
-# ( ): Add "Get ready to do " previous to the ready set go timer
+# (X): Add "Get ready to do <full description of upcoming intervals>" previous to the 
+#    ready set go timer
 
 
 # BACKLOG
