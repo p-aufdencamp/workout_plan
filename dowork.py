@@ -7,7 +7,7 @@
 # ( ): Upate routines of the ramping / HIIT work that contains multiple timers to 
 #    be time based
 # ( ): Update existing generic exercises which are ramping to interval schedules
-# ( ): Add a visual countdown element to the count_down function including a text to 
+# (X): Add a visual countdown element to the count_down function including a text to 
 #    display along with it
 
 # BACKLOG
@@ -100,7 +100,10 @@ def ready_set_go():
 # counts down via 3-2-1 again
 def count_down(timespan):
      if(timespan>3):
-          time.sleep(timespan-3)
+          for i in range(timespan-3):
+               print(timespan-i)
+               time.sleep(1)
+          
           for i in range(3):
                os.system('clear')
                print(3-i)
