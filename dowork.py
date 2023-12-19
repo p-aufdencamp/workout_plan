@@ -10,12 +10,16 @@
 #    be time based
 # (X): Update the time_based portion of the "Do work" function to read the list of 
 #    times rather than the int time
-# ( ): Update existing routines of the time_based class to use a list of length 1 
-#    rather than an int
+# ( ): Update existing generic exercises which are ramping to interval schedules
 # (X): Define a routine for the trainer workout to avoid throwing errors
+# ( ): get the mid-workout countdown working again
+# ( ): Add "Get ready to do " previous to the ready set go timer
 
 
 # BACKLOG
+# ( ): Show a workout preview which lists the scheduled routines
+# ( ): Add a back button from the workout preview back to the scheduled/ala carte screen
+# ( ): Add GMB Wrist Routine
 # ( ): Create functionality for circuit sets
 # ( ): implement a pause function
 # ( ): Change from phase to phase based on calendar days
@@ -149,7 +153,14 @@ def do_work(database,workout_name):
                report[index] = input()
 
           elif isinstance(each,Interval):
-               print(f"Do {each.name}")
+               print(f"Get Ready for {each.name}")
+               # Give the user a preview of what they are going to be doing
+               interval_index = 0
+               for element in each.instructions:
+                    print(f"{each.instructions[interval_index]} @ "
+                         f"{each.load[interval_index]} for "
+                         f"{each.times[interval_index]} seconds")
+                    interval_index = interval_index + 1
                time.sleep(7)
                ready_set_go()
                interval_index = 0
@@ -161,7 +172,7 @@ def do_work(database,workout_name):
                     interval_index = interval_index + 1
 
           index = index + 1
-          # os.system('clear')
+          os.system('clear')
      return report
     
 # define the routines we want to do, put them in a dictionary
