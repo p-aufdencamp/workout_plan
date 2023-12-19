@@ -7,10 +7,8 @@
 # ( ): Upate routines of the ramping / HIIT work that contains multiple timers to 
 #    be time based
 # ( ): Update existing generic exercises which are ramping to interval schedules
-# ( ): get the mid-workout countdown working again
-# (X): Add "Get ready to do <full description of upcoming intervals>" previous to the 
-#    ready set go timer
-
+# ( ): Add a visual countdown element to the count_down function including a text to 
+#    display along with it
 
 # BACKLOG
 # ( ): Show a workout preview which lists the scheduled routines
