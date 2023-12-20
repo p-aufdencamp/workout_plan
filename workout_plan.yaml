@@ -1,3 +1,109 @@
+GMB Wrist P1:
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Wrist Circles, CW
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Wrist Circles, CCW
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Backwards Wrist Stretch
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Backwards Wrist Stretch
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Forward Wrist Stretch
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Forward Wrist Stretch
+- !!python/object:exercise.Time_Based
+  duration: 15
+  load: 0
+  name: Heel Palm Up, Side to Side
+- !!python/object:exercise.Time_Based
+  duration: 25
+  load: 0
+  name: Wrist Shakes
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Wrist Pulses
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Back of Wrist Extension
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Back of Wrist Extension
+  reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 5
+  load: 0
+  name: Rear Facing Wrist Hold
+GMB Wrist P2:
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Wrist Circles, CW
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Wrist Circles, CCW
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Backwards Wrist Stretch
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Backwards Wrist Stretch
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Forward Wrist Stretch
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Forward Wrist Stretch
+- !!python/object:exercise.Time_Based
+  duration: 15
+  load: 0
+  name: Heel Palm Up, Side to Side
+- !!python/object:exercise.Time_Based
+  duration: 25
+  load: 0
+  name: Wrist Shakes
+- !!python/object:exercise.Time_Based
+  duration: 20
+  load: 0
+  name: Wrist Pulses
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Back of Wrist Extension
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Back of Wrist Extension
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Seal Walk
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Seal Walk
+  reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 5
+  load: 0
+  name: Rear Facing Wrist Hold
 Interval Test:
 - !!python/object:exercise.Interval
   instructions:
@@ -285,11 +391,6 @@ P1 Hip Mobility:
   load: Body Weight
   name: Toe Touch, Raised Toes
   reps: 10
-P1 One Wrist Mobility:
-- !!python/object:exercise.Generic
-  instructions: See App
-  load: Theragun
-  name: Carpal Tunnel Routine
 P1 Ramping:
 - !!python/object:exercise.Time_Based
   duration: 45
@@ -303,42 +404,132 @@ P1 Ramping:
   load: Bodyweight
   name: Lying Side Leg Leg, Right
   reps: 10
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Bridge
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: Hold
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Narrow Knees
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Neck Triceps Extension
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: Hold
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Butterfly Crunch
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Front Raise
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Deadlift
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Chest Press
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Squat
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Row
+  times:
+  - 20
+  - 10
+  - 5
 - !!python/object:exercise.Time_Based
   duration: 45
   load: Body Weight

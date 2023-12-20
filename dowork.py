@@ -4,7 +4,7 @@
 # IN PROGRESS
 
 # TODO
-# ( ): Add GMB Wrist Routine and put it in the schedule
+# (X): Add GMB Wrist Routine and put it in the schedule
 
 # ORDERED BACKLOG
 
