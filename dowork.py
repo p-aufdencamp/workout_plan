@@ -4,19 +4,18 @@
 # IN PROGRESS
 
 # TODO
-# ( ): Upate routines of the ramping / HIIT work that contains multiple timers 
+# (X): Upate routines of the ramping / HIIT work that contains multiple timers 
 #    to be time based
-# (X): Add a description text including a text to display along with the 
-#    countdown, just gonna use the name of the workout rather than a special 
-#    string which modifies the exercise class
-#         (X): Use customized per interval one_liners instead of just 
-#              using each.name
+#         (X): P1 Ramping
+#         (X): P0.2 Ramping
 
-# BACKLOG
+# Ordered BACKLOG
+# ( ): Add GMB Wrist Routine and put it in the schedule
 # ( ): Show a workout preview which lists the scheduled routines
+# ( ): At the end of each exercise, show what the next exercise so that you
+#    can get ready for it
 # ( ): Add a back button from the workout preview back to the scheduled/ala 
 #    carte screen
-# ( ): Add GMB Wrist Routine
 # ( ): Create functionality for circuit sets
 # ( ): implement a pause function
 # ( ): Change from phase to phase based on calendar days
@@ -196,17 +195,24 @@ routines = {
      'P1 Ramping': [Time_Based("Plank","Bodyweight",45),
           Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
           Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
-          Generic("Iso Bridge","BJJ", "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Narrow Knees","Hold", "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Neck Triceps Extension","BJJ",
-               "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Butterfly Crunch","Hold", 
-               "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Front Raise","BJJ", "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Deadlift","BJJ", "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Chest Press","BJJ", "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Squat","BJJ", "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Row","BJJ", "20s @50%, 10s @80%, 5s @100%"),
+          Interval("Iso Bridge",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+          Interval("Iso Narrow Knees",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+          Interval("Iso Neck Triceps Extension",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+          Interval("Iso Butterfly Crunch",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+          Interval("Iso Front Raise",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+          Interval("Iso Deadlift",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+          Interval("Iso Chest Press",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+          Interval("Iso Squat",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+          Interval("Iso Row",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
           Time_Based("Left Plank","Body Weight",45),
           Time_Based("Right Plank","Body Weight",45)],
      'P1 Hip Mobility': [Generic("Cycling Recovery","Theragun","See App"),
@@ -272,22 +278,22 @@ routines = {
                   Time_Based("Banded Row, Single Foot","Medium Heavy Band",45)],
      'P0.2 Ramping, Modified': [Time_Based("Kneeling Plank",0,45),
                Reps_Based("Bicycle Crunch",0,10),
-               Generic("Iso Bridge","BJJ",
-                           "20s @50%, 10s @80%, 5s @100%"),
-               Generic("Iso Banded Bridge Abduction","BJJ",
-                       "20s@ 50%, 10s@ 80%, 5s @100%"),
-               Generic("Iso Narrow Knees","Hold",
-                           "20s @50%, 10s @80%, 5s @100%"),
-               Generic("Iso Neck Triceps Extension","BJJ",
-                           "20s @50%, 10s @80%, 5s @100%"),
-               Generic("Iso Butterfly Crunch","Hold",
-                            "20s @50%, 10s @80%, 5s @100%"),
-               Generic("Iso Lying Front Raise","BJJ",
-                            "20s @50%, 10s @80%, 5s @100%"),
-               Generic("Iso Lying Chest Press","BJJ",
-                    "20s @50%, 10s @80%, 5s @100%"),
-               Generic("Iso Single Foot Row","BJJ",
-                    "20s @50%, 10s @80%, 5s @100%")],
+               Interval("Iso Bridge",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+               Interval("Iso Banded Bridge Abduction",["Press","Press","Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+               Interval("Iso Narrow Knees",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+               Interval("Iso Neck Triceps Extension",["Press","Press","Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+               Interval("Iso Butterfly Crunch",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+               Interval("Iso Lying Front Raise",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+               Interval("Iso Lying Chest Press",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5]),
+               Interval("Iso Single Foot Row",["Press", "Press", "Press"],
+                           ["50%","80%","110%"],[20,10,5])],
      'Interval Test': [Interval("Ramping Squat",
           ["Press ","Press ","Press "],["50%","80%","100%"],[20,10,5])],
      'Trainer Work': [Generic("Trainer Road Workout","Bike","Open the TR Apo")],

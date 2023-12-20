@@ -51,38 +51,118 @@ P0.2 Ramping, Modified:
   load: 0
   name: Bicycle Crunch
   reps: 10
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Bridge
-- !!python/object:exercise.Generic
-  instructions: 20s@ 50%, 10s@ 80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Banded Bridge Abduction
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: Hold
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Narrow Knees
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Neck Triceps Extension
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: Hold
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Butterfly Crunch
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Lying Front Raise
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Lying Chest Press
-- !!python/object:exercise.Generic
-  instructions: 20s @50%, 10s @80%, 5s @100%
-  load: BJJ
+  times:
+  - 20
+  - 10
+  - 5
+- !!python/object:exercise.Interval
+  instructions:
+  - Press
+  - Press
+  - Press
+  load:
+  - 50%
+  - 80%
+  - 110%
   name: Iso Single Foot Row
+  times:
+  - 20
+  - 10
+  - 5
 P1 Banded:
 - !!python/object:exercise.Time_Based
   duration: 45
