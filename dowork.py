@@ -6,7 +6,7 @@
 # TODO
 # ( ): Upate routines of the ramping / HIIT work that contains multiple timers 
 #    to be time based
-# ( ): Add a description text including a text to display along with the 
+# (X): Add a description text including a text to display along with the 
 #    countdown, just gonna use the name of the workout rather than a special 
 #    string which modifies the exercise class
 #         (X): Use customized per interval one_liners instead of just 
