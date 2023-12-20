@@ -4,35 +4,45 @@
 # IN PROGRESS
 
 # TODO
-# (X): Show a workout preview which lists the scheduled routines after the
-#     user selects schedule
+# (X): Show a preview of all the exercises in  a scheduled routine prior to 
+#    entering the routine, with a pause to continue or not
 
-# ORDERED BACKLOG
-
-# ( ): Show a preview of all the exercises in  a scheduled routine prior to 
-#    entering the routine
+# MVP Features:
 # ( ): At the end of each exercise, show what the next exercise is so that you
 #    can get ready for it
-# ( ): Add a back button from the workout preview back to the scheduled/ala 
-#    carte screen
+# ( ): implement a pause function
+
+# NICE TO HAVE FEATURES
 # ( ): Set up an auto advance setting
+#    ( ): Set up a "settings" dictionary with keys for each settings and 
+#         settable corresponding values
 # ( ): Create functionality for circuit sets
+# ( ): Change from phase to phase based on calendar days with auto advance
+#     based on compliance with the work so far
+# ( ): Automate progress across the plan based on compliance and feedback,
+#      maybe with an index variable
+# ( ): print post workout feedback based on the report 
+
+# GLORIOUS FUTURE
 # ( ): Refactor to use a state machine rather than a series of state machines 
 #    with inputs. This will allow the user a "back button"
 #    ( ): Make a list of all the features and functionality that currently work 
 #         so that I can test it and verify no regressions post refactor
-# ( ): implement a pause function
-# ( ): Change from phase to phase based on calendar days
-# ( ): print post workout feedback based on the report 
+# ( ): Add a back button from the workout preview back to the scheduled/ala 
+#    carte screen
 # ( ): do some error handling in the do_work function so that if the 
 #      requested routine isn't in the database, it doesn't get mad
 # ( ): Set up a "test" mode so that I can test the code without affecting the 
 #    tracking compliance or other reported metrics
-# ( ): Automate progress across the plan based on compliance and feedback,
-#      maybe with an index variable
-# ( ): Build a trailing average compliance metric
 # ( ): Do some error handling in the scheduled workout function so that if 
 #       today doesn't have a scheduled workout, it doesn't get mad
+
+# Per Commit Tests to Run
+# ( ): scheduled workout runthrough
+# ( ): ala carte workout runthrough, Reps_Based
+# ( ): ala carte workout runthrough, Timne_Based
+# ( ): ala carte workout runthrough, Generic
+# ( ): ala carte workout runthrough, Interval
 
 # import from big python libraries
 import datetime
@@ -55,8 +65,6 @@ from exercise import Generic
 from exercise import Interval
 from exercise import Reps_Based
 from exercise import Time_Based
-
-
 
 # define a function play a tone of arbitrary frequency (Hz) and duration (sec)
 def play_tone(frequency,duration):
@@ -136,6 +144,12 @@ def do_work(database,workout_name):
      todays_routine = database.get(workout_name, None)
      report = [None] * len(todays_routine)
      index = 0
+     for each in todays_routine:
+          print(each.name)
+     # eventually this user input will factor into a state machine and 
+     # allows the user to go back to a previous menu, but for now 
+     # it's essentially acting as a pause button
+     continue_yn = input("Enter to continue with scheduled Routine")
      for each in todays_routine:
           if isinstance(each,Time_Based):
                print(f"Do a {each.name} with {each.load} for "
