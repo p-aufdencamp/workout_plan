@@ -4,19 +4,21 @@
 # IN PROGRESS
 
 # TODO
-# ( ): Upate routines of the ramping / HIIT work that contains multiple timers to 
-#    be time based
-# ( ): Add a description text including a text to display along with the countdown, 
-#    just gonna use the name of the workout rather than a special string which modifies 
-#    the exercise class
-#         (X): Modify every call of "countdown" and "ready_set_go" methods to include
-#              a one liner pass through
-#         ( ): Use customized per interval one_liners
-#         ( ): Make the countdown clear screen between numbers
+# ( ): Upate routines of the ramping / HIIT work that contains multiple timers 
+#    to be time based
+# ( ): Add a description text including a text to display along with the 
+#    countdown, just gonna use the name of the workout rather than a special 
+#    string which modifies the exercise class
+#         (X): Modify every call of "countdown" and "ready_set_go" methods to 
+#              include a one liner pass through
+#         ( ): Use customized per interval one_liners instead of just 
+#              using each.name
+#         (X): Make the countdown clear screen between numbers
 
 # BACKLOG
 # ( ): Show a workout preview which lists the scheduled routines
-# ( ): Add a back button from the workout preview back to the scheduled/ala carte screen
+# ( ): Add a back button from the workout preview back to the scheduled/ala 
+#    carte screen
 # ( ): Add GMB Wrist Routine
 # ( ): Create functionality for circuit sets
 # ( ): implement a pause function
@@ -73,7 +75,7 @@ def scheduled_workout():
      current_datetime = datetime.datetime.now()
 
      # Get the day of the week as a string
-     day_of_week_string = current_datetime.strftime('%A') #Returns as "Wednesday" ie
+     day_of_week_string = current_datetime.strftime('%A') #Returns "Wednesday" ie
      print(day_of_week_string)
 
      weekly_plan = {
@@ -106,6 +108,7 @@ def ready_set_go(one_liner):
 def count_down(timespan, one_liner):
      if(timespan>3):
           for i in range(timespan-3):
+               os.system('clear')
                print(f"{timespan-i} remaining for {one_liner}")
                time.sleep(1)
           
@@ -133,7 +136,8 @@ def do_work(database,workout_name):
      index = 0
      for each in todays_routine:
           if isinstance(each,Time_Based):
-               print(f"Do a {each.name} with {each.load} for {each.duration} seconds.")
+               print(f"Do a {each.name} with {each.load} for "
+                     f" {each.duration} seconds.")
                time.sleep(7)
                ready_set_go(each.name)
                count_down(each.duration, each.name)
@@ -142,12 +146,14 @@ def do_work(database,workout_name):
                report[index] = input()
 
           elif isinstance(each,Reps_Based):
-               print(f"Do a {each.name} with {each.load} pounds for {each.reps} reps.")
+               print(f"Do a {each.name} with {each.load} pounds for "
+                     f" {each.reps} reps.")
                print(f" [d] for done, [s] for skipped, [i] for incomplete")
                report[index] = input()
 
           elif isinstance(each,Generic):
-               print(f"Do {each.name} with {each.load} according to {each.instructions}")
+               print(f"Do {each.name} with {each.load} according to "
+                     f"{each.instructions}")
                print(f" [d] for done, [s] for skipped, [i] for incomplete")
                report[index] = input()
 
@@ -197,7 +203,8 @@ routines = {
           Generic("Iso Narrow Knees","Hold", "20s @50%, 10s @80%, 5s @100%"),
           Generic("Iso Neck Triceps Extension","BJJ",
                "20s @50%, 10s @80%, 5s @100%"),
-          Generic("Iso Butterfly Crunch","Hold", "20s @50%, 10s @80%, 5s @100%"),
+          Generic("Iso Butterfly Crunch","Hold", 
+               "20s @50%, 10s @80%, 5s @100%"),
           Generic("Iso Front Raise","BJJ", "20s @50%, 10s @80%, 5s @100%"),
           Generic("Iso Deadlift","BJJ", "20s @50%, 10s @80%, 5s @100%"),
           Generic("Iso Chest Press","BJJ", "20s @50%, 10s @80%, 5s @100%"),
@@ -208,8 +215,8 @@ routines = {
      'P1 Hip Mobility': [Generic("Cycling Recovery","Theragun","See App"),
                     Generic("Glutes","Theragun","See App"),
                     Reps_Based("Frog Stretch","Body Weight",8),
-                    Reps_Based("Kneeling Lunge Stretch, Left","Body Weight",10),
-                    Reps_Based("Kneeling Lunge Stretch, Right","Body Weight",10),
+          Reps_Based("Kneeling Lunge Stretch, Left","Body Weight",10),
+          Reps_Based("Kneeling Lunge Stretch, Right","Body Weight",10),
                     Reps_Based("Childs Pose to Up Dog","Body Weight",5),
                     Reps_Based("Hamstring Stretch, Center->Cross->Out, Left",
                                "Body Weight",10),
@@ -217,8 +224,8 @@ routines = {
                                "Body Weight",10),
                     Reps_Based("Bow Stretch, Left","Body Weight",5),
                     Reps_Based("Bow Stretch, Right","Body Weight",5),
-                    Reps_Based("Seated Windshield Wiper, Left","Body Weight",5),
-                    Reps_Based("Seated Windshield Wiper, Right","Body Weight",5),
+          Reps_Based("Seated Windshield Wiper, Left","Body Weight",5),
+          Reps_Based("Seated Windshield Wiper, Right","Body Weight",5),
                     Reps_Based("Active Leg Lower, Left","Body Weight",5),
                     Reps_Based("Active Leg Lower, Right","Body Weight",5),
                     Reps_Based("Toe Touch, Raised Heels","Body Weight",10),
@@ -226,17 +233,17 @@ routines = {
      'P1 One Wrist Mobility': [Generic("Carpal Tunnel Routine",
           "Theragun","See App")],
      'P1 Shoulder Mobility': [Generic("Shoulders","Theragun","See App"),
-                                    Generic("Triceps","Theragun","See App"),
+          Generic("Triceps","Theragun","See App"),
                                     Reps_Based("Hold the Wall, Left","BW",5),
                                     Reps_Based("Hold the Wall, Right","BW",5),
-                                    Reps_Based("Overhead Shoulder, Left","BW",5),
-                                    Reps_Based("Overhead Shoulder, Right","BW",5),
+          Reps_Based("Overhead Shoulder, Left","BW",5),
+          Reps_Based("Overhead Shoulder, Right","BW",5),
                                     Reps_Based("Lats Stretch, Left","BW",5),
                                     Reps_Based("Last Stretch, Right","BW",5),
                                     Reps_Based("Rib Pull, Left","BW",5),
                                     Reps_Based("Rib Pull, Right","BW",5),
-                                    Reps_Based("Half Kneeling T Spine Twist","BW",5),
-                                    Reps_Based("Half Kneeling T Spine Twist, Right","BW",5)],
+          Reps_Based("Half Kneeling T Spine Twist","BW",5),
+          Reps_Based("Half Kneeling T Spine Twist, Right","BW",5)],
      'P3 Rehab': [Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
           Time_Based("Plantar Fascia Mobilization",0,60),
           Reps_Based("Heel Raises w/ Counter Support",0,20), #Set 1
@@ -270,7 +277,8 @@ routines = {
                Reps_Based("Bicycle Crunch",0,10),
                Generic("Iso Bridge","BJJ",
                            "20s @50%, 10s @80%, 5s @100%"),
-               Generic("Iso Banded Bridge Abduction","BJJ","20s@ 50%, 10s@ 80%, 5s @100%"),
+               Generic("Iso Banded Bridge Abduction","BJJ",
+                       "20s@ 50%, 10s@ 80%, 5s @100%"),
                Generic("Iso Narrow Knees","Hold",
                            "20s @50%, 10s @80%, 5s @100%"),
                Generic("Iso Neck Triceps Extension","BJJ",
