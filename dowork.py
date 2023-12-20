@@ -1,19 +1,26 @@
 # Author: Phil Aufdencamp
 # Main script which you run to do work
-# Feature List
+# Dev List
 # IN PROGRESS
 
 # TODO
-# (X): Add GMB Wrist Routine and put it in the schedule
+# (X): Show a workout preview which lists the scheduled routines after the
+#     user selects schedule
 
 # ORDERED BACKLOG
 
-# ( ): Show a workout preview which lists the scheduled routines
-# ( ): At the end of each exercise, show what the next exercise so that you
+# ( ): Show a preview of all the exercises in  a scheduled routine prior to 
+#    entering the routine
+# ( ): At the end of each exercise, show what the next exercise is so that you
 #    can get ready for it
 # ( ): Add a back button from the workout preview back to the scheduled/ala 
 #    carte screen
+# ( ): Set up an auto advance setting
 # ( ): Create functionality for circuit sets
+# ( ): Refactor to use a state machine rather than a series of state machines 
+#    with inputs. This will allow the user a "back button"
+#    ( ): Make a list of all the features and functionality that currently work 
+#         so that I can test it and verify no regressions post refactor
 # ( ): implement a pause function
 # ( ): Change from phase to phase based on calendar days
 # ( ): print post workout feedback based on the report 
@@ -26,7 +33,6 @@
 # ( ): Build a trailing average compliance metric
 # ( ): Do some error handling in the scheduled workout function so that if 
 #       today doesn't have a scheduled workout, it doesn't get mad
-# ( ): Add a "rest" exercise type to wait between sets
 
 # import from big python libraries
 import datetime
@@ -330,23 +336,29 @@ if __name__ == "__main__":
      with open('workout_plan.yaml', 'w') as file:
           yaml.dump(routines, file)
 
-     #index variable is used regardless of wht the user selecs
+     #index variable is used regardless of what the user selecs
      index = 0
      # prompt the user to do what is currently scheduled vs selecting one from the 
      # routines which are available
-     # demo beep
      
      print("[s] for scheduled")
      print("[a] for ala carte")
-     choice = input("select an option: ")
-     if choice == "s":
+     scheduled_vs_ala_carte = input("select an option: ")
+     if scheduled_vs_ala_carte == "s":
           todays_workouts = scheduled_workout()
           todays_reports = [None] * len(todays_workouts)
+          for each in todays_workouts:
+               print(each)
+               
+          # eventually this user input will factor into a state machine and 
+          # allows the user to go back to a previous menu, but for now 
+          # it's essentially acting as a pause button
+          continue_yn = input("Enter to continue with scheduled workout")
           for each in todays_workouts:
                todays_reports[index] = do_work(routines,each)
                index = index + 1
 
-     elif choice == "a":
+     elif scheduled_vs_ala_carte == "a":
           os.system('clear')
           #print("select a routine from the options below")
           routine_keys = [None] * len(routines)
@@ -354,8 +366,8 @@ if __name__ == "__main__":
                print(f"[{index}] {key}")
                routine_keys[index] = key
                index = index + 1
-          user_input = input("select a routine from the library")
-          selected_index = int(user_input)
+          selected_routine = input("select a routine from the library")
+          selected_index = int(selected_routine)
           todays_workout_name = routine_keys[selected_index]
           print(todays_workout_name)
           report = do_work(routines,todays_workout_name)
