@@ -4,13 +4,10 @@
 # IN PROGRESS
 
 # TODO
-# (X): Upate routines of the ramping / HIIT work that contains multiple timers 
-#    to be time based
-#         (X): P1 Ramping
-#         (X): P0.2 Ramping
-
-# Ordered BACKLOG
 # ( ): Add GMB Wrist Routine and put it in the schedule
+
+# ORDERED BACKLOG
+
 # ( ): Show a workout preview which lists the scheduled routines
 # ( ): At the end of each exercise, show what the next exercise so that you
 #    can get ready for it
@@ -76,16 +73,19 @@ def scheduled_workout():
 
      weekly_plan = {
           'Sunday':['P3 Rehab','P1.2 Recovery Floor Work',
-               'P0.2 Banded, Modified'],
-          'Monday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work'],
+               'GMB Wrist P1'],
+          'Monday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
+               'GMB Wrist P1'],
           'Tuesday':['P3 Rehab','P1.2 Recovery Floor Work',
-               'P0.2 Banded, Modified'],
-          'Wednesday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work'],
+               'P0.2 Banded, Modified','GMB Wrist P1'],
+          'Wednesday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
+               'GMB Wrist P1'],
           'Thursday':['P3 Rehab','P1.2 Recovery Floor Work',
-               'P0.2 Ramping, Modified'],
-          'Friday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work'],
+               'P0.2 Ramping, Modified','GMB Wrist P1'],
+          'Friday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
+               'GMB Wrist P1'],
           'Saturday':['P3 Rehab','P1.2 Recovery Floor Work',
-               'P0.2 Banded, Modified']
+               'GMB Wrist P1']
                } 
      return weekly_plan.get(day_of_week_string, None)
 
@@ -233,8 +233,32 @@ routines = {
                     Reps_Based("Active Leg Lower, Right","Body Weight",5),
                     Reps_Based("Toe Touch, Raised Heels","Body Weight",10),
                     Reps_Based("Toe Touch, Raised Toes","Body Weight",10)],
-     'P1 One Wrist Mobility': [Generic("Carpal Tunnel Routine",
-          "Theragun","See App")],
+     'GMB Wrist P1': [Time_Based("Wrist Circles, CW",0,30),
+          Time_Based("Wrist Circles, CCW",0,30),
+          Time_Based("Backwards Wrist Stretch",0,20),
+          Time_Based("Backwards Wrist Stretch",0,20),
+          Time_Based("Forward Wrist Stretch",0,20),
+          Time_Based("Forward Wrist Stretch",0,20),
+          Time_Based("Heel Palm Up, Side to Side",0,15),
+          Time_Based("Wrist Shakes",0,25),
+          Time_Based("Wrist Pulses",0,20),
+          Reps_Based("Back of Wrist Extension",0,10),
+          Reps_Based("Back of Wrist Extension",0,10),
+          Time_Based("Rear Facing Wrist Hold",0,5)],
+     'GMB Wrist P2': [Time_Based("Wrist Circles, CW",0,30),
+          Time_Based("Wrist Circles, CCW",0,30),
+          Time_Based("Backwards Wrist Stretch",0,20),
+          Time_Based("Backwards Wrist Stretch",0,20),
+          Time_Based("Forward Wrist Stretch",0,20),
+          Time_Based("Forward Wrist Stretch",0,20),
+          Time_Based("Heel Palm Up, Side to Side",0,15),
+          Time_Based("Wrist Shakes",0,25),
+          Time_Based("Wrist Pulses",0,20),
+          Reps_Based("Back of Wrist Extension",0,10),
+          Reps_Based("Back of Wrist Extension",0,10),
+          Reps_Based("Seal Walk",0,10),
+          Reps_Based("Seal Walk",0,10),
+          Time_Based("Rear Facing Wrist Hold",0,5)],
      'P1 Shoulder Mobility': [Generic("Shoulders","Theragun","See App"),
           Generic("Triceps","Theragun","See App"),
                                     Reps_Based("Hold the Wall, Left","BW",5),
