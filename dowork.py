@@ -4,13 +4,18 @@
 # IN PROGRESS
 
 # TODO
-# (X): Show a preview of all the exercises in  a scheduled routine prior to 
-#    entering the routine, with a pause to continue or not
+# ( ): Add a new wrist routine for Katy's Exercises
+# ( ): Add that Routine to the Tuesday/Thursday Plan
+# ( ): Update existing rehab routine per Katy's new guidance
+# ( ): Move Strength Training to Tues/Thu/Sat
+# ( ): Move Mobility Floor Work to M/W/F
+# (X): Alphabetize the function definitions
 
 # MVP Features:
 # ( ): At the end of each exercise, show what the next exercise is so that you
 #    can get ready for it
 # ( ): implement a pause function
+
 
 # NICE TO HAVE FEATURES
 # ( ): Set up an auto advance setting
@@ -24,10 +29,7 @@
 # ( ): print post workout feedback based on the report 
 
 # GLORIOUS FUTURE
-# ( ): Refactor to use a state machine rather than a series of state machines 
-#    with inputs. This will allow the user a "back button"
-#    ( ): Make a list of all the features and functionality that currently work 
-#         so that I can test it and verify no regressions post refactor
+# ( ): Build a "textual" UI
 # ( ): Add a back button from the workout preview back to the scheduled/ala 
 #    carte screen
 # ( ): do some error handling in the do_work function so that if the 
@@ -44,6 +46,10 @@
 # ( ): ala carte workout runthrough, Generic
 # ( ): ala carte workout runthrough, Interval
 
+# set the path to FFmpeg executable -> this may not actually be needed, will try 
+# deleting it later
+pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
+
 # import from big python libraries
 import datetime
 import os
@@ -56,9 +62,7 @@ import subprocess
 import time
 import yaml
 
-# set the path to FFmpeg executable -> this may not actually be needed, will try 
-# deleting it later
-pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
+
 
 # do the imports from other classes i've written
 from exercise import Generic
@@ -66,52 +70,6 @@ from exercise import Interval
 from exercise import Reps_Based
 from exercise import Time_Based
 
-# define a function play a tone of arbitrary frequency (Hz) and duration (sec)
-def play_tone(frequency,duration):
-     #Generate a sine wave of the specified frequency and duration
-     sine_wave = Sine(frequency).to_audio_segment(duration=duration*1000) 
-
-     #Play the generated sine wave
-     sine_wave.export("temp.wav",format="wav")
-     subprocess.run(["afplay", "temp.wav"], check=True)
-
-# define a function to return the workout for today based on a schedule
-def scheduled_workout():
-
-     # Get the current date and time
-     current_datetime = datetime.datetime.now()
-
-     # Get the day of the week as a string
-     day_of_week_string = current_datetime.strftime('%A') #Returns "Wednesday" ie
-     print(day_of_week_string)
-
-     weekly_plan = {
-          'Sunday':['P3 Rehab','P1.2 Recovery Floor Work',
-               'GMB Wrist P1'],
-          'Monday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
-               'GMB Wrist P1'],
-          'Tuesday':['P3 Rehab','P1.2 Recovery Floor Work',
-               'P0.2 Banded, Modified','GMB Wrist P1'],
-          'Wednesday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
-               'GMB Wrist P1'],
-          'Thursday':['P3 Rehab','P1.2 Recovery Floor Work',
-               'P0.2 Ramping, Modified','GMB Wrist P1'],
-          'Friday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
-               'GMB Wrist P1'],
-          'Saturday':['P3 Rehab','P1.2 Recovery Floor Work',
-               'GMB Wrist P1']
-               } 
-     return weekly_plan.get(day_of_week_string, None)
-
-# plays a 3-2-1 type tone to start
-def ready_set_go(one_liner):
-     for i in range(3):
-          os.system('clear')
-          print(f"get ready to do {one_liner}")
-          print(3-i)
-          play_tone(440, 0.5)
-          time.sleep(0.125)
-     play_tone(880,0.5)
 
 # waits the duration of the time, then 
 # counts down via 3-2-1 again
@@ -195,6 +153,52 @@ def do_work(database,workout_name):
           index = index + 1
           os.system('clear')
      return report
+
+# define a function play a tone of arbitrary frequency (Hz) and duration (sec)
+def play_tone(frequency,duration):
+     #Generate a sine wave of the specified frequency and duration
+     sine_wave = Sine(frequency).to_audio_segment(duration=duration*1000) 
+
+     #Play the generated sine wave
+     sine_wave.export("temp.wav",format="wav")
+     subprocess.run(["afplay", "temp.wav"], check=True)
+
+# plays a 3-2-1 type tone to start
+def ready_set_go(one_liner):
+     for i in range(3):
+          os.system('clear')
+          print(f"get ready to do {one_liner}")
+          print(3-i)
+          play_tone(440, 0.5)
+          time.sleep(0.125)
+     play_tone(880,0.5)
+
+# define a function to return the workout for today based on a schedule
+def scheduled_workout():
+
+     # Get the current date and time
+     current_datetime = datetime.datetime.now()
+
+     # Get the day of the week as a string
+     day_of_week_string = current_datetime.strftime('%A') #Returns "Wednesday" ie
+
+     weekly_plan = {
+          'Sunday':['P3 Rehab','P1.2 Recovery Floor Work',
+               'GMB Wrist P1'],
+          'Monday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
+               'GMB Wrist P1'],
+          'Tuesday':['P3 Rehab','P1.2 Recovery Floor Work',
+               'P0.2 Banded, Modified','GMB Wrist P1'],
+          'Wednesday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
+               'GMB Wrist P1'],
+          'Thursday':['P3 Rehab','P1.2 Recovery Floor Work',
+               'P0.2 Ramping, Modified','GMB Wrist P1'],
+          'Friday':['P3 Rehab','P1.2 Recovery Floor Work','Trainer Work',
+               'GMB Wrist P1'],
+          'Saturday':['P3 Rehab','P1.2 Recovery Floor Work',
+               'GMB Wrist P1']
+               } 
+     return weekly_plan.get(day_of_week_string, None)
     
 # define the routines we want to do, put them in a dictionary
 routines = {
