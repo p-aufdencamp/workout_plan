@@ -141,15 +141,7 @@ Katy Rehab P4:
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Heel Raises w/ Counter Support
-  reps: 20
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Single Leg Stance, Right
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Sit to Stand, High Surface, Right
-  reps: 10
+  reps: 30
 - !!python/object:exercise.Reps_Based
   load: vLight
   name: Banded Side Step
@@ -158,18 +150,18 @@ Katy Rehab P4:
   load: 0
   name: 4-Way Reach
   reps: 5
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Reverse Step up
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Reverse Lunge Squat
+  reps: 10
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Heel Raises w/ Counter Support
-  reps: 20
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Single Leg Stance, Right
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Sit to Stand, High Surface, Right
-  reps: 10
+  reps: 30
 - !!python/object:exercise.Reps_Based
   load: vLight
   name: Banded Side Step
@@ -178,18 +170,18 @@ Katy Rehab P4:
   load: 0
   name: 4-Way Reach
   reps: 5
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Reverse Step up
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Reverse Lunge Squat
+  reps: 10
 - !!python/object:exercise.Reps_Based
   load: 0
   name: Heel Raises w/ Counter Support
-  reps: 20
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Single Leg Stance, Right
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Single Leg Sit to Stand, High Surface, Right
-  reps: 10
+  reps: 30
 - !!python/object:exercise.Reps_Based
   load: vLight
   name: Banded Side Step
@@ -198,6 +190,14 @@ Katy Rehab P4:
   load: 0
   name: 4-Way Reach
   reps: 5
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Reverse Step up
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Reverse Lunge Squat
+  reps: 10
 Katy Wrist Rehab P1:
 - !!python/object:exercise.Reps_Based
   load: 6

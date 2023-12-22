@@ -4,9 +4,7 @@
 # IN PROGRESS
 
 # TODO
-# (X): Add the Wrist Routine to the Tuesday/Thursday Plan, remove the 
-#    GMB Wrist Routine
-# ( ): Update existing rehab routine per Katy's new guidance
+# (X): Update existing rehab routine per Katy's new guidance
 # ( ): Move Strength Training to Tues/Thu/Sat
 # ( ): Move Mobility Floor Work to M/W/F
 # ( ): revisit the modifications for the Banding & Ramping workouts
@@ -239,21 +237,22 @@ routines = {
           Reps_Based("MacKenzie Extensions",0,10)],
      'Katy Rehab P4': [Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
           Time_Based("Plantar Fascia Mobilization",0,60),
-          Reps_Based("Heel Raises w/ Counter Support",0,20), #Set 1
-          Time_Based("Single Leg Stance, Right",0,30),
-          Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
+          Reps_Based("Heel Raises w/ Counter Support",0,30), #Set 1
           Reps_Based("Banded Side Step","vLight",20),
           Reps_Based("4-Way Reach",0,5),
-          Reps_Based("Heel Raises w/ Counter Support",0,20), #Set 2
-          Time_Based("Single Leg Stance, Right",0,30),
-          Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
+          Reps_Based("Reverse Step up",0,10),
+          Reps_Based("Reverse Lunge Squat",0,10),
+          Reps_Based("Heel Raises w/ Counter Support",0,30), #Set 2
           Reps_Based("Banded Side Step","vLight",20),
           Reps_Based("4-Way Reach",0,5),
-          Reps_Based("Heel Raises w/ Counter Support",0,20), #Set 3
-          Time_Based("Single Leg Stance, Right",0,30),
-          Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
+          Reps_Based("Reverse Step up",0,10),
+          Reps_Based("Reverse Lunge Squat",0,10),
+          Reps_Based("Heel Raises w/ Counter Support",0,30), #Set 3
           Reps_Based("Banded Side Step","vLight",20),
-          Reps_Based("4-Way Reach",0,5)],
+          Reps_Based("4-Way Reach",0,5),
+          Reps_Based("Reverse Step up",0,10),
+          Reps_Based("Reverse Lunge Squat",0,10)],
+          
      'Katy Wrist Rehab P1': [Reps_Based("Wrist Extensions", 6,10),
                Time_Based("Rest",0,30),
                Reps_Based("Wrist Extensions", 6,10),
