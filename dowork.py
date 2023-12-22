@@ -4,9 +4,8 @@
 # IN PROGRESS
 
 # TODO
-# (X): Update existing rehab routine per Katy's new guidance
-# ( ): Move Strength Training to Tues/Thu/Sat
-# ( ): Move Mobility Floor Work to M/W/F
+# (X): Move Strength Training (Katy's Rehab) to Tues/Thu/Sat
+# (X): Move Mobility Floor Work to M/W/F
 # ( ): revisit the modifications for the Banding & Ramping workouts
 
 # MVP Features:
@@ -15,12 +14,14 @@
 # ( ): implement a pause function
 
 # NICE TO HAVE FEATURES
-# ( ): Migrate the routine data base to a YAML
-# ( ): Migrate the plan to a YAML
+# ( ): If there isn't a scheduled workout on the weekly plan, give the user a 
+#    friendly message to see the ala carte menu instead of erroring out
 # ( ): Set up an auto advance setting
 #    ( ): Set up a "settings" dictionary with keys for each settings and 
 #         settable corresponding values
 # ( ): Create functionality for circuit sets
+# ( ): Migrate the routine data base to a YAML
+# ( ): Migrate the plan to a YAML
 # ( ): Change from phase to phase based on calendar days with auto advance
 #     based on compliance with the work so far
 # ( ): Automate progress across the plan based on compliance and feedback,
@@ -185,18 +186,13 @@ def scheduled_workout():
      day_of_week_string = current_datetime.strftime('%A') #Returns "Wednesday" ie
 
      weekly_plan = {
-          'Sunday':['Katy Rehab P4','Katy Mobility Floor Work P2'],
-          'Monday':['Katy Rehab P4','Katy Mobility Floor Work P2',
-               'TR Trainer Work'],
-          'Tuesday':['Katy Rehab P4','Katy Wrist Rehab P1',
-               'Katy Mobility Floor Work P2', 'MTBS Banded P0.2'],
-          'Wednesday':['Katy Rehab P4','Katy Mobility Floor Work P2',
-               'TR Trainer Work'],
-          'Thursday':['Katy Rehab P4','Katy Wrist Rehab P1',
-               'Katy Mobility Floor Work P2','MTBS Ramping Modified P0.2'],
-          'Friday':['Katy Rehab P4','Katy Mobility Floor Work P2',
-               'TR Trainer Work'],
-          'Saturday':['Katy Rehab P4','Katy Mobility Floor Work P2']
+          'Sunday':[],
+          'Monday':['Katy Mobility Floor Work P2','TR Trainer Work'],
+          'Tuesday':['Katy Rehab P4','Katy Wrist Rehab P1','MTBS Banded P0.2'],
+          'Wednesday':['Katy Mobility Floor Work P2','TR Trainer Work'],
+          'Thursday':['Katy Rehab P4','Katy Wrist Rehab P1','MTBS Ramping Modified P0.2'],
+          'Friday':['Katy Mobility Floor Work P2','TR Trainer Work'],
+          'Saturday':['Katy Rehab P4']
                } 
      return weekly_plan.get(day_of_week_string, None)
     
