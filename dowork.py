@@ -4,7 +4,6 @@
 # IN PROGRESS
 
 # TODO
-# (X): revisit the modifications for the Banding & Ramping workouts
 
 # MVP Features:
 # ( ): At the end of each exercise, show what the next exercise is so that you
