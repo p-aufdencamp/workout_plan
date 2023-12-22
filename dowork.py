@@ -4,20 +4,17 @@
 # IN PROGRESS
 
 # TODO
-# ( ): Add a new wrist routine for Katy's Exercises
-# ( ): Add that Routine to the Tuesday/Thursday Plan
+# (X): Add a new wrist routine for Katy's Exercises
+# ( ): Add the Wrist Routine to the Tuesday/Thursday Plan
 # ( ): Update existing rehab routine per Katy's new guidance
 # ( ): Move Strength Training to Tues/Thu/Sat
 # ( ): Move Mobility Floor Work to M/W/F
-# (X): Alphabetize the Routines, Change naming convention to be <source>, 
-#    <series>, <phase>
 # ( ): revisit the modifications for the Banding & Ramping workouts
 
 # MVP Features:
 # ( ): At the end of each exercise, show what the next exercise is so that you
 #    can get ready for it
 # ( ): implement a pause function
-
 
 # NICE TO HAVE FEATURES
 # ( ): Migrate the routine data base to a YAML
@@ -52,9 +49,7 @@
 # ( ): ala carte workout runthrough, Generic
 # ( ): ala carte workout runthrough, Interval
 
-# set the path to FFmpeg executable -> this may not actually be needed, will try 
-# deleting it later
-pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
+
 
 # import from big python libraries
 import datetime
@@ -75,6 +70,10 @@ from exercise import Generic
 from exercise import Interval
 from exercise import Reps_Based
 from exercise import Time_Based
+
+# set the path to FFmpeg executable -> this may not actually be needed, will try 
+# deleting it later
+pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
 
 # waits the duration of the time, then 
 # counts down via 3-2-1 again
@@ -257,6 +256,17 @@ routines = {
           Reps_Based("Single Leg Sit to Stand, High Surface, Right",0,10),
           Reps_Based("Banded Side Step","vLight",20),
           Reps_Based("4-Way Reach",0,5)],
+     'Katy Wrist Rehab P1': [Reps_Based("Wrist Extensions", 6,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Wrist Extensions", 6,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Wrist Extensions", 6,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Hammer Twists",0,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Hammer Twists",0,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Hammer Twists",0,10)],
      'MTBS Banded P0.2': [Time_Based("Kneeling Plank",0,45),
           Reps_Based("Bicycle Crunch",0,10),
           Time_Based("Banded Bridge Abduction","Light",45),
