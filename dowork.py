@@ -4,8 +4,8 @@
 # IN PROGRESS
 
 # TODO
-# (X): Add a new wrist routine for Katy's Exercises
-# ( ): Add the Wrist Routine to the Tuesday/Thursday Plan
+# (X): Add the Wrist Routine to the Tuesday/Thursday Plan, remove the 
+#    GMB Wrist Routine
 # ( ): Update existing rehab routine per Katy's new guidance
 # ( ): Move Strength Training to Tues/Thu/Sat
 # ( ): Move Mobility Floor Work to M/W/F
@@ -187,20 +187,18 @@ def scheduled_workout():
      day_of_week_string = current_datetime.strftime('%A') #Returns "Wednesday" ie
 
      weekly_plan = {
-          'Sunday':['Katy Rehab P4','Katy Mobility Floor Work P2',
-               'GMB Wrist P1'],
-          'Monday':['Katy Rehab P4','Katy Mobility Floor Work P2','TR Trainer Work',
-               'GMB Wrist P1'],
-          'Tuesday':['Katy Rehab P4','Katy Mobility Floor Work P2',
-               'MTBS Banded P0.2','GMB Wrist P1'],
-          'Wednesday':['Katy Rehab P4','Katy Mobility Floor Work P2','TR Trainer Work',
-               'GMB Wrist P1'],
-          'Thursday':['Katy Rehab P4','Katy Mobility Floor Work P2',
-               'MTBS Ramping Modified P0.2','GMB Wrist P1'],
-          'Friday':['Katy Rehab P4','Katy Mobility Floor Work P2','TR Trainer Work',
-               'GMB Wrist P1'],
-          'Saturday':['Katy Rehab P4','Katy Mobility Floor Work P2',
-               'GMB Wrist P1']
+          'Sunday':['Katy Rehab P4','Katy Mobility Floor Work P2'],
+          'Monday':['Katy Rehab P4','Katy Mobility Floor Work P2',
+               'TR Trainer Work'],
+          'Tuesday':['Katy Rehab P4','Katy Wrist Rehab P1',
+               'Katy Mobility Floor Work P2', 'MTBS Banded P0.2'],
+          'Wednesday':['Katy Rehab P4','Katy Mobility Floor Work P2',
+               'TR Trainer Work'],
+          'Thursday':['Katy Rehab P4','Katy Wrist Rehab P1',
+               'Katy Mobility Floor Work P2','MTBS Ramping Modified P0.2'],
+          'Friday':['Katy Rehab P4','Katy Mobility Floor Work P2',
+               'TR Trainer Work'],
+          'Saturday':['Katy Rehab P4','Katy Mobility Floor Work P2']
                } 
      return weekly_plan.get(day_of_week_string, None)
     
