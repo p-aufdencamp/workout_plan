@@ -243,19 +243,19 @@ Katy Wrist Rehab P1:
   load: 0
   name: Hammer Twists
   reps: 10
-MTBS Banded P0.2:
+MTBS Banded P0.3:
 - !!python/object:exercise.Time_Based
   duration: 45
   load: 0
-  name: Kneeling Plank
+  name: Plank on Elbows
 - !!python/object:exercise.Reps_Based
-  load: 0
-  name: Bicycle Crunch
+  load: Bodyweight
+  name: Lying Side Leg Raise, Left
   reps: 10
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Light
-  name: Banded Bridge Abduction
+- !!python/object:exercise.Reps_Based
+  load: Bodyweight
+  name: Lying Side Leg Leg, Right
+  reps: 10
 - !!python/object:exercise.Time_Based
   duration: 45
   load: Medium Band
@@ -263,15 +263,35 @@ MTBS Banded P0.2:
 - !!python/object:exercise.Time_Based
   duration: 45
   load: Light Band
-  name: Lying Banded Front Raise
+  name: Banded Narrow Knees
+- !!python/object:exercise.Time_Based
+  duration: 45
+  load: Light Band
+  name: Banded Back Neck Hold
+- !!python/object:exercise.Time_Based
+  duration: 45
+  load: Light Band
+  name: Banded Front Neck Hold
+- !!python/object:exercise.Time_Based
+  duration: 45
+  load: Light Band
+  name: Banded Front Raise
 - !!python/object:exercise.Time_Based
   duration: 45
   load: Medium Heavy Band
-  name: Lying Banded Chest Press
+  name: Banded Chest Press
 - !!python/object:exercise.Time_Based
   duration: 45
   load: Medium Heavy Band
-  name: Banded Row, Single Foot
+  name: Banded Row
+- !!python/object:exercise.Time_Based
+  duration: 45
+  load: Body Weight
+  name: Left Plank
+- !!python/object:exercise.Time_Based
+  duration: 45
+  load: Body Weight
+  name: Right Plank
 MTBS Banded P1:
 - !!python/object:exercise.Time_Based
   duration: 45
@@ -394,14 +414,18 @@ MTBS Hip Mobility:
   load: Body Weight
   name: Toe Touch, Raised Toes
   reps: 10
-MTBS Ramping Modified P0.2:
+MTBS Ramping Modified P0.3:
 - !!python/object:exercise.Time_Based
   duration: 45
   load: 0
-  name: Kneeling Plank
+  name: Plank on Elbows
 - !!python/object:exercise.Reps_Based
-  load: 0
-  name: Bicycle Crunch
+  load: Bodyweight
+  name: Lying Side Leg Raise, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: Bodyweight
+  name: Lying Side Leg Leg, Right
   reps: 10
 - !!python/object:exercise.Interval
   instructions:
@@ -413,20 +437,6 @@ MTBS Ramping Modified P0.2:
   - 80%
   - 110%
   name: Iso Bridge
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Banded Bridge Abduction
   times:
   - 20
   - 10
@@ -482,7 +492,7 @@ MTBS Ramping Modified P0.2:
   - 50%
   - 80%
   - 110%
-  name: Iso Lying Front Raise
+  name: Iso Front Raise
   times:
   - 20
   - 10
@@ -496,7 +506,7 @@ MTBS Ramping Modified P0.2:
   - 50%
   - 80%
   - 110%
-  name: Iso Lying Chest Press
+  name: Iso Chest Press
   times:
   - 20
   - 10
@@ -510,11 +520,19 @@ MTBS Ramping Modified P0.2:
   - 50%
   - 80%
   - 110%
-  name: Iso Single Foot Row
+  name: Iso Row
   times:
   - 20
   - 10
   - 5
+- !!python/object:exercise.Time_Based
+  duration: 45
+  load: Body Weight
+  name: Left Plank
+- !!python/object:exercise.Time_Based
+  duration: 45
+  load: Body Weight
+  name: Right Plank
 MTBS Ramping P1:
 - !!python/object:exercise.Time_Based
   duration: 45
