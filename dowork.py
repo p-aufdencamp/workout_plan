@@ -4,6 +4,7 @@
 # IN PROGRESS
 
 # TODO
+# ( ): Extend the wrist routine to include the right arm
 
 # MVP Features:
 # ( ): At the end of each exercise, show what the next exercise is so that you
@@ -245,17 +246,30 @@ routines = {
           Reps_Based("4-Way Reach",0,5),
           Reps_Based("Reverse Step up",0,10),
           Reps_Based("Reverse Lunge Squat",0,10)],          
-     'Katy Wrist Rehab P1': [Reps_Based("Wrist Extensions", 6,10),
+     'Katy Wrist Rehab P1': [Reps_Based("Wrist Extensions, Left", 6,10),
                Time_Based("Rest",0,30),
-               Reps_Based("Wrist Extensions", 6,10),
+               Reps_Based("Wrist Extensions, Left", 6,10),
                Time_Based("Rest",0,30),
-               Reps_Based("Wrist Extensions", 6,10),
+               Reps_Based("Wrist Extensions, Left", 6,10),
                Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twists",0,10),
+               Reps_Based("Hammer Twist, Left",0,10),
                Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twists",0,10),
+               Reps_Based("Hammer Twists, Left",0,10),
                Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twists",0,10)],
+               Reps_Based("Hammer Twists, Left",0,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Wrist Extensions, Right", 6,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Wrist Extensions, Right", 6,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Wrist Extensions, Right", 6,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Hammer Twist, Right",0,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Hammer Twist, Right",0,10),
+               Time_Based("Rest",0,30),
+               Reps_Based("Hammer Twist, Right",0,10),
+               Time_Based("Rest",0,30)],
      'MTBS Banded P0.3': [Time_Based("Plank on Elbows",0,45),
           Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
           Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
