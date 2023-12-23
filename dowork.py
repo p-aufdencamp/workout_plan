@@ -4,7 +4,7 @@
 # IN PROGRESS
 
 # TODO
-# ( ): Extend the wrist routine to include the right arm
+# (X): Extend the wrist routine to include the right arm
 
 # MVP Features:
 # ( ): At the end of each exercise, show what the next exercise is so that you
