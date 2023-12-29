@@ -4,11 +4,13 @@
 # IN PROGRESS
 
 # TODO
-# (X): Extend the wrist routine to include the right arm
+# (X): interleaf the L/R reps for the wrist stability rehab routine instead of 
+#    doing all lefts and then all rights
+# ( ): At the end of each exercise, show what the next exercise is so that you
+#    can get ready for it before starting the timer
 
 # MVP Features:
-# ( ): At the end of each exercise, show what the next exercise is so that you
-#    can get ready for it
+# ( ): implement a skip function
 # ( ): implement a pause function
 
 # NICE TO HAVE FEATURES
@@ -247,29 +249,17 @@ routines = {
           Reps_Based("Reverse Step up",0,10),
           Reps_Based("Reverse Lunge Squat",0,10)],          
      'Katy Wrist Rehab P1': [Reps_Based("Wrist Extensions, Left", 6,10),
-               Time_Based("Rest",0,30),
+               Reps_Based("Wrist Extensions, Right", 6,10),
                Reps_Based("Wrist Extensions, Left", 6,10),
-               Time_Based("Rest",0,30),
+               Reps_Based("Wrist Extensions, Right", 6,10),
                Reps_Based("Wrist Extensions, Left", 6,10),
-               Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twist, Left",0,10),
-               Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twists, Left",0,10),
-               Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twists, Left",0,10),
-               Time_Based("Rest",0,30),
                Reps_Based("Wrist Extensions, Right", 6,10),
-               Time_Based("Rest",0,30),
-               Reps_Based("Wrist Extensions, Right", 6,10),
-               Time_Based("Rest",0,30),
-               Reps_Based("Wrist Extensions, Right", 6,10),
-               Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twist, Right",0,10),
-               Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twist, Right",0,10),
-               Time_Based("Rest",0,30),
-               Reps_Based("Hammer Twist, Right",0,10),
-               Time_Based("Rest",0,30)],
+               Reps_Based("Hammer Twist, Left",6,10),
+               Reps_Based("Hammer Twist, Right",6,10),
+               Reps_Based("Hammer Twists, Left",6,10),
+               Reps_Based("Hammer Twist, Right",6,10),
+               Reps_Based("Hammer Twists, Left",6,10),
+               Reps_Based("Hammer Twist, Right",6,10)],
      'MTBS Banded P0.3': [Time_Based("Plank on Elbows",0,45),
           Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
           Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
@@ -385,6 +375,7 @@ if __name__ == "__main__":
      print("[s] for scheduled")
      print("[a] for ala carte")
      scheduled_vs_ala_carte = input("select an option: ")
+
      if scheduled_vs_ala_carte == "s":
           todays_workouts = scheduled_workout()
           todays_reports = [None] * len(todays_workouts)
@@ -412,5 +403,6 @@ if __name__ == "__main__":
           todays_workout_name = routine_keys[selected_index]
           print(todays_workout_name)
           report = do_work(routines,todays_workout_name)
+    
      else:
           print ("come on, ya gotta do something today")
