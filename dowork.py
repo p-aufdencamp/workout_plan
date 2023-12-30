@@ -4,17 +4,7 @@
 # IN PROGRESS
 
 # TODO
-# (X): Update the rehab routine with katy's updated work
-#    (X): Define "Katy Daily Rehab P1" for Flexibility, Mobility, Daily Strength:
-#         (x): Ankle Dorsiflexion (60sec)
-#         (x): Plantar Fascia Mobilization (60sec)
-#         (x): Heel Raises, Crease the toes! (3x30)
-#    (X): Define "Katy Strength Work P2"
-#         ( ): Ankle Side Step (3x20)
-#         ( ): Lungey Boi (3x10)
-#         ( ): Step Up (3x12)
-#         ( ): Forward T (3x8)
-# ( ): Update weekly schedule
+# (X): Update weekly schedule
 # ( ): At the end of each exercise, show what the next exercise is so that you
 #    can get ready for it before starting the timer
 
