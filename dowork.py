@@ -4,12 +4,12 @@
 # IN PROGRESS
 
 # TODO
-# ( ): Update the rehab routine with katy's updated work
+# (X): Update the rehab routine with katy's updated work
 #    (X): Define "Katy Daily Rehab P1" for Flexibility, Mobility, Daily Strength:
 #         (x): Ankle Dorsiflexion (60sec)
 #         (x): Plantar Fascia Mobilization (60sec)
 #         (x): Heel Raises, Crease the toes! (3x30)
-#    ( ): Define "Katy Strength Work P2"
+#    (X): Define "Katy Strength Work P2"
 #         ( ): Ankle Side Step (3x20)
 #         ( ): Lungey Boi (3x10)
 #         ( ): Step Up (3x12)
@@ -242,29 +242,25 @@ routines = {
           Reps_Based("Heel Raises w/ Counter Support",0,30), 
           Time_Based("Rest",0,30), #Set 2
           Reps_Based("Heel Raises w/ Counter Support",0,30)
-          ]
+          ],
      'Katy Mobility Floor Work P2': [Time_Based("Forward Fold",0,60),
           Time_Based("Bow Stretch, Left",0,60),
           Time_Based("Bow Stretch, Right",0,60),
           Time_Based("Lying Spine Twist, Left",0,60),
           Time_Based("Lying Spine Twist, Right",0,60),
           Reps_Based("MacKenzie Extensions",0,10)],
-     'Katy Rehab P4': [
-          
-          
-          Reps_Based("Banded Side Step","vLight",20),
-          Reps_Based("4-Way Reach",0,5),
-          Reps_Based("Reverse Step up",0,10),
+     'Katy Strength Work P2': 
+          [Reps_Based("Banded Side Step","vLight",20), #Set 1
+          Reps_Based("Forward T",0,8),
+          Reps_Based("Step up",0,12),
           Reps_Based("Reverse Lunge Squat",0,10),
-          Reps_Based("Heel Raises w/ Counter Support",0,30), #Set 2
-          Reps_Based("Banded Side Step","vLight",20),
-          Reps_Based("4-Way Reach",0,5),
-          Reps_Based("Reverse Step up",0,10),
+          Reps_Based("Banded Side Step","vLight",20),#Set 2
+          Reps_Based("Forward T",0,8),
+          Reps_Based("Step up",0,12),
           Reps_Based("Reverse Lunge Squat",0,10),
-          Reps_Based("Heel Raises w/ Counter Support",0,30), #Set 3
-          Reps_Based("Banded Side Step","vLight",20),
-          Reps_Based("4-Way Reach",0,5),
-          Reps_Based("Reverse Step up",0,10),
+          Reps_Based("Banded Side Step","vLight",20), #Set 3
+          Reps_Based("Forward T",0,8),
+          Reps_Based("Step up",0,12),
           Reps_Based("Reverse Lunge Squat",0,10)],          
      'Katy Wrist Rehab P1': [Reps_Based("Wrist Extensions, Left", 6,10),
                Reps_Based("Wrist Extensions, Right", 6,10),
