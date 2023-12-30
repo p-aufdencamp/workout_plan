@@ -4,7 +4,6 @@
 # IN PROGRESS
 
 # TODO
-# (X): Update weekly schedule
 # ( ): At the end of each exercise, show what the next exercise is so that you
 #    can get ready for it before starting the timer
 
@@ -118,20 +117,14 @@ def do_work(database,workout_name):
                ready_set_go(each.name)
                count_down(each.duration, each.name)
                print(each.name)
-               print(f" [d] for done, [s] for skipped, [i] for incomplete")
-               report[index] = input()
-
+               
           elif isinstance(each,Reps_Based):
                print(f"Do a {each.name} with {each.load} pounds for "
                      f" {each.reps} reps.")
-               print(f" [d] for done, [s] for skipped, [i] for incomplete")
-               report[index] = input()
 
           elif isinstance(each,Generic):
                print(f"Do {each.name} with {each.load} according to "
                      f"{each.instructions}")
-               print(f" [d] for done, [s] for skipped, [i] for incomplete")
-               report[index] = input()
 
           elif isinstance(each,Interval):
                print(f"Get Ready for {each.name}")
@@ -151,7 +144,8 @@ def do_work(database,workout_name):
                     print(workout_text)
                     count_down(each.times[interval_index],workout_text)
                     interval_index = interval_index + 1
-
+          print(f" [d] for done, [s] for skipped, [i] for incomplete")
+          report[index] = input()
           index = index + 1
           os.system('clear')
      return report
@@ -182,15 +176,20 @@ def scheduled_workout():
      current_datetime = datetime.datetime.now()
 
      # Get the day of the week as a string
-     day_of_week_string = current_datetime.strftime('%A') #Returns "Wednesday" ie
+     day_of_week_string = current_datetime.strftime('%A') #ie "Wednesday"
 
      weekly_plan = {
           'Sunday':['Katy Daily Rehab P1'],
-          'Monday':['Katy Daily Rehab P1','Katy Mobility Floor Work P2','TR Trainer Work'],
-          'Tuesday':['Katy Daily Rehab P1','Katy Strength Work P2','Katy Wrist Rehab P1','MTBS Banded P0.3'],
-          'Wednesday':['Katy Daily Rehab P1', 'Katy Mobility Floor Work P2','TR Trainer Work'],
-          'Thursday':['Katy Daily Rehab P1', 'Katy Strength Work P2','Katy Wrist Rehab P1','MTBS Ramping Modified P0.3'],
-          'Friday':['Katy Daily Rehab P1', 'Katy Mobility Floor Work P2','TR Trainer Work'],
+          'Monday':['Katy Daily Rehab P1','Katy Mobility Floor Work P2',
+               'TR Trainer Work'],
+          'Tuesday':['Katy Daily Rehab P1','Katy Strength Work P2',
+               'Katy Wrist Rehab P1','MTBS Banded P0.3'],
+          'Wednesday':['Katy Daily Rehab P1', 'Katy Mobility Floor Work P2',
+               'TR Trainer Work'],
+          'Thursday':['Katy Daily Rehab P1', 'Katy Strength Work P2',
+               'Katy Wrist Rehab P1','MTBS Ramping Modified P0.3'],
+          'Friday':['Katy Daily Rehab P1', 'Katy Mobility Floor Work P2',
+               'TR Trainer Work'],
           'Saturday':['Katy Daily Rehab P1', 'Katy Strength Work P2']
                } 
      return weekly_plan.get(day_of_week_string, None)
@@ -373,8 +372,8 @@ if __name__ == "__main__":
 
      #index variable is used regardless of what the user selecs
      index = 0
-     # prompt the user to do what is currently scheduled vs selecting one from the 
-     # routines which are available
+     # prompt the user to do what is currently scheduled vs selecting one from 
+     # the routines which are available
      
      print("[s] for scheduled")
      print("[a] for ala carte")
