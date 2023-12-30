@@ -4,7 +4,7 @@
 # IN PROGRESS
 
 # TODO
-# ( ): At the end of each exercise, show what the next exercise is so that you
+# (X): At the end of each exercise, show what the next exercise is so that you
 #    can get ready for it before starting the timer
 
 # MVP Features:
@@ -100,54 +100,98 @@ def do_work(database,workout_name):
      # function to perform a workout routine located in the database
      os.system('clear')
      print(workout_name)
-     todays_routine = database.get(workout_name, None)
-     report = [None] * len(todays_routine)
+     active_routine = database.get(workout_name, None)
+     report = [None] * len(active_routine)
      index = 0
-     for each in todays_routine:
+     for each in active_routine:
           print(each.name)
      # eventually this user input will factor into a state machine and 
      # allows the user to go back to a previous menu, but for now 
      # it's essentially acting as a pause button
      continue_yn = input("Enter to continue with scheduled Routine")
-     for each in todays_routine:
-          if isinstance(each,Time_Based):
-               print(f"Do a {each.name} with {each.load} for "
-                     f" {each.duration} seconds.")
-               time.sleep(7)
-               ready_set_go(each.name)
-               count_down(each.duration, each.name)
-               print(each.name)
-               
-          elif isinstance(each,Reps_Based):
-               print(f"Do a {each.name} with {each.load} pounds for "
-                     f" {each.reps} reps.")
 
-          elif isinstance(each,Generic):
-               print(f"Do {each.name} with {each.load} according to "
-                     f"{each.instructions}")
+     for i in range(len(active_routine)):
+          current = active_routine[i]
+          try:
+               next = active_routine[i+1]
+               if isinstance(current,Time_Based):
+                    print(f"Do a {current.name} with {current.load} for "
+                         f" {current.duration} seconds.")
+                    time.sleep(7)
+                    ready_set_go(current.name)
+                    count_down(current.duration, current.name)
+                    print(current.name)
+                    
+               elif isinstance(current,Reps_Based):
+                    print(f"Do a {current.name} with {current.load} pounds for "
+                         f" {current.reps} reps.")
 
-          elif isinstance(each,Interval):
-               print(f"Get Ready for {each.name}")
-               # Give the user a preview of what they are going to be doing
-               interval_index = 0
-               for element in each.instructions:
-                    print(f"{each.instructions[interval_index]} @ "
-                         f"{each.load[interval_index]} for "
-                         f"{each.times[interval_index]} seconds")
-                    interval_index = interval_index + 1
-               time.sleep(7)
-               ready_set_go(each.name)
-               interval_index = 0
-               for element in each.instructions:
-                    workout_text = f"Do {each.instructions[interval_index]} @ " \
-                    f"{each.load[interval_index]} "
-                    print(workout_text)
-                    count_down(each.times[interval_index],workout_text)
-                    interval_index = interval_index + 1
-          print(f" [d] for done, [s] for skipped, [i] for incomplete")
-          report[index] = input()
-          index = index + 1
-          os.system('clear')
+               elif isinstance(current,Generic):
+                    print(f"Do {current.name} with {current.load} according to "
+                         f"{current.instructions}")
+
+               elif isinstance(current,Interval):
+                    print(f"Get Ready for {current.name}")
+                    # Give the user a preview of what they are going to be doing
+                    interval_index = 0
+                    for element in current.instructions:
+                         print(f"{current.instructions[interval_index]} @ "
+                              f"{current.load[interval_index]} for "
+                              f"{current.times[interval_index]} seconds")
+                         interval_index = interval_index + 1
+                    time.sleep(7)
+                    ready_set_go(current.name)
+                    interval_index = 0
+                    for element in current.instructions:
+                         workout_text = f"Do {current.instructions[interval_index]} @ " \
+                         f"{current.load[interval_index]} "
+                         print(workout_text)
+                         count_down(current.times[interval_index],workout_text)
+                         interval_index = interval_index + 1
+               print(f" [d] for done, [s] for skipped, [i] for incomplete")
+               report[index] = input()
+               user_ready = input(f"get ready to do {next.name}")
+               index = index + 1
+               os.system('clear')
+          except IndexError:
+               if isinstance(current,Time_Based):
+                    print(f"Do a {current.name} with {current.load} for "
+                         f" {current.duration} seconds.")
+                    time.sleep(7)
+                    ready_set_go(current.name)
+                    count_down(current.duration, current.name)
+                    print(current.name)
+                    
+               elif isinstance(current,Reps_Based):
+                    print(f"Do a {current.name} with {current.load} pounds for "
+                         f" {current.reps} reps.")
+
+               elif isinstance(current,Generic):
+                    print(f"Do {current.name} with {current.load} according to "
+                         f"{current.instructions}")
+
+               elif isinstance(current,Interval):
+                    print(f"Get Ready for {current.name}")
+                    # Give the user a preview of what they are going to be doing
+                    interval_index = 0
+                    for element in current.instructions:
+                         print(f"{current.instructions[interval_index]} @ "
+                              f"{current.load[interval_index]} for "
+                              f"{current.times[interval_index]} seconds")
+                         interval_index = interval_index + 1
+                    time.sleep(7)
+                    ready_set_go(current.name)
+                    interval_index = 0
+                    for element in current.instructions:
+                         workout_text = f"Do {current.instructions[interval_index]} @ " \
+                         f"{current.load[interval_index]} "
+                         print(workout_text)
+                         count_down(current.times[interval_index],workout_text)
+                         interval_index = interval_index + 1
+               print(f" [d] for done, [s] for skipped, [i] for incomplete")
+               report[index] = input()
+               index = index + 1
+               os.system('clear')
      return report
 
 # define a function play a tone of arbitrary frequency (Hz) and duration (sec)
