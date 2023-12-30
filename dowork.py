@@ -4,8 +4,17 @@
 # IN PROGRESS
 
 # TODO
-# (X): interleaf the L/R reps for the wrist stability rehab routine instead of 
-#    doing all lefts and then all rights
+# ( ): Update the rehab routine with katy's updated work
+#    (X): Define "Katy Daily Rehab P1" for Flexibility, Mobility, Daily Strength:
+#         (x): Ankle Dorsiflexion (60sec)
+#         (x): Plantar Fascia Mobilization (60sec)
+#         (x): Heel Raises, Crease the toes! (3x30)
+#    ( ): Define "Katy Strength Work P2"
+#         ( ): Ankle Side Step (3x20)
+#         ( ): Lungey Boi (3x10)
+#         ( ): Step Up (3x12)
+#         ( ): Forward T (3x8)
+# ( ): Update weekly schedule
 # ( ): At the end of each exercise, show what the next exercise is so that you
 #    can get ready for it before starting the timer
 
@@ -186,13 +195,13 @@ def scheduled_workout():
      day_of_week_string = current_datetime.strftime('%A') #Returns "Wednesday" ie
 
      weekly_plan = {
-          'Sunday':[],
-          'Monday':['Katy Mobility Floor Work P2','TR Trainer Work'],
-          'Tuesday':['Katy Rehab P4','Katy Wrist Rehab P1','MTBS Banded P0.3'],
-          'Wednesday':['Katy Mobility Floor Work P2','TR Trainer Work'],
-          'Thursday':['Katy Rehab P4','Katy Wrist Rehab P1','MTBS Ramping Modified P0.3'],
-          'Friday':['Katy Mobility Floor Work P2','TR Trainer Work'],
-          'Saturday':['Katy Rehab P4']
+          'Sunday':['Katy Daily Rehab P1'],
+          'Monday':['Katy Daily Rehab P1','Katy Mobility Floor Work P2','TR Trainer Work'],
+          'Tuesday':['Katy Daily Rehab P1','Katy Strength Work P2','Katy Wrist Rehab P1','MTBS Banded P0.3'],
+          'Wednesday':['Katy Daily Rehab P1', 'Katy Mobility Floor Work P2','TR Trainer Work'],
+          'Thursday':['Katy Daily Rehab P1', 'Katy Strength Work P2','Katy Wrist Rehab P1','MTBS Ramping Modified P0.3'],
+          'Friday':['Katy Daily Rehab P1', 'Katy Mobility Floor Work P2','TR Trainer Work'],
+          'Saturday':['Katy Daily Rehab P1', 'Katy Strength Work P2']
                } 
      return weekly_plan.get(day_of_week_string, None)
     
@@ -225,15 +234,24 @@ routines = {
           Reps_Based("Seal Walk",0,10),
           Reps_Based("Seal Walk",0,10),
           Time_Based("Rear Facing Wrist Hold",0,5)],
+     'Katy Daily Rehab P1':
+          [Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
+          Time_Based("Plantar Fascia Mobilization",0,60),
+          Reps_Based("Heel Raises w/ Counter Support",0,30), 
+          Time_Based("Rest",0,30), #Set 1
+          Reps_Based("Heel Raises w/ Counter Support",0,30), 
+          Time_Based("Rest",0,30), #Set 2
+          Reps_Based("Heel Raises w/ Counter Support",0,30)
+          ]
      'Katy Mobility Floor Work P2': [Time_Based("Forward Fold",0,60),
           Time_Based("Bow Stretch, Left",0,60),
           Time_Based("Bow Stretch, Right",0,60),
           Time_Based("Lying Spine Twist, Left",0,60),
           Time_Based("Lying Spine Twist, Right",0,60),
           Reps_Based("MacKenzie Extensions",0,10)],
-     'Katy Rehab P4': [Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
-          Time_Based("Plantar Fascia Mobilization",0,60),
-          Reps_Based("Heel Raises w/ Counter Support",0,30), #Set 1
+     'Katy Rehab P4': [
+          
+          
           Reps_Based("Banded Side Step","vLight",20),
           Reps_Based("4-Way Reach",0,5),
           Reps_Based("Reverse Step up",0,10),
