@@ -4,12 +4,14 @@
 # IN PROGRESS
 
 # TODO
-# (X): At the end of each exercise, show what the next exercise is so that you
-#    can get ready for it before starting the timer
 
 # MVP Features:
 # ( ): implement a skip function
 # ( ): implement a pause function
+# ( ): really need a phase type thing so I can divorce the weekly plan
+#     from the details of each routine. Something like "MWF do strength",
+#    and then have some lookup table or something to figure out "well, what
+#    strength workout is most appropriate for today"
 
 # NICE TO HAVE FEATURES
 # ( ): If there isn't a scheduled workout on the weekly plan, give the user a 
@@ -46,8 +48,6 @@
 # ( ): ala carte workout runthrough, Generic
 # ( ): ala carte workout runthrough, Interval
 
-
-
 # import from big python libraries
 import datetime
 import os
@@ -67,10 +67,6 @@ from exercise import Generic
 from exercise import Interval
 from exercise import Reps_Based
 from exercise import Time_Based
-
-# set the path to FFmpeg executable -> this may not actually be needed, will try 
-# deleting it later
-pydub.AudioSegment.converter = "/usr/local/bin/ffmpeg"
 
 # waits the duration of the time, then 
 # counts down via 3-2-1 again
@@ -143,7 +139,8 @@ def do_work(database,workout_name):
                     ready_set_go(current.name)
                     interval_index = 0
                     for element in current.instructions:
-                         workout_text = f"Do {current.instructions[interval_index]} @ " \
+                         workout_text = f"Do " \
+                         f"{current.instructions[interval_index]} @ " \
                          f"{current.load[interval_index]} "
                          print(workout_text)
                          count_down(current.times[interval_index],workout_text)
@@ -183,7 +180,8 @@ def do_work(database,workout_name):
                     ready_set_go(current.name)
                     interval_index = 0
                     for element in current.instructions:
-                         workout_text = f"Do {current.instructions[interval_index]} @ " \
+                         workout_text = f"Do " \ 
+                         f"{current.instructions[interval_index]} @ " \
                          f"{current.load[interval_index]} "
                          print(workout_text)
                          count_down(current.times[interval_index],workout_text)
@@ -405,7 +403,8 @@ routines = {
                                     Reps_Based("Rib Pull, Right","BW",5),
           Reps_Based("Half Kneeling T Spine Twist","BW",5),
           Reps_Based("Half Kneeling T Spine Twist, Right","BW",5)],     
-     'TR Trainer Work': [Generic("Trainer Road Workout","Bike","Open the TR Apo")]
+     'TR Trainer Work': [Generic("Trainer Road Workout","Bike",
+          "Open the TR App")]
 }
 
 # Where the magic happens

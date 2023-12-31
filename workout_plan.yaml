@@ -744,6 +744,6 @@ MTBS Shoulder Mobility:
   reps: 5
 TR Trainer Work:
 - !!python/object:exercise.Generic
-  instructions: Open the TR Apo
+  instructions: Open the TR App
   load: Bike
   name: Trainer Road Workout
