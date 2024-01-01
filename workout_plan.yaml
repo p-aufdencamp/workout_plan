@@ -214,21 +214,36 @@ Katy Wrist Rehab P1:
   reps: 10
 - !!python/object:exercise.Reps_Based
   load: 6
+<<<<<<< HEAD
   name: Wrist Extensions, Right
+=======
+  name: Wrist Extensions, Left
+>>>>>>> 9226ab2 (commiting local changes to update main branch)
   reps: 10
 - !!python/object:exercise.Reps_Based
   load: 6
   name: Wrist Extensions, Left
   reps: 10
 - !!python/object:exercise.Reps_Based
+<<<<<<< HEAD
   load: 6
   name: Wrist Extensions, Right
+=======
+  load: 0
+  name: Hammer Twist, Left
+>>>>>>> 9226ab2 (commiting local changes to update main branch)
   reps: 10
 - !!python/object:exercise.Reps_Based
+<<<<<<< HEAD
   load: 6
   name: Wrist Extensions, Left
+=======
+  load: 0
+  name: Hammer Twists, Left
+>>>>>>> 9226ab2 (commiting local changes to update main branch)
   reps: 10
 - !!python/object:exercise.Reps_Based
+<<<<<<< HEAD
   load: 6
   name: Wrist Extensions, Right
   reps: 10
@@ -255,7 +270,63 @@ Katy Wrist Rehab P1:
 - !!python/object:exercise.Reps_Based
   load: 6
   name: Hammer Twist, Right
+=======
+  load: 0
+  name: Hammer Twists, Left
+>>>>>>> 9226ab2 (commiting local changes to update main branch)
   reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Wrist Extensions, Right
+  reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Wrist Extensions, Right
+  reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Wrist Extensions, Right
+  reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Hammer Twist, Right
+  reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Hammer Twist, Right
+  reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Hammer Twist, Right
+  reps: 10
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
 MTBS Banded P0.3:
 - !!python/object:exercise.Time_Based
   duration: 45
