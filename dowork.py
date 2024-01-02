@@ -3,15 +3,57 @@
 # Dev List
 # IN PROGRESS
 
+# Problem Statement:
+# When i recieve a new workout routine from Katy, I need to update it in N places
+#    1. Add it to the routine data base, at times changing around the contents 
+#    of each routine because there are exercises I do 7x a week and others I do
+#    3x a week.
+#    2. the weekly schedule. Really I could stop doing this by not including the 
+#    phase name in the weekly schedule. Yea I think i'll do that. 
+
+
+# Feature branch description
+# Function of this branch is to figure out how to leave the weekly schedule 
+# alone, and then change what it's pointing to. The weekly schedule right now 
+# is basically:
+#    Saturday: 
+#         1. Mobility: Ankle Rehab 
+#         2. Strength: Rehab Strength
+#         3. Cardio: None
+#    Sunday:
+#         1. Rehab Mobility
+#    Monday:
+#         1. Rehab Mobility
+#         2. 
+#    Monday: Mobility + TR
+#    Tuesday: Mobility + Strength A
+#    Wednesday: Mobility + TR... etc etc
+# then we have another function or lookup table or something which determines
+# what the appropriate "Strength A" (for example) is based on calendar days 
+
+
+# Design Doc
+# Gonna make it so that the weekly schedule doesn't have to change by deleting 
+# references to phases in the weekly schedule. I'll at some point include phase 
+# to phase changes in some other functionality somewhere. 
+
 # TODO
+# Remove Phase elements from the weekly schedule
+# (X): Define the following routines
+#    (X): Rehab Mobility
+#    (X): Mobility A
+#    (X): Rehab Strength
+#    (X): Wrist Strength
+#    (X): Banded Iso Strength
+#    (X): Ramping Iso Strength
+# ( ): Good news we can store each category of workout such as Rehab Mobility,
+#    Mobility A, etc. This way we can use the commit history on the invidual 
+#    files as a record of the workout progress and change over time
 
 # MVP Features:
 # ( ): implement a skip function
 # ( ): implement a pause function
-# ( ): really need a phase type thing so I can divorce the weekly plan
-#     from the details of each routine. Something like "MWF do strength",
-#    and then have some lookup table or something to figure out "well, what
-#    strength workout is most appropriate for today"
+
 
 # NICE TO HAVE FEATURES
 # ( ): If there isn't a scheduled workout on the weekly plan, give the user a 
@@ -29,6 +71,7 @@
 # ( ): print post workout feedback based on the report 
 
 # GLORIOUS FUTURE
+# ( ): Automated pre-commit testing
 # ( ): Build a "textual" UI
 # ( ): Divorce the front end UI from the "business logic"
 # ( ): Add some functionality for different users and/or profiles
@@ -221,6 +264,18 @@ def scheduled_workout():
      day_of_week_string = current_datetime.strftime('%A') #ie "Wednesday"
 
      weekly_plan = {
+          'Saturday': ['Rehab Mobility','Rehab Leg Strength'],
+          'Sunday': ['Rehab Mobility'],
+          'Monday': ['Rehab Mobility','Mobility A','TR Trainer Work'],
+          'Tuesday': ['Rehab Mobility','Rehab Leg Strength','Wrist Strength', 
+               'Banded Iso Strength'],
+          'Wednesday': ['Rehab Mobility','Mobility A','TR Trainer Work'],
+          'Thursday': ['Rehab Mobility','Rehab Leg Strength', 'Wrist Strength', 
+               'Ramping Iso Strength'],
+          'Friday': ['Rehab Mobility','Mobility A','TR Trainer Work']
+     }
+
+     old_weekly_plan = {
           'Sunday':['Katy Daily Rehab P1'],
           'Monday':['Katy Daily Rehab P1','Katy Mobility Floor Work P2',
                'TR Trainer Work'],
@@ -239,19 +294,8 @@ def scheduled_workout():
 # define the routines we want to do, put them in a dictionary
 # Routines are named according to the following convention
 routines = {
-     'GMB Wrist P1': [Time_Based("Wrist Circles, CW",0,30),
-          Time_Based("Wrist Circles, CCW",0,30),
-          Time_Based("Backwards Wrist Stretch",0,20),
-          Time_Based("Backwards Wrist Stretch",0,20),
-          Time_Based("Forward Wrist Stretch",0,20),
-          Time_Based("Forward Wrist Stretch",0,20),
-          Time_Based("Heel Palm Up, Side to Side",0,15),
-          Time_Based("Wrist Shakes",0,25),
-          Time_Based("Wrist Pulses",0,20),
-          Reps_Based("Back of Wrist Extension",0,10),
-          Reps_Based("Back of Wrist Extension",0,10),
-          Time_Based("Rear Facing Wrist Hold",0,5)],
-     'GMB Wrist P2': [Time_Based("Wrist Circles, CW",0,30),
+     'GMB Wrist': 
+          [Time_Based("Wrist Circles, CW",0,30),
           Time_Based("Wrist Circles, CCW",0,30),
           Time_Based("Backwards Wrist Stretch",0,20),
           Time_Based("Backwards Wrist Stretch",0,20),
@@ -265,7 +309,7 @@ routines = {
           Reps_Based("Seal Walk",0,10),
           Reps_Based("Seal Walk",0,10),
           Time_Based("Rear Facing Wrist Hold",0,5)],
-     'Katy Daily Rehab P1':
+     'Rehab Mobility':
           [Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
           Time_Based("Plantar Fascia Mobilization",0,60),
           Reps_Based("Heel Raises w/ Counter Support",0,30), 
@@ -274,13 +318,14 @@ routines = {
           Time_Based("Rest",0,30), #Set 2
           Reps_Based("Heel Raises w/ Counter Support",0,30)
           ],
-     'Katy Mobility Floor Work P2': [Time_Based("Forward Fold",0,60),
+     'Mobility A': 
+          [Time_Based("Forward Fold",0,60),
           Time_Based("Bow Stretch, Left",0,60),
           Time_Based("Bow Stretch, Right",0,60),
           Time_Based("Lying Spine Twist, Left",0,60),
           Time_Based("Lying Spine Twist, Right",0,60),
           Reps_Based("MacKenzie Extensions",0,10)],
-     'Katy Strength Work P2': 
+     'Rehab Strength': 
           [Reps_Based("Banded Side Step","vLight",20), #Set 1
           Reps_Based("Forward T",0,8),
           Reps_Based("Step up",0,12),
@@ -293,19 +338,21 @@ routines = {
           Reps_Based("Forward T",0,8),
           Reps_Based("Step up",0,12),
           Reps_Based("Reverse Lunge Squat",0,10)],          
-     'Katy Wrist Rehab P1': [Reps_Based("Wrist Extensions, Left", 6,10),
-               Reps_Based("Wrist Extensions, Right", 6,10),
-               Reps_Based("Wrist Extensions, Left", 6,10),
-               Reps_Based("Wrist Extensions, Right", 6,10),
-               Reps_Based("Wrist Extensions, Left", 6,10),
-               Reps_Based("Wrist Extensions, Right", 6,10),
-               Reps_Based("Hammer Twist, Left",6,10),
-               Reps_Based("Hammer Twist, Right",6,10),
-               Reps_Based("Hammer Twists, Left",6,10),
-               Reps_Based("Hammer Twist, Right",6,10),
-               Reps_Based("Hammer Twists, Left",6,10),
-               Reps_Based("Hammer Twist, Right",6,10)],
-     'MTBS Banded P0.3': [Time_Based("Plank on Elbows",0,45),
+     'Wrist Strength': 
+          [Reps_Based("Wrist Extensions, Left", 6,10),
+          Reps_Based("Wrist Extensions, Right", 6,10),
+          Reps_Based("Wrist Extensions, Left", 6,10),
+          Reps_Based("Wrist Extensions, Right", 6,10),
+          Reps_Based("Wrist Extensions, Left", 6,10),
+          Reps_Based("Wrist Extensions, Right", 6,10),
+          Reps_Based("Hammer Twist, Left",6,10),
+          Reps_Based("Hammer Twist, Right",6,10),
+          Reps_Based("Hammer Twists, Left",6,10),
+          Reps_Based("Hammer Twist, Right",6,10),
+          Reps_Based("Hammer Twists, Left",6,10),
+          Reps_Based("Hammer Twist, Right",6,10)],
+     'Banded Iso Strength': 
+          [Time_Based("Plank on Elbows",0,45),
           Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
           Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
           Time_Based("Banded Bridge","Medium Band",45),
@@ -349,7 +396,7 @@ routines = {
                     Reps_Based("Active Leg Lower, Right","Body Weight",5),
                     Reps_Based("Toe Touch, Raised Heels","Body Weight",10),
                     Reps_Based("Toe Touch, Raised Toes","Body Weight",10)],
-     'MTBS Ramping Modified P0.3': [Time_Based("Plank on Elbows",0,45),
+     'Ramping Iso Strength': [Time_Based("Plank on Elbows",0,45),
           Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
           Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
           Interval("Iso Bridge",["Press", "Press", "Press"],
