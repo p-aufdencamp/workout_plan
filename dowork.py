@@ -223,7 +223,7 @@ def do_work(database,workout_name):
                     ready_set_go(current.name)
                     interval_index = 0
                     for element in current.instructions:
-                         workout_text = f"Do " \ 
+                         workout_text = f"Do " \
                          f"{current.instructions[interval_index]} @ " \
                          f"{current.load[interval_index]} "
                          print(workout_text)
