@@ -4,6 +4,10 @@
 # IN PROGRESS
 
 # TODO
+# ( ): Change planks to pushups
+# ( ): Add rest intervals to the wrist rehab routine
+# ( ): Add clamshells to daily mobility work
+# ( ): reduce side planks to 20 sec
 
 # MVP Features:
 # ( ): implement a skip function
@@ -180,7 +184,7 @@ def do_work(database,workout_name):
                     ready_set_go(current.name)
                     interval_index = 0
                     for element in current.instructions:
-                         workout_text = f"Do " \ 
+                         workout_text = f"Do " \
                          f"{current.instructions[interval_index]} @ " \
                          f"{current.load[interval_index]} "
                          print(workout_text)
