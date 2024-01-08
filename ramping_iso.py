@@ -28,5 +28,5 @@ ramping_iso_routine = [Time_Based("Plank on Elbows",0,45),
                          ["50%","80%","110%"],[20,10,5]),
           Interval("Iso Row",["Press", "Press", "Press"],
                          ["50%","80%","110%"],[20,10,5]),
-          Time_Based("Left Plank","Body Weight",45),
-          Time_Based("Right Plank","Body Weight",45)]
+          Time_Based("Left Plank","Body Weight",20),
+          Time_Based("Right Plank","Body Weight",20)]
