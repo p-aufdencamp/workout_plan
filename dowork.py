@@ -38,17 +38,7 @@
 # to phase changes in some other functionality somewhere. 
 
 # TODO
-# Remove Phase elements from the weekly schedule
-# (X): Define the following routines
-#    (X): Rehab Mobility
-#    (X): Mobility A
-#    (X): Rehab Strength
-#    (X): Wrist Strength
-#    (X): Banded Iso Strength
-#    (X): Ramping Iso Strength
-# (X): Good news we can store each category of workout such as Rehab Mobility,
-#    Mobility A, etc. This way we can use the commit history on the invidual 
-#    files as a record of the workout progress and change over time
+
 
 # MVP Features:
 # ( ): implement a skip function
