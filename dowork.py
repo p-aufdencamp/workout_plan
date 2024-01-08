@@ -4,9 +4,6 @@
 # IN PROGRESS
 
 # TODO
-# ( ): Add rest intervals to the wrist rehab routine
-# (X): reduce side planks to 20 sec
-
 
 # MVP Features:
 # ( ): implement a skip function
