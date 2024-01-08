@@ -13,9 +13,8 @@ from exercise import Time_Based
 
 rehab_mobility_routine = [Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
           Time_Based("Plantar Fascia Mobilization",0,60),
-          Reps_Based("Heel Raises w/ Counter Support",0,30), 
+          Reps_Based("Single Leg Assisted Heel Raises",0,10), 
           Time_Based("Rest",0,30), #Set 1
-          Reps_Based("Heel Raises w/ Counter Support",0,30), 
-          Time_Based("Rest",0,30), #Set 2
-          Reps_Based("Heel Raises w/ Counter Support",0,30)
+          Reps_Based("Single Leg Assisted Heel Raises",0,10), 
+          Time_Based("Rest",0,30) #Set 2
           ]
