@@ -5,7 +5,7 @@
 
 # TODO
 # ( ): Add rest intervals to the wrist rehab routine
-# ( ): reduce side planks to 20 sec
+# (X): reduce side planks to 20 sec
 
 
 # MVP Features:
