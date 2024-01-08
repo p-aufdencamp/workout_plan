@@ -12,15 +12,18 @@ from exercise import Reps_Based
 from exercise import Time_Based
 
 rehab_strength_routine = [
-          Reps_Based("Banded Side Step","vLight",20), #Set 1
-          Reps_Based("Forward T",0,8),
-          Reps_Based("Step up",0,12),
-          Reps_Based("Reverse Lunge Squat",0,10),
-          Reps_Based("Banded Side Step","vLight",20),#Set 2
-          Reps_Based("Forward T",0,8),
-          Reps_Based("Step up",0,12),
-          Reps_Based("Reverse Lunge Squat",0,10),
-          Reps_Based("Banded Side Step","vLight",20), #Set 3
-          Reps_Based("Forward T",0,8),
-          Reps_Based("Step up",0,12),
-          Reps_Based("Reverse Lunge Squat",0,10)]
+        Reps_Based("Half Deadlift w/ Stick","0",15), #Set 1
+        Reps_Based("Forward T",0,8),
+        Reps_Based("Lunge",0,10),
+        Reps_Based("Lateral Step Down",0,10),
+
+        Reps_Based("Half Deadlift w/ Stick","0",15),#Set 2
+        Reps_Based("Forward T",0,8),
+        Reps_Based("Lunge",0,10),
+        Reps_Based("Lateral Step Down",0,10),
+        
+        Reps_Based("Half Deadlift w/ Stick","0",15), #Set 3
+        Reps_Based("Forward T",0,8),
+        Reps_Based("Lunge",0,10),
+        Reps_Based("Lateral Step Down",0,10)
+        ]
