@@ -1,262 +1,4 @@
-GMB Wrist P1:
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Wrist Circles, CW
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Wrist Circles, CCW
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Backwards Wrist Stretch
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Backwards Wrist Stretch
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Forward Wrist Stretch
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Forward Wrist Stretch
-- !!python/object:exercise.Time_Based
-  duration: 15
-  load: 0
-  name: Heel Palm Up, Side to Side
-- !!python/object:exercise.Time_Based
-  duration: 25
-  load: 0
-  name: Wrist Shakes
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Wrist Pulses
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Back of Wrist Extension
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Back of Wrist Extension
-  reps: 10
-- !!python/object:exercise.Time_Based
-  duration: 5
-  load: 0
-  name: Rear Facing Wrist Hold
-GMB Wrist P2:
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Wrist Circles, CW
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Wrist Circles, CCW
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Backwards Wrist Stretch
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Backwards Wrist Stretch
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Forward Wrist Stretch
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Forward Wrist Stretch
-- !!python/object:exercise.Time_Based
-  duration: 15
-  load: 0
-  name: Heel Palm Up, Side to Side
-- !!python/object:exercise.Time_Based
-  duration: 25
-  load: 0
-  name: Wrist Shakes
-- !!python/object:exercise.Time_Based
-  duration: 20
-  load: 0
-  name: Wrist Pulses
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Back of Wrist Extension
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Back of Wrist Extension
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Seal Walk
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Seal Walk
-  reps: 10
-- !!python/object:exercise.Time_Based
-  duration: 5
-  load: 0
-  name: Rear Facing Wrist Hold
-Katy Daily Rehab P1:
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Elevated Ankle Dorsiflexion, Right
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Plantar Fascia Mobilization
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Heel Raises w/ Counter Support
-  reps: 30
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Rest
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Heel Raises w/ Counter Support
-  reps: 30
-- !!python/object:exercise.Time_Based
-  duration: 30
-  load: 0
-  name: Rest
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Heel Raises w/ Counter Support
-  reps: 30
-Katy Mobility Floor Work P2:
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Forward Fold
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Bow Stretch, Left
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Bow Stretch, Right
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Lying Spine Twist, Left
-- !!python/object:exercise.Time_Based
-  duration: 60
-  load: 0
-  name: Lying Spine Twist, Right
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: MacKenzie Extensions
-  reps: 10
-Katy Strength Work P2:
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Side Step
-  reps: 20
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Forward T
-  reps: 8
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Step up
-  reps: 12
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Reverse Lunge Squat
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Side Step
-  reps: 20
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Forward T
-  reps: 8
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Step up
-  reps: 12
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Reverse Lunge Squat
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: vLight
-  name: Banded Side Step
-  reps: 20
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Forward T
-  reps: 8
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Step up
-  reps: 12
-- !!python/object:exercise.Reps_Based
-  load: 0
-  name: Reverse Lunge Squat
-  reps: 10
-Katy Wrist Rehab P1:
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Wrist Extensions, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Wrist Extensions, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Wrist Extensions, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Wrist Extensions, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Wrist Extensions, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Wrist Extensions, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Hammer Twist, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Hammer Twist, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Hammer Twists, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Hammer Twist, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Hammer Twists, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: 6
-  name: Hammer Twist, Right
-  reps: 10
-MTBS Banded P0.3:
+Banded Iso Strength:
 - !!python/object:exercise.Time_Based
   duration: 45
   load: 0
@@ -305,129 +47,32 @@ MTBS Banded P0.3:
   duration: 45
   load: Body Weight
   name: Right Plank
-MTBS Banded P1:
+Mobility A:
 - !!python/object:exercise.Time_Based
-  duration: 45
-  load: Bodyweight
-  name: Plank
-- !!python/object:exercise.Reps_Based
-  load: Bodyweight
-  name: Lying Side Leg Raise, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: Bodyweight
-  name: Lying Side Leg Leg, Right
-  reps: 10
+  duration: 60
+  load: 0
+  name: Forward Fold
 - !!python/object:exercise.Time_Based
-  duration: 45
-  load: Medium Band
-  name: Banded Bridge
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Light Band
-  name: Banded Narrow Knees
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Light Band
-  name: Banded Back Neck
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Light Band
-  name: Banded Back Neck Hold
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Light Band
-  name: Banded Front Raise
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Medium Heavy Band
-  name: Banded Deadlift
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Medium Heavy Band
-  name: Banded Chest Press
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Body Weight
-  name: Banded Squat
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Medium Heavy Band
-  name: Banded Row
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Body Weight
-  name: Left Plank
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Body Weight
-  name: Right Plank
-MTBS Hip Mobility:
-- !!python/object:exercise.Generic
-  instructions: See App
-  load: Theragun
-  name: Cycling Recovery
-- !!python/object:exercise.Generic
-  instructions: See App
-  load: Theragun
-  name: Glutes
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Frog Stretch
-  reps: 8
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Kneeling Lunge Stretch, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Kneeling Lunge Stretch, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Childs Pose to Up Dog
-  reps: 5
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Hamstring Stretch, Center->Cross->Out, Left
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Hamstring Stretch, Center->Cross->Out, Right
-  reps: 10
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
+  duration: 60
+  load: 0
   name: Bow Stretch, Left
-  reps: 5
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
+- !!python/object:exercise.Time_Based
+  duration: 60
+  load: 0
   name: Bow Stretch, Right
-  reps: 5
+- !!python/object:exercise.Time_Based
+  duration: 60
+  load: 0
+  name: Lying Spine Twist, Left
+- !!python/object:exercise.Time_Based
+  duration: 60
+  load: 0
+  name: Lying Spine Twist, Right
 - !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Seated Windshield Wiper, Left
-  reps: 5
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Seated Windshield Wiper, Right
-  reps: 5
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Active Leg Lower, Left
-  reps: 5
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Active Leg Lower, Right
-  reps: 5
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Toe Touch, Raised Heels
+  load: 0
+  name: MacKenzie Extensions
   reps: 10
-- !!python/object:exercise.Reps_Based
-  load: Body Weight
-  name: Toe Touch, Raised Toes
-  reps: 10
-MTBS Ramping Modified P0.3:
+Ramping Iso Strength:
 - !!python/object:exercise.Time_Based
   duration: 45
   load: 0
@@ -546,204 +191,130 @@ MTBS Ramping Modified P0.3:
   duration: 45
   load: Body Weight
   name: Right Plank
-MTBS Ramping P1:
+Rehab Mobility:
 - !!python/object:exercise.Time_Based
-  duration: 45
-  load: Bodyweight
-  name: Plank
+  duration: 60
+  load: 0
+  name: Elevated Ankle Dorsiflexion, Right
+- !!python/object:exercise.Time_Based
+  duration: 60
+  load: 0
+  name: Plantar Fascia Mobilization
 - !!python/object:exercise.Reps_Based
-  load: Bodyweight
-  name: Lying Side Leg Raise, Left
+  load: 0
+  name: Heel Raises w/ Counter Support
+  reps: 30
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Heel Raises w/ Counter Support
+  reps: 30
+- !!python/object:exercise.Time_Based
+  duration: 30
+  load: 0
+  name: Rest
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Heel Raises w/ Counter Support
+  reps: 30
+Rehab Strength:
+- !!python/object:exercise.Reps_Based
+  load: vLight
+  name: Banded Side Step
+  reps: 20
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Forward T
+  reps: 8
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Step up
+  reps: 12
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Reverse Lunge Squat
   reps: 10
 - !!python/object:exercise.Reps_Based
-  load: Bodyweight
-  name: Lying Side Leg Leg, Right
+  load: vLight
+  name: Banded Side Step
+  reps: 20
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Forward T
+  reps: 8
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Step up
+  reps: 12
+- !!python/object:exercise.Reps_Based
+  load: 0
+  name: Reverse Lunge Squat
   reps: 10
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Bridge
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Narrow Knees
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Neck Triceps Extension
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Butterfly Crunch
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Front Raise
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Deadlift
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Chest Press
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Squat
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Interval
-  instructions:
-  - Press
-  - Press
-  - Press
-  load:
-  - 50%
-  - 80%
-  - 110%
-  name: Iso Row
-  times:
-  - 20
-  - 10
-  - 5
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Body Weight
-  name: Left Plank
-- !!python/object:exercise.Time_Based
-  duration: 45
-  load: Body Weight
-  name: Right Plank
-MTBS Shoulder Mobility:
-- !!python/object:exercise.Generic
-  instructions: See App
-  load: Theragun
-  name: Shoulders
-- !!python/object:exercise.Generic
-  instructions: See App
-  load: Theragun
-  name: Triceps
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Hold the Wall, Left
-  reps: 5
+  load: vLight
+  name: Banded Side Step
+  reps: 20
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Hold the Wall, Right
-  reps: 5
+  load: 0
+  name: Forward T
+  reps: 8
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Overhead Shoulder, Left
-  reps: 5
+  load: 0
+  name: Step up
+  reps: 12
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Overhead Shoulder, Right
-  reps: 5
+  load: 0
+  name: Reverse Lunge Squat
+  reps: 10
+Wrist Strength:
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Lats Stretch, Left
-  reps: 5
+  load: 6
+  name: Wrist Extensions, Left
+  reps: 10
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Last Stretch, Right
-  reps: 5
+  load: 6
+  name: Wrist Extensions, Right
+  reps: 10
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Rib Pull, Left
-  reps: 5
+  load: 6
+  name: Wrist Extensions, Left
+  reps: 10
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Rib Pull, Right
-  reps: 5
+  load: 6
+  name: Wrist Extensions, Right
+  reps: 10
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Half Kneeling T Spine Twist
-  reps: 5
+  load: 6
+  name: Wrist Extensions, Left
+  reps: 10
 - !!python/object:exercise.Reps_Based
-  load: BW
-  name: Half Kneeling T Spine Twist, Right
-  reps: 5
-TR Trainer Work:
-- !!python/object:exercise.Generic
-  instructions: Open the TR App
-  load: Bike
-  name: Trainer Road Workout
+  load: 6
+  name: Wrist Extensions, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Hammer Twist, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Hammer Twist, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Hammer Twists, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Hammer Twist, Right
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Hammer Twists, Left
+  reps: 10
+- !!python/object:exercise.Reps_Based
+  load: 6
+  name: Hammer Twist, Right
+  reps: 10
