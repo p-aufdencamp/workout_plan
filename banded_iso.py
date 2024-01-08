@@ -21,5 +21,5 @@ banded_iso_routine = [Time_Based("Plank on Elbows",0,45),
           Time_Based("Banded Front Raise","Light Band",45),
           Time_Based("Banded Chest Press","Medium Heavy Band",45),
           Time_Based("Banded Row","Medium Heavy Band",45),
-          Time_Based("Left Plank","Body Weight",45),
-          Time_Based("Right Plank","Body Weight",45)]
+          Time_Based("Left Plank","Body Weight",20),
+          Time_Based("Right Plank","Body Weight",20)]

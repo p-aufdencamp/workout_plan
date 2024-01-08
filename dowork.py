@@ -3,44 +3,8 @@
 # Dev List
 # IN PROGRESS
 
-# Problem Statement:
-# When i recieve a new workout routine from Katy, I need to update it in N places
-#    1. Add it to the routine data base, at times changing around the contents 
-#    of each routine because there are exercises I do 7x a week and others I do
-#    3x a week.
-#    2. the weekly schedule. Really I could stop doing this by not including the 
-#    phase name in the weekly schedule. Yea I think i'll do that. 
-
-
-# Feature branch description
-# Function of this branch is to figure out how to leave the weekly schedule 
-# alone, and then change what it's pointing to. The weekly schedule right now 
-# is basically:
-#    Saturday: 
-#         1. Mobility: Ankle Rehab 
-#         2. Strength: Rehab Strength
-#         3. Cardio: None
-#    Sunday:
-#         1. Rehab Mobility
-#    Monday:
-#         1. Rehab Mobility
-#         2. 
-#    Monday: Mobility + TR
-#    Tuesday: Mobility + Strength A
-#    Wednesday: Mobility + TR... etc etc
-# then we have another function or lookup table or something which determines
-# what the appropriate "Strength A" (for example) is based on calendar days 
-
-
-# Design Doc
-# Gonna make it so that the weekly schedule doesn't have to change by deleting 
-# references to phases in the weekly schedule. I'll at some point include phase 
-# to phase changes in some other functionality somewhere. 
-
 # TODO
-# ( ): Change planks to pushups
 # ( ): Add rest intervals to the wrist rehab routine
-# ( ): Add clamshells to daily mobility work
 # ( ): reduce side planks to 20 sec
 
 
