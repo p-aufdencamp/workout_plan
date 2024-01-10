@@ -218,8 +218,8 @@ Rehab Mobility:
   name: Rest
 Rehab Strength:
 - !!python/object:exercise.Reps_Based
-  load: '0'
-  name: Half Deadlift w/ Stick
+  load: 25
+  name: Half Deadlift w/ Kettlebell
   reps: 15
 - !!python/object:exercise.Reps_Based
   load: 0

@@ -227,13 +227,13 @@ def scheduled_workout():
      day_of_week_string = current_datetime.strftime('%A') #ie "Wednesday"
 
      weekly_plan = {
-          'Saturday': ['Rehab Mobility','Rehab Leg Strength'],
+          'Saturday': ['Rehab Mobility','Rehab Strength'],
           'Sunday': ['Rehab Mobility'],
           'Monday': ['Rehab Mobility','Mobility A','TR Trainer Work'],
-          'Tuesday': ['Rehab Mobility','Rehab Leg Strength','Wrist Strength', 
+          'Tuesday': ['Rehab Mobility','Rehab Strength','Wrist Strength', 
                'Banded Iso Strength'],
           'Wednesday': ['Rehab Mobility','Mobility A','TR Trainer Work'],
-          'Thursday': ['Rehab Mobility','Rehab Leg Strength', 'Wrist Strength', 
+          'Thursday': ['Rehab Mobility','Rehab Strength', 'Wrist Strength', 
                'Ramping Iso Strength'],
           'Friday': ['Rehab Mobility','Mobility A','TR Trainer Work']
      }

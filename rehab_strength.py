@@ -12,7 +12,7 @@ from exercise import Reps_Based
 from exercise import Time_Based
 
 rehab_strength_routine = [
-        Reps_Based("Half Deadlift w/ Stick","0",15), #Set 1
+        Reps_Based("Half Deadlift w/ Kettlebell",25,15), #Set 1
         Reps_Based("Forward T",0,8),
         Reps_Based("Lunge",0,10),
         Reps_Based("Lateral Step Down",0,10),
