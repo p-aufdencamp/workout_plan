@@ -3,7 +3,20 @@
 # Dev List
 # IN PROGRESS
 
+# Feature Branch Goals / Description
+# Implement a "settings" dictionary so that we can do things like test mode,
+# multiple users, etc
+# This branch will be considered complete when we have moved the 
+# scheduled vs ala carte to the settings file, 
+# Introduced multiple user profiles
+# Refactored the storage of the strength/rehab/etc workouts so that they return 
+# different answers for different users
+
 # TODO
+# (X): Introduce a settings dictionary, populated by a function
+# ( ): Collect settings of ala_carte_vs_schedule
+# ( ): Collect user settings
+
 
 # MVP Features:
 # ( ): implement a skip function
@@ -73,6 +86,18 @@ from wrist_strength import wrist_strength_routine
 from banded_iso import banded_iso_routine
 from ramping_iso import ramping_iso_routine
 
+# prompts the user for a series of settings, then writes the settings 
+# dictionary based on the responses to those prompts
+def collect_settings():
+     settings = {} #initialize an empty dictionary
+
+     # first setting: Scheduled vs ala carte mode
+     print("[s] for scheduled")
+     print("[a] for ala carte")
+     scheduled_vs_ala_carte = input("select an option: ")
+     settings['schedule_mode'] = scheduled_vs_ala_carte
+
+     return settings
 
 # waits the duration of the time, then 
 # counts down via 3-2-1 again
@@ -254,8 +279,6 @@ def scheduled_workout():
                } 
      return weekly_plan.get(day_of_week_string, None)
 
-
-
 #    (X): Rehab Mobility
 #    (X): Mobility A
 #    (X): Rehab Strength
@@ -286,11 +309,15 @@ if __name__ == "__main__":
      # prompt the user to do what is currently scheduled vs selecting one from 
      # the routines which are available
      
-     print("[s] for scheduled")
-     print("[a] for ala carte")
-     scheduled_vs_ala_carte = input("select an option: ")
+     #print("[s] for scheduled")
+     #print("[a] for ala carte")
+     #scheduled_vs_ala_carte = input("select an option: ")
 
-     if scheduled_vs_ala_carte == "s":
+     settings = collect_settings() # Collect the settings from the user so we can act accordingly
+     which_schedule = settings['schedule_mode']
+
+
+     if which_schedule == "s":
           todays_workouts = scheduled_workout()
           todays_reports = [None] * len(todays_workouts)
           for each in todays_workouts:
@@ -304,7 +331,7 @@ if __name__ == "__main__":
                todays_reports[index] = do_work(active_routines,each)
                index = index + 1
 
-     elif scheduled_vs_ala_carte == "a":
+     elif which_schedule == "a":
           os.system('clear')
           #print("select a routine from the options below")
           routine_keys = [None] * len(active_routines)
@@ -319,4 +346,4 @@ if __name__ == "__main__":
           report = do_work(active_routines,todays_workout_name)
     
      else:
-          print ("come on, ya gotta do something today")
+          print ("Thanks for coming to the gym")
