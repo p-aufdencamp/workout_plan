@@ -16,18 +16,7 @@
 # (X): Introduce a settings dictionary, populated by a function
 # (X): Collect settings of ala_carte_vs_schedule
 # (X): Collect settings re: which user
-# (X): instead of importing the variable directly, import the file and 
-#    define a function inside the file which will return the varible we 
-#    want. This provides the requisite flexibility to do phased approaches 
-#    and different answers based on users
-#    (X): rehab_mobility
-#    (x): mobility_a
-#    (X): rehab_strength
-#    (X): wrist_strength
-#    (X): banded_iso_strength
-#    (X): ramping_iso_strength
-#    (X): cardio
-# ( ): Pass the settings file to the scheduled_workout function so that it 
+# (X): Pass the settings file to the scheduled_workout function so that it 
 #    can keep a Philou schedule as well as a Claudi Schedule
 
 # Code Best Practices:
@@ -110,7 +99,7 @@ import wrist_strength
 def collect_settings():
 
      settings = {} #initialize an empty dictionary
-
+     os.system('clear')
      # First Setting: Which user
      print("Hello, welcome to the ClaufdenGym. What's your name?")
      print("[c] for Claudi")
@@ -275,7 +264,7 @@ def ready_set_go(one_liner):
      play_tone(880,0.5)
 
 # define a function to return the workout for today based on a schedule
-def scheduled_workout():
+def scheduled_workout(settings):
 
      # Get the current date and time
      current_datetime = datetime.datetime.now()
@@ -283,17 +272,40 @@ def scheduled_workout():
      # Get the day of the week as a string
      day_of_week_string = current_datetime.strftime('%A') #ie "Wednesday"
 
-     weekly_plan = {
-          'Saturday': ['Rehab Mobility','Rehab Strength'],
-          'Sunday': ['Rehab Mobility'],
-          'Monday': ['Rehab Mobility','Mobility A','Cardio'],
-          'Tuesday': ['Rehab Mobility','Rehab Strength','Wrist Strength', 
-               'Strength A'],
-          'Wednesday': ['Rehab Mobility','Mobility A','Cardio'],
-          'Thursday': ['Rehab Mobility','Rehab Strength', 'Wrist Strength', 
-               'Strength B'],
-          'Friday': ['Rehab Mobility','Mobility A','Cardio']
-     }
+     if settings['selected_user'] == "p":
+          weekly_plan = {
+               'Saturday': ['Rehab Mobility','Rehab Strength'],
+               'Sunday': ['Rehab Mobility'],
+               'Monday': ['Rehab Mobility','Mobility A','Cardio'],
+               'Tuesday': ['Rehab Mobility','Rehab Strength','Wrist Strength', 
+                    'Strength A'],
+               'Wednesday': ['Rehab Mobility','Mobility A','Cardio'],
+               'Thursday': ['Rehab Mobility','Rehab Strength', 'Wrist Strength', 
+                    'Strength B'],
+               'Friday': ['Rehab Mobility','Mobility A','Cardio']
+          }
+     elif settings['selected_user'] == "c":
+          weekly_plan = {
+               'Saturday': ['Rehab Mobility','Rehab Strength'],
+               'Sunday': ['Rehab Mobility'],
+               'Monday': ['Rehab Mobility','Mobility A','Cardio'],
+               'Tuesday': ['Rehab Mobility','Rehab Strength','Wrist Strength', 
+                    'Strength A'],
+               'Wednesday': ['Rehab Mobility','Mobility A','Cardio'],
+               'Thursday': ['Rehab Mobility','Rehab Strength', 'Wrist Strength', 
+                    'Strength B'],
+               'Friday': ['Rehab Mobility','Mobility A','Cardio']
+          }
+     else:
+          weekly_plan = {
+               'Saturday': ['Strength A','Mobility A'],
+               'Sunday': ['Strength B','Mobility A'],
+               'Monday': ['Strenght A','Mobility A'],
+               'Tuesday': ['Strength A','Mobility A'],
+               'Wednesday': ['Strength A','Mobility A'],
+               'Thursday': ['Strength A','Mobility A'],
+               'Friday': ['Strength A','Mobility A']
+          }
 
      return weekly_plan.get(day_of_week_string, None)
 
@@ -326,7 +338,7 @@ if __name__ == "__main__":
 }
 
      if which_schedule == "s":
-          todays_workouts = scheduled_workout()
+          todays_workouts = scheduled_workout(settings)
           todays_reports = [None] * len(todays_workouts)
           for each in todays_workouts:
                print(each)
