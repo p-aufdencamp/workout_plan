@@ -3,21 +3,8 @@
 # Dev List
 # IN PROGRESS
 ############################################################################
-# Feature Branch Goals / Description
-# Implement a "settings" dictionary so that we can do things like test mode,
-# multiple users, etc
-# This branch will be considered complete when we have
-# (X) moved the scheduled vs ala carte to the settings file, 
-# (X) Introduced multiple user profiles
-# (X) Refactored the storage of the strength/rehab/etc workouts so that they 
-# r  eturn different answers for different users
 
 # TODO
-# (X): Introduce a settings dictionary, populated by a function
-# (X): Collect settings of ala_carte_vs_schedule
-# (X): Collect settings re: which user
-# (X): Pass the settings file to the scheduled_workout function so that it 
-#    can keep a Philou schedule as well as a Claudi Schedule
 
 # Code Best Practices:
 # ( ): no need for an intermediate variable between the settings dictionary
