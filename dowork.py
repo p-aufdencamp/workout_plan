@@ -6,11 +6,11 @@
 # Feature Branch Goals / Description
 # Implement a "settings" dictionary so that we can do things like test mode,
 # multiple users, etc
-# This branch will be considered complete when we have moved the 
-# scheduled vs ala carte to the settings file, 
-# Introduced multiple user profiles
-# Refactored the storage of the strength/rehab/etc workouts so that they 
-# return different answers for different users
+# This branch will be considered complete when we have
+# (X) moved the scheduled vs ala carte to the settings file, 
+# (X) Introduced multiple user profiles
+# (X) Refactored the storage of the strength/rehab/etc workouts so that they 
+# r  eturn different answers for different users
 
 # TODO
 # (X): Introduce a settings dictionary, populated by a function
@@ -22,7 +22,8 @@
 # Code Best Practices:
 # ( ): no need for an intermediate variable between the settings dictionary
 #    and the logic which requires it, eliminate this.
-# ( ): Refactor the workout containing python files to use a dictionary instead of a series of if statements
+# ( ): Refactor the workout containing python files to use a dictionary instead 
+#    of a series of if statements
 
 # MVP Features:
 # ( ): implement a skip function
