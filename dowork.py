@@ -2,8 +2,28 @@
 # Main script which you run to do work
 # Dev List
 # IN PROGRESS
+############################################################################
+# Feature Branch Goals / Description
+# Implement a "settings" dictionary so that we can do things like test mode,
+# multiple users, etc
+# This branch will be considered complete when we have
+# (X) moved the scheduled vs ala carte to the settings file, 
+# (X) Introduced multiple user profiles
+# (X) Refactored the storage of the strength/rehab/etc workouts so that they 
+# r  eturn different answers for different users
 
 # TODO
+# (X): Introduce a settings dictionary, populated by a function
+# (X): Collect settings of ala_carte_vs_schedule
+# (X): Collect settings re: which user
+# (X): Pass the settings file to the scheduled_workout function so that it 
+#    can keep a Philou schedule as well as a Claudi Schedule
+
+# Code Best Practices:
+# ( ): no need for an intermediate variable between the settings dictionary
+#    and the logic which requires it, eliminate this.
+# ( ): Refactor the workout containing python files to use a dictionary instead 
+#    of a series of if statements
 
 # MVP Features:
 # ( ): implement a skip function
@@ -60,19 +80,46 @@ import yaml
 
 
 
-# do the imports from other classes i've written
+# do the imports from other classes and files i've written
 from exercise import Generic
 from exercise import Interval
 from exercise import Reps_Based
 from exercise import Time_Based
 
-from rehab_mobility import rehab_mobility_routine
-from mobility_a import mobility_a_routine
-from rehab_strength import rehab_strength_routine
-from wrist_strength import wrist_strength_routine
-from banded_iso import banded_iso_routine
-from ramping_iso import ramping_iso_routine
+import cardio
+import mobility_a
+import rehab_mobility
+import rehab_strength
+import strength_a
+import strength_b
+import wrist_strength
 
+
+# prompts the user for a series of settings, then writes the settings 
+# dictionary based on the responses to those prompts
+def collect_settings():
+
+     settings = {} #initialize an empty dictionary
+     os.system('clear')
+     # First Setting: Which user
+     print("Hello, welcome to the ClaufdenGym. What's your name?")
+     print("[c] for Claudi")
+     print("[p] for Philou")
+     print("[g] for guest")
+     settings['selected_user'] = input("Type an option" \
+          " from the brackets and hit enter")
+     os.system('clear')
+
+     # Second setting: Scheduled vs ala carte mode
+     print("Tell me some settings for this session")
+     print("which workout would you like to do?")
+     print("[s] for scheduled")
+     print("[a] for ala carte")
+     settings['schedule_mode'] = input("Type an option" \
+          " from the brackets and hit enter")
+     os.system('clear')
+
+     return settings
 
 # waits the duration of the time, then 
 # counts down via 3-2-1 again
@@ -218,7 +265,7 @@ def ready_set_go(one_liner):
      play_tone(880,0.5)
 
 # define a function to return the workout for today based on a schedule
-def scheduled_workout():
+def scheduled_workout(settings):
 
      # Get the current date and time
      current_datetime = datetime.datetime.now()
@@ -226,72 +273,73 @@ def scheduled_workout():
      # Get the day of the week as a string
      day_of_week_string = current_datetime.strftime('%A') #ie "Wednesday"
 
-     weekly_plan = {
-          'Saturday': ['Rehab Mobility','Rehab Strength'],
-          'Sunday': ['Rehab Mobility'],
-          'Monday': ['Rehab Mobility','Mobility A','TR Trainer Work'],
-          'Tuesday': ['Rehab Mobility','Rehab Strength','Wrist Strength', 
-               'Banded Iso Strength'],
-          'Wednesday': ['Rehab Mobility','Mobility A','TR Trainer Work'],
-          'Thursday': ['Rehab Mobility','Rehab Strength', 'Wrist Strength', 
-               'Ramping Iso Strength'],
-          'Friday': ['Rehab Mobility','Mobility A','TR Trainer Work']
-     }
+     if settings['selected_user'] == "p":
+          weekly_plan = {
+               'Saturday': ['Rehab Mobility','Rehab Strength'],
+               'Sunday': ['Rehab Mobility'],
+               'Monday': ['Rehab Mobility','Mobility A','Cardio'],
+               'Tuesday': ['Rehab Mobility','Rehab Strength','Wrist Strength', 
+                    'Strength A'],
+               'Wednesday': ['Rehab Mobility','Mobility A','Cardio'],
+               'Thursday': ['Rehab Mobility','Rehab Strength', 'Wrist Strength', 
+                    'Strength B'],
+               'Friday': ['Rehab Mobility','Mobility A','Cardio']
+          }
+     elif settings['selected_user'] == "c":
+          weekly_plan = {
+               'Saturday': ['Rehab Mobility','Rehab Strength'],
+               'Sunday': ['Rehab Mobility'],
+               'Monday': ['Rehab Mobility','Mobility A','Cardio'],
+               'Tuesday': ['Rehab Mobility','Rehab Strength','Wrist Strength', 
+                    'Strength A'],
+               'Wednesday': ['Rehab Mobility','Mobility A','Cardio'],
+               'Thursday': ['Rehab Mobility','Rehab Strength', 'Wrist Strength', 
+                    'Strength B'],
+               'Friday': ['Rehab Mobility','Mobility A','Cardio']
+          }
+     else:
+          weekly_plan = {
+               'Saturday': ['Strength A','Mobility A'],
+               'Sunday': ['Strength B','Mobility A'],
+               'Monday': ['Strenght A','Mobility A'],
+               'Tuesday': ['Strength A','Mobility A'],
+               'Wednesday': ['Strength A','Mobility A'],
+               'Thursday': ['Strength A','Mobility A'],
+               'Friday': ['Strength A','Mobility A']
+          }
 
-     old_weekly_plan = {
-          'Sunday':['Katy Daily Rehab P1'],
-          'Monday':['Katy Daily Rehab P1','Katy Mobility Floor Work P2',
-               'TR Trainer Work'],
-          'Tuesday':['Katy Daily Rehab P1','Katy Strength Work P2',
-               'Katy Wrist Rehab P1','MTBS Banded P0.3'],
-          'Wednesday':['Katy Daily Rehab P1', 'Katy Mobility Floor Work P2',
-               'TR Trainer Work'],
-          'Thursday':['Katy Daily Rehab P1', 'Katy Strength Work P2',
-               'Katy Wrist Rehab P1','MTBS Ramping Modified P0.3'],
-          'Friday':['Katy Daily Rehab P1', 'Katy Mobility Floor Work P2',
-               'TR Trainer Work'],
-          'Saturday':['Katy Daily Rehab P1', 'Katy Strength Work P2']
-               } 
      return weekly_plan.get(day_of_week_string, None)
 
 
 
-#    (X): Rehab Mobility
-#    (X): Mobility A
-#    (X): Rehab Strength
-#    (X): Wrist Strength
-#    (X): Banded Iso Strength
-#    (X): Ramping Iso Strength
-
-# make a dictionary looking at the files which contain our active workouts for 
-# the moment
-
-active_routines = {
-     'Rehab Mobility': rehab_mobility_routine,
-     'Mobility A': mobility_a_routine,
-     'Rehab Strength': rehab_strength_routine,
-     'Wrist Strength' : wrist_strength_routine,
-     'Banded Iso Strength' : banded_iso_routine,
-     'Ramping Iso Strength' : ramping_iso_routine
-}
-
 # Where the magic happens
 # this makes it so that this code only runs when this is the main method
 if __name__ == "__main__": 
-     with open('workout_plan.yaml', 'w') as file:
-          yaml.dump(active_routines, file)
 
      #index variable is used regardless of what the user selecs
      index = 0
      # prompt the user to do what is currently scheduled vs selecting one from 
      # the routines which are available
      
-     print("[s] for scheduled")
-     print("[a] for ala carte")
-     scheduled_vs_ala_carte = input("select an option: ")
+     #print("[s] for scheduled")
+     #print("[a] for ala carte")
+     #scheduled_vs_ala_carte = input("select an option: ")
 
-     if scheduled_vs_ala_carte == "s":
-          todays_workouts = scheduled_workout()
+     settings = collect_settings() # Collect the settings from the user 
+     which_schedule = settings['schedule_mode']
+
+     active_routines = {
+     'Rehab Mobility': rehab_mobility.get_rehab_mobility_routine(settings),
+     'Mobility A': mobility_a.get_mobility_a_routine(settings),
+     'Rehab Strength': rehab_strength.get_rehab_strength_routine(settings),
+     'Wrist Strength' : wrist_strength.get_wrist_strength_routine(settings),
+     'Strength A' : strength_a.get_strength_a_routine(settings),
+     'Strength B' : strength_b.get_strength_b_routine(settings),
+     'Cardio' : cardio.get_cardio_routine(settings)
+}
+
+     if which_schedule == "s":
+          todays_workouts = scheduled_workout(settings)
           todays_reports = [None] * len(todays_workouts)
           for each in todays_workouts:
                print(each)
@@ -304,7 +352,7 @@ if __name__ == "__main__":
                todays_reports[index] = do_work(active_routines,each)
                index = index + 1
 
-     elif scheduled_vs_ala_carte == "a":
+     elif which_schedule == "a":
           os.system('clear')
           #print("select a routine from the options below")
           routine_keys = [None] * len(active_routines)
@@ -319,4 +367,4 @@ if __name__ == "__main__":
           report = do_work(active_routines,todays_workout_name)
     
      else:
-          print ("come on, ya gotta do something today")
+          print ("Thanks for coming to the gym")
