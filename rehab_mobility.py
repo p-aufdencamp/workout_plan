@@ -1,5 +1,8 @@
 # Author: Phil Aufdencamp
 ################################################################################
+# Updates 1/21/24
+# Changed from 4x10 Heel Raises to 3x15 Heel Raises, with rests in between
+
 # This file will store the list of objects which makes up the rehab_mobility 
 # routine
 
@@ -17,9 +20,11 @@ def get_rehab_mobility_routine(settings):
     phil_rehab_mobility_routine = [
         Time_Based("Elevated Ankle Dorsiflexion, Right",0,60),
         Time_Based("Plantar Fascia Mobilization",0,60),
-        Reps_Based("Single Leg Assisted Heel Raises",0,10), 
+        Reps_Based("Single Leg Assisted Heel Raises",0,15), 
         Time_Based("Rest",0,30), #Set 1
-        Reps_Based("Single Leg Assisted Heel Raises",0,10), 
+        Reps_Based("Single Leg Assisted Heel Raises",0,15), 
+        Time_Based("Rest",0,30), #Set 2
+        Reps_Based("Single Leg Assisted Heel Raises",0,15), 
         Time_Based("Rest",0,30) #Set 2
         ]
     
