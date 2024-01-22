@@ -1,4 +1,12 @@
 # Author: Phil Aufdencamp
+# Update 1/21/24:
+# New workout is 
+# 3 sets of 
+# ( )6x Single Leg Sit to Stand
+# ( )12x Standing Clam with Resistance Loop, Left Leg Down
+# ( )10x Upright Side Lunge
+# ( )30s single leg balance on foam pad
+# ( )10x Alternating Bird Dogs, knees on foam pad
 
 # This file will store the list of objects which makes up the rehab_strength
 # routine
@@ -15,20 +23,26 @@ def get_rehab_strength_routine(settings):
     
     if settings['selected_user'] == "p":
         routine = [
-        Reps_Based("Half Deadlift w/ Kettlebell",25,15), #Set 1
-        Reps_Based("Forward T, Right",0,8),
-        Reps_Based("Lunge, Right",0,10),
-        Reps_Based("Lateral Step Down, Right",0,10),
+        #Set 1
+        Reps_Based("Single Leg Sit to Stand, Arms Extended ",0,6), 
+        Reps_Based("Standing Clam w/ Reistance Band","vLight",12),
+        Reps_Based("Upright Side Lunge, Right",0,10),
+        Time_Based("Single Leg Balance on Foam Pad, Right",0,30),
+        Reps_Based("Alternating Bird Dogs",0,10),
 
-        Reps_Based("Half Deadlift w/ Stick","0",15),#Set 2
-        Reps_Based("Forward T, Right",0,8),
-        Reps_Based("Lunge, Right",0,10),
-        Reps_Based("Lateral Step Down, Right",0,10),
+        #Set 2
+        Reps_Based("Single Leg Sit to Stand, Arms Extended ",0,6), 
+        Reps_Based("Standing Clam w/ Reistance Band","vLight",12),
+        Reps_Based("Upright Side Lunge, Right",0,10),
+        Time_Based("Single Leg Balance on Foam Pad, Right",0,30),
+        Reps_Based("Alternating Bird Dogs",0,10),
         
-        Reps_Based("Half Deadlift w/ Stick","0",15), #Set 3
-        Reps_Based("Forward T, right",0,8),
-        Reps_Based("Lunge, Right",0,10),
-        Reps_Based("Lateral Step Down, Right",0,10)
+        #Set 3
+        Reps_Based("Single Leg Sit to Stand, Arms Extended ",0,6), 
+        Reps_Based("Standing Clam w/ Reistance Band","vLight",12),
+        Reps_Based("Upright Side Lunge, Right",0,10),
+        Time_Based("Single Leg Balance on Foam Pad, Right",0,30),
+        Reps_Based("Alternating Bird Dogs",0,10),
         ]
     elif settings['selected_user'] == "c":
         routine = [
