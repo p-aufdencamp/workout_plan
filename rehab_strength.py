@@ -1,12 +1,5 @@
 # Author: Phil Aufdencamp
-# Update 1/21/24:
-# New workout is 
-# 3 sets of 
-# ( )6x Single Leg Sit to Stand
-# ( )12x Standing Clam with Resistance Loop, Left Leg Down
-# ( )10x Upright Side Lunge
-# ( )30s single leg balance on foam pad
-# ( )10x Alternating Bird Dogs, knees on foam pad
+# Update 2/10/24:
 
 # This file will store the list of objects which makes up the rehab_strength
 # routine
@@ -24,31 +17,28 @@ def get_rehab_strength_routine(settings):
     if settings['selected_user'] == "p":
         routine = [
         #Set 1
-        Reps_Based("Single Leg Squat, Wall Asissted",0,6), 
-        Reps_Based("Standing Clam w/ Reistance Band, Right","vLight",12),
-        Reps_Based("Standing Clam w/ Reistance Band, Left","vLight",12),
-        Reps_Based("Upright Side Lunge, Right",0,10),
-        Reps_Based("Upright Side Lunge, Left",0,10),
-        Time_Based("Play catch on one leg, Right",0,30),
-        Reps_Based("Alternating Bird Dogs",0,10),
+        Time_Based("Childs Pose",0,30),
+        Reps_Based("Hands on Chair Plank into Bike Pose",0,8),
+        Time_Based("Double Leg Squat Jumps",0,30),
+        Reps_Based("Pushup Staggered Stance Ball Rolls",0,12),
+        Reps_Based("Lateral Step Down",0,10),
+        Time_Based("Bear Plank",0,30),
 
         #Set 2
-        Reps_Based("Single Leg Sit Squat, Wall Asissted",0,6), 
-        Reps_Based("Standing Clam w/ Reistance Band, Right","vLight",12),
-        Reps_Based("Standing Clam w/ Reistance Band, Left","vLight",12),
-        Reps_Based("Upright Side Lunge, Right",0,10),
-        Reps_Based("Upright Side Lunge, Left",0,10),
-        Time_Based("Play catch on one leg, Right",0,30),
-        Reps_Based("Alternating Bird Dogs",0,10),
+        Time_Based("Childs Pose",0,30),
+        Reps_Based("Hands on Chair Plank into Bike Pose",0,8),
+        Time_Based("Double Leg Squat Jumps",0,30),
+        Reps_Based("Pushup Staggered Stance Ball Rolls",0,12),
+        Reps_Based("Lateral Step Down",0,10),
+        Time_Based("Bear Plank",0,30),
         
         #Set 3
-        Reps_Based("Single Leg Squat, Wall Asissted",0,6), 
-        Reps_Based("Standing Clam w/ Reistance Band, Right","vLight",12),
-        Reps_Based("Standing Clam w/ Reistance Band, Left","vLight",12),
-        Reps_Based("Upright Side Lunge, Right",0,10),
-        Reps_Based("Upright Side Lunge, Left",0,10),
-        Time_Based("Play catch on one leg, Right",0,30),
-        Reps_Based("Alternating Bird Dogs",0,10),
+        Time_Based("Childs Pose",0,30),
+        Reps_Based("Hands on Chair Plank into Bike Pose",0,8),
+        Time_Based("Double Leg Squat Jumps",0,30),
+        Reps_Based("Pushup Staggered Stance Ball Rolls",0,12),
+        Reps_Based("Lateral Step Down",0,10),
+        Time_Based("Bear Plank",0,30),
         ]
     elif settings['selected_user'] == "c":
         routine = [
