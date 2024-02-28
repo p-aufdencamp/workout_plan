@@ -12,33 +12,36 @@ from exercise import Interval
 from exercise import Reps_Based
 from exercise import Time_Based
 
+Straight leg tall hopping 3x20s
+
 def get_rehab_strength_routine(settings):
     
     if settings['selected_user'] == "p":
         routine = [
-        #Set 1
-        Time_Based("Childs Pose",0,30),
+        #Set -1
+        Reps_Based("Single Leg Heel Raise",0,20),
+        Time_Based("Rest",0,30),
+        #Set 0
+        Reps_Based("Single Leg Heel Raise",0,20),
+        Time_Based("Rest",0,30),
+        
+        # Set 1
         Reps_Based("Hands on Chair Plank into Bike Pose",0,8),
         Time_Based("Double Leg Squat Jumps",0,30),
-        Reps_Based("Pushup Staggered Stance Ball Rolls",0,12),
-        Reps_Based("Lateral Step Down",0,10),
         Time_Based("Bear Plank",0,30),
+        Time_Based("Straight Leg Tall Hop",0,20),
 
         #Set 2
-        Time_Based("Childs Pose",0,30),
         Reps_Based("Hands on Chair Plank into Bike Pose",0,8),
         Time_Based("Double Leg Squat Jumps",0,30),
-        Reps_Based("Pushup Staggered Stance Ball Rolls",0,12),
-        Reps_Based("Lateral Step Down",0,10),
         Time_Based("Bear Plank",0,30),
+        Time_Based("Straight Leg Tall Hop",0,20),
         
         #Set 3
-        Time_Based("Childs Pose",0,30),
         Reps_Based("Hands on Chair Plank into Bike Pose",0,8),
         Time_Based("Double Leg Squat Jumps",0,30),
-        Reps_Based("Pushup Staggered Stance Ball Rolls",0,12),
-        Reps_Based("Lateral Step Down",0,10),
         Time_Based("Bear Plank",0,30),
+        Time_Based("Straight Leg Tall Hop",0,20)
         ]
     elif settings['selected_user'] == "c":
         routine = [
