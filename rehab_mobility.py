@@ -19,13 +19,7 @@ def get_rehab_mobility_routine(settings):
 
     phil_rehab_mobility_routine = [
         Reps_Based("Ankle Dorsiflexion, Right, 5 sec hold",0,10),
-        Time_Based("Plantar Fascia Mobilization",0,60),
-        Reps_Based("Single Leg Assisted Heel Raises",0,25), 
-        Time_Based("Rest",0,30), #Set 1
-        Reps_Based("Single Leg Assisted Heel Raises",0,25), 
-        Time_Based("Rest",0,30), #Set 2
-        Reps_Based("Single Leg Assisted Heel Raises",0,25), 
-        Time_Based("Rest",0,30) #Set 2
+        Time_Based("Plantar Fascia Mobilization",0,60)
         ]
     
     claudi_rehab_mobility_routine = [
