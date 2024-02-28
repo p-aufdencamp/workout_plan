@@ -12,8 +12,6 @@ from exercise import Interval
 from exercise import Reps_Based
 from exercise import Time_Based
 
-Straight leg tall hopping 3x20s
-
 def get_rehab_strength_routine(settings):
     
     if settings['selected_user'] == "p":
