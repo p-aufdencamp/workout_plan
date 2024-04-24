@@ -13,42 +13,52 @@ from exercise import Reps_Based
 from exercise import Time_Based
 
 
+
+
+ 
+
+
 def get_rehab_strength_routine(settings):
     
     if settings['selected_user'] == "p":
         routine = [
-        #Set -1
-        Reps_Based("Single Leg Heel Raise, straight leg, keep ankle out",0,20),
+        # Skater hops 2x30s
+        Time_Based("Skater Hops",0,30),
         Time_Based("Rest",0,30),
-        Reps_Based("Single Leg Heel Raise, knee Bent, keep ankle out",0,20),
+        Time_Based("Skater Hops",0,20),
         Time_Based("Rest",0,30),
 
-        #Set 0
-        Reps_Based("Single Leg Heel Raise, keep ankle out",0,20),
+        #Sidestepping with band 3x30s
+        Time_Based("Side Stepping w/ Band",0,30),
         Time_Based("Rest",0,30),
-        Reps_Based("Single Leg Heel Raise, knee Bent, keep ankle out",0,20),
+        Time_Based("Side Stepping w/ Band",0,30),
+        Time_Based("Rest",0,30),
+        Time_Based("Side Stepping w/ Band",0,30),
         Time_Based("Rest",0,30),
         
-        # Set 1
-        Reps_Based("Double Leg Decline Squat w/ weight",30,12),
-        Reps_Based("Single Leg Squat Heel Elevated",0,10),
-        Time_Based("Double Leg Squat Jumps",0,20),
-        Reps_Based("6in Lateral Step down w/ Arch Lift",0,12),
+        #Bear plank with chest taps 3x5 on each side
+        Reps_Based("Bear Plank w/ Alternating Chest Taps",0,5),
+        Time_Based("Rest",0,30),
+        Reps_Based("Bear Plank w/ Alternating Chest Taps",0,5),
+        Time_Based("Rest",0,30),
+        Reps_Based("Bear Plank w/ Alternating Chest Taps",0,5),
+        Time_Based("Rest",0,30),
 
-        #Set 2
-        Reps_Based("Double Leg Decline Squat w/ weight",30,12),
-        Reps_Based("Single Leg Squat Heel Elevated",0,10),
-        Time_Based("Double Leg Squat Jumps",0,20),
-        Reps_Based("6in Lateral Step down w/ Arch Lift",0,12),
+        #SL hopping with assistance 3x15s
+        Time_Based("Single Leg Hop w/ Assistance",0,15),
+        Time_Based("Rest",0,30),
+        Time_Based("Single Leg Hop w/ Assistance",0,15),
+        Time_Based("Rest",0,30),
+        Time_Based("Single Leg Hop w/ Assistance",0,15),
+        Time_Based("Rest",0,30),
         
-        #Set 3
-        Reps_Based("Double Leg Decline Squat w/ weight",30,12),
-        Reps_Based("Single Leg Squat Heel Elevated",0,10),
-        Time_Based("Double Leg Squat Jumps",0,20),
-        Reps_Based("6in Lateral Step down w/ Arch Lift",0,12),
-
-        # Bonus Set
-        Reps_Based("Double Leg Decline Squat w/ weight",30,12)
+        #SL squat mini bobs 3x20
+        Reps_Based("Single Leg Squat Mini Bobs",0,20),
+        Time_Based("Rest",0,30),
+        Reps_Based("Single Leg Squat Mini Bobs",0,20),
+        Time_Based("Rest",0,30),
+        Reps_Based("Single Leg Squat Mini Bobs",0,20),
+        Time_Based("Rest",0,30)
         ]
     elif settings['selected_user'] == "c":
         routine = [
