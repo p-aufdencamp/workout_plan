@@ -18,8 +18,12 @@ from exercise import Time_Based
 def get_rehab_mobility_routine(settings):
 
     phil_rehab_mobility_routine = [
-        Reps_Based("Ankle Dorsiflexion, Right, 5 sec hold",0,10),
-        Time_Based("Plantar Fascia Mobilization",0,60)
+        Reps_Based("Single Leg Heel Raise, Right",0,20),
+        Time_Based("Rest",0,30),
+        Reps_Based("Single Leg Heel Raise, Right",0,20),
+        Time_Based("Rest",0,30),
+        Reps_Based("Single Leg Heel Raise, Right",0,20),
+        Time_Based("Rest",0,30)
         ]
     
     claudi_rehab_mobility_routine = [
