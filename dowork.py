@@ -265,10 +265,9 @@ def scheduled_workout(settings):
                'Saturday': ['Rehab Mobility','Rehab Strength'],
                'Sunday': ['Rehab Mobility'],
                'Monday': ['Rehab Mobility','Mobility A','Cardio'],
-               'Tuesday': ['Rehab Mobility','Rehab Strength','Wrist Strength', 
-                    'Strength A'],
+               'Tuesday': ['Rehab Mobility', 'Strength A'],
                'Wednesday': ['Rehab Mobility','Mobility A','Cardio'],
-               'Thursday': ['Rehab Mobility','Rehab Strength', 'Wrist Strength', 
+               'Thursday': ['Rehab Mobility','Rehab Strength', 
                     'Strength B'],
                'Friday': ['Rehab Mobility','Mobility A','Cardio']
           }
