@@ -19,28 +19,63 @@ def get_strength_b_routine(settings):
     if settings['selected_user'] == "p":
         # isometric ramping isos
         routine = [
-          Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
-          Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
-          Interval("Iso Bridge",["Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Interval("Iso Narrow Knees",["Press", "Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Interval("Iso Neck Triceps Extension",["Press", "Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Interval("Iso Butterfly Crunch",["Press", "Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Interval("Iso Front Raise",["Press", "Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Interval("Iso Deadlift (No Max)",["Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Interval("Iso Push Up",["Press", "Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Interval("Iso Squat (No Max)",["Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Interval("Iso Row",["Press", "Press", "Press"],
-                           ["50%","80%","110%"],[20,10,5]),
-          Time_Based("Left Plank","Body Weight",45),
-          Time_Based("Right Plank","Body Weight",45)]
+          #Warm Up: 6 minutes
+            Time_Based("Knee to Chest Alternating","Body weight",60),
+            Time_Based("Quad Stretch, Left","Bodyweight",60),
+            Time_Based("Quad Stretch, Right","Bodyweight",60),
+            Time_Based("Hamstring Sweeps, Left", "Bodyweight",60),
+            Time_Based("Hamstring Sweeps, Right", "Bodyweight",60),
+            Time_Based("Lunge w/ Twist, Alternating","Body",60),
+
+            # Jumping Circuit 1of3 : 3 / 9 minutes
+            Time_Based("Hop Forward + Backward","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Zig Zag","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Criss Cross","Bodyweight",20),
+            Time_Based("Rest","None",30),
+
+            # Jumping Circuit 2of3 : 3 / 12 minutes
+            Time_Based("Hop Forward + Backward","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Zig Zag","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Criss Cross","Bodyweight",20),
+            Time_Based("Rest","None",30),
+
+            # Jumping Circuit 3of3: 3 / 15 minutes
+            Time_Based("Hop Forward + Backward","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Zig Zag","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Criss Cross","Bodyweight",20),
+            Time_Based("Rest","None",30),
+
+            # Animal Flow Circuit: #1 of 3: 3 / 18 minutes
+            Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Bear Crawl Left + Right","Bodyweight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Crab Walk Forward + Backward","Bodyweight",30),
+            Time_Based("Rest","None",30),
+
+            # Animal Flow Circuit: #2 of 3: 3 / 21 minutes
+            Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Bear Crawl Left + Right","Bodyweight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Crab Walk Forward + Backward","Bodyweight",30),
+            Time_Based("Rest","None",30),
+
+            # Animal Flow Circuit: #3 of 3: 3 / 34 minutes
+            Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Bear Crawl Left + Right","Bodyweight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Crab Walk Forward + Backward","Bodyweight",30),
+            Time_Based("Rest","None",30)
+        ]
+
         
     elif settings['selected_user'] == "c":
         routine = [Reps_Based("Body Weight Squat",0,15),#Set 1

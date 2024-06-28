@@ -19,19 +19,86 @@ def get_strength_a_routine(settings):
     if settings['selected_user'] == "p":
         # Banded Iso Routine
         routine = [
-        Reps_Based("Lying Side Leg Raise, Left","Bodyweight",10),
-        Reps_Based("Lying Side Leg Leg, Right","Bodyweight",10),
-        Time_Based("Banded Bridge","Medium Band",45),
-        Time_Based("Banded Narrow Knees","Light Band",45),
-        Time_Based("Banded Back Neck","Light Band",45),
-        Time_Based("Banded Back Neck Hold","Light Band",45),
-        Time_Based("Banded Front Raise","Light Band",45),
-        Time_Based("Banded Deadlift","Medium Heavy Band",45),
-        Time_Based("Isometric Pushup","Light Band",45),
-        Time_Based("Banded Squat","Light Band",45),
-        Time_Based("Banded Row","Medium Heavy Band",45),
-        Time_Based("Left Plank","Body Weight",45),
-        Time_Based("Right Plank","Body Weight",45)]
+            #Warm Up: 6 minutes
+            Time_Based("Knee to Chest Alternating","Body weight",60),
+            Time_Based("Quad Stretch, Left","Bodyweight",60),
+            Time_Based("Quad Stretch, Right","Bodyweight",60),
+            Time_Based("Hamstring Sweeps, Left", "Bodyweight",60),
+            Time_Based("Hamstring Sweeps, Right", "Bodyweight",60),
+            Time_Based("Lunge w/ Twist, Alternating","Body",60),
+
+            # Jumping Circuit 1of3 : 3 / 9 minutes
+            Time_Based("Hop Forward + Backward","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Zig Zag","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Criss Cross","Bodyweight",20),
+            Time_Based("Rest","None",30),
+
+            # Jumping Circuit 2of3 : 3 / 12 minutes
+            Time_Based("Hop Forward + Backward","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Zig Zag","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Criss Cross","Bodyweight",20),
+            Time_Based("Rest","None",30),
+
+            # Jumping Circuit 3of3: 3 / 15 minutes
+            Time_Based("Hop Forward + Backward","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Zig Zag","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Time_Based("Hop Criss Cross","Bodyweight",20),
+            Time_Based("Rest","None",30),
+
+            # Isometrics 1 of 4: 5 / 20 minutes
+            Time_Based("Left Lunge Hold","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Right Lunge Hold","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Left Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Right Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+
+            # Isometrics 2 of 4: 5 / 25 minutes
+            Time_Based("Left Lunge Hold","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Right Lunge Hold","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Left Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Right Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+
+            # Isometrics 3 of 4: 5 / 30 minutes
+            Time_Based("Left Lunge Hold","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Right Lunge Hold","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Left Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Right Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+
+            # Isometrics 4 of 4: 5 / 35 minutes
+            Time_Based("Left Lunge Hold","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Right Lunge Hold","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Left Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Right Plank","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30)
+        ]
         
     elif settings['selected_user'] == "c":
         routine = [Reps_Based("Pushups",0,15),#Set 1
