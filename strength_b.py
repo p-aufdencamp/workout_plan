@@ -17,41 +17,65 @@ from exercise import Time_Based
 def get_strength_b_routine(settings):
     
     if settings['selected_user'] == "p":
-        # isometric ramping isos
+        # Crawling Routine
         routine = [
-          #Warm Up: 6 minutes
+            #Warm Up: 6 minutes
             Time_Based("Knee to Chest Alternating","Body weight",60),
             Time_Based("Quad Stretch, Left","Bodyweight",60),
             Time_Based("Quad Stretch, Right","Bodyweight",60),
-            Time_Based("Hamstring Sweeps, Left", "Bodyweight",60),
-            Time_Based("Hamstring Sweeps, Right", "Bodyweight",60),
+            Time_Based("Hamstring Sweeps, Alternating", "Bodyweight",60),
+            Time_Based("Side Lunge, Alternating","Bodyweight",60),
             Time_Based("Lunge w/ Twist, Alternating","Body",60),
 
-            # Jumping Circuit 1of3 : 3 / 9 minutes
+            # Jumping Circuit 1of3 : 6 / 12 minutes
             Time_Based("Hop Forward + Backward","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Zig Zag","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Criss Cross","Bodyweight",20),
             Time_Based("Rest","None",30),
+            Time_Based("Alternating Pony Steps","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Reps_Based("High Knee Bounds","Bodyweight",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Hop Squat","Bodyweight",8),
+            Time_Based("Rest","none",30),
 
-            # Jumping Circuit 2of3 : 3 / 12 minutes
+            # Jumping Circuit 2of3 : 6 / 18 minutes
             Time_Based("Hop Forward + Backward","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Zig Zag","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Criss Cross","Bodyweight",20),
             Time_Based("Rest","None",30),
+            Time_Based("Alternating Pony Steps","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Reps_Based("High Knee Bounds","Bodyweight",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Hop Squat","Bodyweight",8),
+            Time_Based("Rest","none",30),
 
-            # Jumping Circuit 3of3: 3 / 15 minutes
+            # Jumping Circuit 3of3 : 6 / 24 minutes
             Time_Based("Hop Forward + Backward","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Zig Zag","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Criss Cross","Bodyweight",20),
             Time_Based("Rest","None",30),
+            Time_Based("Alternating Pony Steps","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Reps_Based("High Knee Bounds","Bodyweight",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Hop Squat","Bodyweight",8),
+            Time_Based("Rest","none",30),
 
-            # Animal Flow Circuit: #1 of 3: 3 / 18 minutes
+            # Animal Flow Circuit: #1 of 4: 2 / 26 minutes
+            Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Bear Crawl Left + Right","Bodyweight",30),
+            Time_Based("Rest","None",30),
+
+            # Animal Flow Circuit: #2 of 4: 2 / 28 minutes
             Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
             Time_Based("Rest","None",30),
             Time_Based("Bear Crawl Left + Right","Bodyweight",30),
@@ -59,7 +83,7 @@ def get_strength_b_routine(settings):
             Time_Based("Crab Walk Forward + Backward","Bodyweight",30),
             Time_Based("Rest","None",30),
 
-            # Animal Flow Circuit: #2 of 3: 3 / 21 minutes
+            # Animal Flow Circuit: #3 of 4: 2 / 30 minutes
             Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
             Time_Based("Rest","None",30),
             Time_Based("Bear Crawl Left + Right","Bodyweight",30),
@@ -67,7 +91,7 @@ def get_strength_b_routine(settings):
             Time_Based("Crab Walk Forward + Backward","Bodyweight",30),
             Time_Based("Rest","None",30),
 
-            # Animal Flow Circuit: #3 of 3: 3 / 34 minutes
+            # Animal Flow Circuit: #4 of 4: 2 / 32 minutes
             Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
             Time_Based("Rest","None",30),
             Time_Based("Bear Crawl Left + Right","Bodyweight",30),

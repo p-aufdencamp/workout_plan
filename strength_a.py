@@ -17,86 +17,96 @@ from exercise import Time_Based
 def get_strength_a_routine(settings):
     
     if settings['selected_user'] == "p":
-        # Banded Iso Routine
+        # Isometric Routine
         routine = [
             #Warm Up: 6 minutes
             Time_Based("Knee to Chest Alternating","Body weight",60),
             Time_Based("Quad Stretch, Left","Bodyweight",60),
             Time_Based("Quad Stretch, Right","Bodyweight",60),
-            Time_Based("Hamstring Sweeps, Left", "Bodyweight",60),
-            Time_Based("Hamstring Sweeps, Right", "Bodyweight",60),
+            Time_Based("Hamstring Sweeps, Alternating", "Bodyweight",60),
+            Time_Based("Side Lunge, Alternating","Bodyweight",60),
             Time_Based("Lunge w/ Twist, Alternating","Body",60),
 
-            # Jumping Circuit 1of3 : 3 / 9 minutes
+            # Jumping Circuit 1of3 : 6 / 12 minutes
             Time_Based("Hop Forward + Backward","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Zig Zag","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Criss Cross","Bodyweight",20),
             Time_Based("Rest","None",30),
+            Time_Based("Alternating Pony Steps","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Reps_Based("High Knee Bounds","Bodyweight",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Hop Squat","Bodyweight",8),
+            Time_Based("Rest","none",30),
 
-            # Jumping Circuit 2of3 : 3 / 12 minutes
+            # Jumping Circuit 2of3 : 6 / 18 minutes
             Time_Based("Hop Forward + Backward","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Zig Zag","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Criss Cross","Bodyweight",20),
             Time_Based("Rest","None",30),
+            Time_Based("Alternating Pony Steps","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Reps_Based("High Knee Bounds","Bodyweight",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Hop Squat","Bodyweight",8),
+            Time_Based("Rest","none",30),
 
-            # Jumping Circuit 3of3: 3 / 15 minutes
+            # Jumping Circuit 3of3 : 6 / 24 minutes
             Time_Based("Hop Forward + Backward","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Zig Zag","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Criss Cross","Bodyweight",20),
             Time_Based("Rest","None",30),
+            Time_Based("Alternating Pony Steps","Bodyweight",20),
+            Time_Based("Rest","None",30),
+            Reps_Based("High Knee Bounds","Bodyweight",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Hop Squat","Bodyweight",8),
+            Time_Based("Rest","none",30),
 
-            # Isometrics 1 of 4: 5 / 20 minutes
-            Time_Based("Left Lunge Hold","Bodyweight",30),
+            # Isometrics 1 of 4: 4 / 28 minutes
+            Time_Based("Forward & Backward Lunges, Right","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Right Lunge Hold","Bodyweight",30),
+            Time_Based("Forward & Backward Lunges, Left","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Plank","Bodyweight",30),
+            Time_Based("Rolling Planks","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Left Plank","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Right Plank","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-
-            # Isometrics 2 of 4: 5 / 25 minutes
-            Time_Based("Left Lunge Hold","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Right Lunge Hold","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Plank","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Left Plank","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Right Plank","Bodyweight",30),
+            Time_Based("Pushup Planks","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
 
-            # Isometrics 3 of 4: 5 / 30 minutes
-            Time_Based("Left Lunge Hold","Bodyweight",30),
+            # Isometrics 2 of 4: 4 / 32 minutes
+            Time_Based("Forward & Backward Lunges, Right","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Right Lunge Hold","Bodyweight",30),
+            Time_Based("Forward & Backward Lunges, Left","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Plank","Bodyweight",30),
+            Time_Based("Rolling Planks","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Left Plank","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Right Plank","Bodyweight",30),
+            Time_Based("Pushup Planks","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
 
-            # Isometrics 4 of 4: 5 / 35 minutes
-            Time_Based("Left Lunge Hold","Bodyweight",30),
+            # Isometrics 3 of 4: 4 / 36 minutes
+            Time_Based("Forward & Backward Lunges, Right","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Right Lunge Hold","Bodyweight",30),
+            Time_Based("Forward & Backward Lunges, Left","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Plank","Bodyweight",30),
+            Time_Based("Rolling Planks","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Left Plank","Bodyweight",30),
+            Time_Based("Pushup Planks","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Right Plank","Bodyweight",30),
+
+            # Isometrics 4 of 4: 4 / 40 minutes
+            Time_Based("Forward & Backward Lunges, Right","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Forward & Backward Lunges, Left","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Rolling Planks","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Pushup Planks","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30)
         ]
         
