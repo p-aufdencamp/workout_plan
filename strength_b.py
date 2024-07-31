@@ -27,7 +27,7 @@ def get_strength_b_routine(settings):
             Time_Based("Side Lunge, Alternating","Bodyweight",60),
             Time_Based("Lunge w/ Twist, Alternating","Body",60),
 
-            # Jumping Circuit 1of3 : 6 / 12 minutes
+            # Jumping Circuit 1of1 : 4 / 10 minutes
             Time_Based("Hop Forward + Backward","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Zig Zag","Bodyweight",20),
@@ -36,67 +36,66 @@ def get_strength_b_routine(settings):
             Time_Based("Rest","None",30),
             Time_Based("Alternating Pony Steps","Bodyweight",20),
             Time_Based("Rest","None",30),
+
+            # Plyometrics 1of3 : 3 / 13 minutes
             Reps_Based("High Knee Bounds","Bodyweight",12),
             Time_Based("Rest","None",30),
             Reps_Based("Hop Squat","Bodyweight",8),
             Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge","Bodyweight",8),
 
-            # Jumping Circuit 2of3 : 6 / 18 minutes
-            Time_Based("Hop Forward + Backward","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Hop Zig Zag","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Hop Criss Cross","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Alternating Pony Steps","Bodyweight",20),
-            Time_Based("Rest","None",30),
+            # Plyometrics 2of3 : 3 / 16 minutes
             Reps_Based("High Knee Bounds","Bodyweight",12),
             Time_Based("Rest","None",30),
             Reps_Based("Hop Squat","Bodyweight",8),
             Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge","Bodyweight",8),
 
-            # Jumping Circuit 3of3 : 6 / 24 minutes
-            Time_Based("Hop Forward + Backward","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Hop Zig Zag","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Hop Criss Cross","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Alternating Pony Steps","Bodyweight",20),
-            Time_Based("Rest","None",30),
+            # Plyometrics 3of3 : 3 / 19 minutes
             Reps_Based("High Knee Bounds","Bodyweight",12),
             Time_Based("Rest","None",30),
             Reps_Based("Hop Squat","Bodyweight",8),
             Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge","Bodyweight",8),
 
-            # Animal Flow Circuit: #1 of 4: 2 / 26 minutes
-            Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
+            # Upper Body Isometrics 1 of 4 : 4 / 23 minutes
+            Time_Based("Hear Crawl Weight Shifts","Bodyweight",30),
             Time_Based("Rest","None",30),
-            Time_Based("Bear Crawl Left + Right","Bodyweight",30),
+            Time_Based("Shoulder Taps","Body weight",30),
             Time_Based("Rest","None",30),
-
-            # Animal Flow Circuit: #2 of 4: 2 / 28 minutes
-            Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
+            Time_Based("Cross Body Toe Taps","Body weight",30),
             Time_Based("Rest","None",30),
-            Time_Based("Bear Crawl Left + Right","Bodyweight",30),
-            Time_Based("Rest","None",30),
-            Time_Based("Crab Walk Forward + Backward","Bodyweight",30),
+            Time_Based("4-Way Pushups","Body weight",30),
             Time_Based("Rest","None",30),
 
-            # Animal Flow Circuit: #3 of 4: 2 / 30 minutes
-            Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
+            # Upper Body Isometrics 2 of 4 : 4 / 27 minutes
+            Time_Based("Hear Crawl Weight Shifts","Bodyweight",30),
             Time_Based("Rest","None",30),
-            Time_Based("Bear Crawl Left + Right","Bodyweight",30),
+            Time_Based("Shoulder Taps","Body weight",30),
             Time_Based("Rest","None",30),
-            Time_Based("Crab Walk Forward + Backward","Bodyweight",30),
+            Time_Based("Cross Body Toe Taps","Body weight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("4-Way Pushups","Body weight",30),
             Time_Based("Rest","None",30),
 
-            # Animal Flow Circuit: #4 of 4: 2 / 32 minutes
-            Time_Based("Bear Crawl Forward + Backward","Bodyweight",30),
+            # Upper Body Isometrics 3 of 4 : 4 / 31 minutes
+            Time_Based("Hear Crawl Weight Shifts","Bodyweight",30),
             Time_Based("Rest","None",30),
-            Time_Based("Bear Crawl Left + Right","Bodyweight",30),
+            Time_Based("Shoulder Taps","Body weight",30),
             Time_Based("Rest","None",30),
-            Time_Based("Crab Walk Forward + Backward","Bodyweight",30),
+            Time_Based("Cross Body Toe Taps","Body weight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("4-Way Pushups","Body weight",30),
+            Time_Based("Rest","None",30),
+
+            # Upper Body Isometrics 4 of 4 : 4 / 35 minutes
+            Time_Based("Hear Crawl Weight Shifts","Bodyweight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Shoulder Taps","Body weight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("Cross Body Toe Taps","Body weight",30),
+            Time_Based("Rest","None",30),
+            Time_Based("4-Way Pushups","Body weight",30),
             Time_Based("Rest","None",30)
         ]
 

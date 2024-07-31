@@ -27,7 +27,7 @@ def get_strength_a_routine(settings):
             Time_Based("Side Lunge, Alternating","Bodyweight",60),
             Time_Based("Lunge w/ Twist, Alternating","Body",60),
 
-            # Jumping Circuit 1of3 : 6 / 12 minutes
+            # Jumping Circuit 1of1 : 4 / 10 minutes
             Time_Based("Hop Forward + Backward","Bodyweight",20),
             Time_Based("Rest","None",30),
             Time_Based("Hop Zig Zag","Bodyweight",20),
@@ -36,78 +36,68 @@ def get_strength_a_routine(settings):
             Time_Based("Rest","None",30),
             Time_Based("Alternating Pony Steps","Bodyweight",20),
             Time_Based("Rest","None",30),
+
+            # Plyometrics 1of3 : 3 / 13 minutes
             Reps_Based("High Knee Bounds","Bodyweight",12),
             Time_Based("Rest","None",30),
             Reps_Based("Hop Squat","Bodyweight",8),
             Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge","Bodyweight",8),
 
-            # Jumping Circuit 2of3 : 6 / 18 minutes
-            Time_Based("Hop Forward + Backward","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Hop Zig Zag","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Hop Criss Cross","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Alternating Pony Steps","Bodyweight",20),
-            Time_Based("Rest","None",30),
+            # Plyometrics 2of3 : 3 / 16 minutes
             Reps_Based("High Knee Bounds","Bodyweight",12),
             Time_Based("Rest","None",30),
             Reps_Based("Hop Squat","Bodyweight",8),
             Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge","Bodyweight",8),
 
-            # Jumping Circuit 3of3 : 6 / 24 minutes
-            Time_Based("Hop Forward + Backward","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Hop Zig Zag","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Hop Criss Cross","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Alternating Pony Steps","Bodyweight",20),
-            Time_Based("Rest","None",30),
+            # Plyometrics 3of3 : 3 / 19 minutes
             Reps_Based("High Knee Bounds","Bodyweight",12),
             Time_Based("Rest","None",30),
             Reps_Based("Hop Squat","Bodyweight",8),
             Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge","Bodyweight",8),
 
-            # Isometrics 1 of 4: 4 / 28 minutes
-            Time_Based("Forward & Backward Lunges, Right","Bodyweight",30),
+            # Lower Body Isometrics 1 of 4: 4 / 23 minutes
+            Time_Based("Rear Foot Elevated Split Hold, Left","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Forward & Backward Lunges, Left","Bodyweight",30),
+            Time_Based("Rear Foot Elevated Split Hold, Right","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Rolling Planks","Bodyweight",30),
+            Reps_Based("Single Leg Skater Squat, Left","Bodyweight",8),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Pushup Planks","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-
-            # Isometrics 2 of 4: 4 / 32 minutes
-            Time_Based("Forward & Backward Lunges, Right","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Forward & Backward Lunges, Left","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Rolling Planks","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Pushup Planks","Bodyweight",30),
+            Reps_Based("Single Leg Skater Squat, Right","Bodyweight",8),
             Time_Based("Rest","Bodyweight",30),
 
-            # Isometrics 3 of 4: 4 / 36 minutes
-            Time_Based("Forward & Backward Lunges, Right","Bodyweight",30),
+            # Lower Body Isometrics 2 of 4: 4 / 27 minutes
+            Time_Based("Rear Foot Elevated Split Hold, Left","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Forward & Backward Lunges, Left","Bodyweight",30),
+            Time_Based("Rear Foot Elevated Split Hold, Right","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Rolling Planks","Bodyweight",30),
+            Reps_Based("Single Leg Skater Squat, Left","Bodyweight",8),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Pushup Planks","Bodyweight",30),
+            Reps_Based("Single Leg Skater Squat, Right","Bodyweight",8),
             Time_Based("Rest","Bodyweight",30),
 
-            # Isometrics 4 of 4: 4 / 40 minutes
-            Time_Based("Forward & Backward Lunges, Right","Bodyweight",30),
+            # Lower Body Isometrics 3 of 4: 4 / 31 minutes
+            Time_Based("Rear Foot Elevated Split Hold, Left","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Forward & Backward Lunges, Left","Bodyweight",30),
+            Time_Based("Rear Foot Elevated Split Hold, Right","Bodyweight",30),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Rolling Planks","Bodyweight",30),
+            Reps_Based("Single Leg Skater Squat, Left","Bodyweight",8),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Pushup Planks","Bodyweight",30),
+            Reps_Based("Single Leg Skater Squat, Right","Bodyweight",8),
+            Time_Based("Rest","Bodyweight",30),
+
+            # Lower Body Isometrics 4 of 4: 4 / 35 minutes
+            Time_Based("Rear Foot Elevated Split Hold, Left","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Time_Based("Rear Foot Elevated Split Hold, Right","Bodyweight",30),
+            Time_Based("Rest","Bodyweight",30),
+            Reps_Based("Single Leg Skater Squat, Left","Bodyweight",8),
+            Time_Based("Rest","Bodyweight",30),
+            Reps_Based("Single Leg Skater Squat, Right","Bodyweight",8),
             Time_Based("Rest","Bodyweight",30)
+            
         ]
         
     elif settings['selected_user'] == "c":
