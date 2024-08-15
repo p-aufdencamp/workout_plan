@@ -27,75 +27,48 @@ def get_strength_a_routine(settings):
             Time_Based("Side Lunge, Alternating","Bodyweight",60),
             Time_Based("Lunge w/ Twist, Alternating","Body",60),
 
-            # Jumping Circuit 1of1 : 4 / 10 minutes
-            Time_Based("Hop Forward + Backward","Bodyweight",20),
+            # Plyometrics 1of3 : +5 = 11 minutes
+            Reps_Based("High Knee Bounds, Left","Bodyweight",12),
             Time_Based("Rest","None",30),
-            Time_Based("Hop Zig Zag","Bodyweight",20),
+            Reps_Based("High Knee Bounds, Right","Bodyweight, Assist if needed",12),
             Time_Based("Rest","None",30),
-            Time_Based("Hop Criss Cross","Bodyweight",20),
-            Time_Based("Rest","None",30),
-            Time_Based("Alternating Pony Steps","Bodyweight",20),
-            Time_Based("Rest","None",30),
-
-            # Plyometrics 1of3 : 3 / 13 minutes
-            Reps_Based("High Knee Bounds","Bodyweight",12),
-            Time_Based("Rest","None",30),
-            Reps_Based("Hop Squat","Bodyweight",8),
+            Reps_Based("Hop Squat","Bodyweight",12),
             Time_Based("Rest","none",30),
-            Reps_Based("Jumping Lunge","Bodyweight",8),
-
-            # Plyometrics 2of3 : 3 / 16 minutes
-            Reps_Based("High Knee Bounds","Bodyweight",12),
-            Time_Based("Rest","None",30),
-            Reps_Based("Hop Squat","Bodyweight",8),
+            Reps_Based("Jumping Lunge Left","Bodyweight",12),
             Time_Based("Rest","none",30),
-            Reps_Based("Jumping Lunge","Bodyweight",8),
-
-            # Plyometrics 3of3 : 3 / 19 minutes
-            Reps_Based("High Knee Bounds","Bodyweight",12),
-            Time_Based("Rest","None",30),
-            Reps_Based("Hop Squat","Bodyweight",8),
+            Reps_Based("Jumping Lunge Right","Bodyweight",12),
             Time_Based("Rest","none",30),
-            Reps_Based("Jumping Lunge","Bodyweight",8),
 
-            # Lower Body Isometrics 1 of 4: 4 / 23 minutes
-            Time_Based("Rear Foot Elevated Split Hold, Left","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Rear Foot Elevated Split Hold, Right","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Reps_Based("Single Leg Skater Squat, Left","Bodyweight",8),
-            Time_Based("Rest","Bodyweight",30),
-            Reps_Based("Single Leg Skater Squat, Right","Bodyweight",8),
-            Time_Based("Rest","Bodyweight",30),
+            # Plyometrics 2of3 : +5 = 16 minutes
+            Reps_Based("High Knee Bounds, Left","Bodyweight",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("High Knee Bounds, Right","Bodyweight, Assist if needed",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Hop Squat","Bodyweight",12),
+            Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge Left","Bodyweight",12),
+            Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge Right","Bodyweight",12),
+            Time_Based("Rest","none",30),
 
-            # Lower Body Isometrics 2 of 4: 4 / 27 minutes
-            Time_Based("Rear Foot Elevated Split Hold, Left","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Rear Foot Elevated Split Hold, Right","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Reps_Based("Single Leg Skater Squat, Left","Bodyweight",8),
-            Time_Based("Rest","Bodyweight",30),
-            Reps_Based("Single Leg Skater Squat, Right","Bodyweight",8),
-            Time_Based("Rest","Bodyweight",30),
+            # Plyometrics 3of3 : +5 = 21 minutes
+            Reps_Based("High Knee Bounds, Left","Bodyweight",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("High Knee Bounds, Right","Bodyweight, Assist if needed",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Hop Squat","Bodyweight",12),
+            Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge Left","Bodyweight",12),
+            Time_Based("Rest","none",30),
+            Reps_Based("Jumping Lunge Right","Bodyweight",12),
+            Time_Based("Rest","none",30),
 
-            # Lower Body Isometrics 3 of 4: 4 / 31 minutes
-            Time_Based("Rear Foot Elevated Split Hold, Left","Bodyweight",30),
+            # Lower Body Bodyweight 1 of 1: +3 = 24 minutes
+            Reps_Based("Left Leg Elevated Hamstring Bridge, 10s + 5 reps","Bodyweight",3),
             Time_Based("Rest","Bodyweight",30),
-            Time_Based("Rear Foot Elevated Split Hold, Right","Bodyweight",30),
+            Reps_Based("Left Leg Elevated Hamstring Bridge, 10s + 5 reps","Bodyweight",3),
             Time_Based("Rest","Bodyweight",30),
-            Reps_Based("Single Leg Skater Squat, Left","Bodyweight",8),
-            Time_Based("Rest","Bodyweight",30),
-            Reps_Based("Single Leg Skater Squat, Right","Bodyweight",8),
-            Time_Based("Rest","Bodyweight",30),
-
-            # Lower Body Isometrics 4 of 4: 4 / 35 minutes
-            Time_Based("Rear Foot Elevated Split Hold, Left","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Time_Based("Rear Foot Elevated Split Hold, Right","Bodyweight",30),
-            Time_Based("Rest","Bodyweight",30),
-            Reps_Based("Single Leg Skater Squat, Left","Bodyweight",8),
-            Time_Based("Rest","Bodyweight",30),
-            Reps_Based("Single Leg Skater Squat, Right","Bodyweight",8),
+            Reps_Based("Left Leg Elevated Hamstring Bridge, 10s + 5 reps","Bodyweight",3),
             Time_Based("Rest","Bodyweight",30)
             
         ]

@@ -27,75 +27,52 @@ def get_strength_b_routine(settings):
             Time_Based("Side Lunge, Alternating","Bodyweight",60),
             Time_Based("Lunge w/ Twist, Alternating","Body",60),
 
-            # Jumping Circuit 1of1 : 4 / 10 minutes
-            Time_Based("Hop Forward + Backward","Bodyweight",20),
+            # Loaded Work 1 of 3 : +7 = 13 minutes
+            Reps_Based("Left Split Squat 5s down 5s up","40 lbm total",6),
             Time_Based("Rest","None",30),
-            Time_Based("Hop Zig Zag","Bodyweight",20),
+            Reps_Based("Right Split Squat 5s down 5s up","40 lbm total",6),
             Time_Based("Rest","None",30),
-            Time_Based("Hop Criss Cross","Bodyweight",20),
+            Reps_Based("Alternating Loaded Side Lunges","40 lbm total",16),
             Time_Based("Rest","None",30),
-            Time_Based("Alternating Pony Steps","Bodyweight",20),
+            Reps_Based("Left Kneeling Shoulder Press, 10s+5reps","20 lbm total",3),
             Time_Based("Rest","None",30),
-
-            # Plyometrics 1of3 : 3 / 13 minutes
-            Reps_Based("High Knee Bounds","Bodyweight",12),
+            Reps_Based("Right Kneeling Shoulder Press, 10s+5reps","20 lbm total",3),
             Time_Based("Rest","None",30),
-            Reps_Based("Hop Squat","Bodyweight",8),
-            Time_Based("Rest","none",30),
-            Reps_Based("Jumping Lunge","Bodyweight",8),
-
-            # Plyometrics 2of3 : 3 / 16 minutes
-            Reps_Based("High Knee Bounds","Bodyweight",12),
+            Reps_Based("Left Front Plank Row","20 lbm total",12),
             Time_Based("Rest","None",30),
-            Reps_Based("Hop Squat","Bodyweight",8),
-            Time_Based("Rest","none",30),
-            Reps_Based("Jumping Lunge","Bodyweight",8),
-
-            # Plyometrics 3of3 : 3 / 19 minutes
-            Reps_Based("High Knee Bounds","Bodyweight",12),
-            Time_Based("Rest","None",30),
-            Reps_Based("Hop Squat","Bodyweight",8),
-            Time_Based("Rest","none",30),
-            Reps_Based("Jumping Lunge","Bodyweight",8),
-
-            # Upper Body Isometrics 1 of 4 : 4 / 23 minutes
-            Time_Based("Hear Crawl Weight Shifts","Bodyweight",30),
-            Time_Based("Rest","None",30),
-            Time_Based("Shoulder Taps","Body weight",30),
-            Time_Based("Rest","None",30),
-            Time_Based("Cross Body Toe Taps","Body weight",30),
-            Time_Based("Rest","None",30),
-            Time_Based("4-Way Pushups","Body weight",30),
+            Reps_Based("Right Front Plank Row","20 lbm total",12),
             Time_Based("Rest","None",30),
 
-            # Upper Body Isometrics 2 of 4 : 4 / 27 minutes
-            Time_Based("Hear Crawl Weight Shifts","Bodyweight",30),
+            # Loaded Work 2 of 3 : +7 = 20 minutes
+            Reps_Based("Left Split Squat 5s down 5s up","40 lbm total",6),
             Time_Based("Rest","None",30),
-            Time_Based("Shoulder Taps","Body weight",30),
+            Reps_Based("Right Split Squat 5s down 5s up","40 lbm total",6),
             Time_Based("Rest","None",30),
-            Time_Based("Cross Body Toe Taps","Body weight",30),
+            Reps_Based("Alternating Loaded Side Lunges","40 lbm total",16),
             Time_Based("Rest","None",30),
-            Time_Based("4-Way Pushups","Body weight",30),
+            Reps_Based("Left Kneeling Shoulder Press, 10s+5reps","20 lbm total",3),
             Time_Based("Rest","None",30),
-
-            # Upper Body Isometrics 3 of 4 : 4 / 31 minutes
-            Time_Based("Hear Crawl Weight Shifts","Bodyweight",30),
+            Reps_Based("Right Kneeling Shoulder Press, 10s+5reps","20 lbm total",3),
             Time_Based("Rest","None",30),
-            Time_Based("Shoulder Taps","Body weight",30),
+            Reps_Based("Left Front Plank Row","20 lbm total",12),
             Time_Based("Rest","None",30),
-            Time_Based("Cross Body Toe Taps","Body weight",30),
-            Time_Based("Rest","None",30),
-            Time_Based("4-Way Pushups","Body weight",30),
+            Reps_Based("Right Front Plank Row","20 lbm total",12),
             Time_Based("Rest","None",30),
 
-            # Upper Body Isometrics 4 of 4 : 4 / 35 minutes
-            Time_Based("Hear Crawl Weight Shifts","Bodyweight",30),
+            # Loaded Work 3 of 3 : +7 = 27 minutes
+            Reps_Based("Left Split Squat 5s down 5s up","40 lbm total",6),
             Time_Based("Rest","None",30),
-            Time_Based("Shoulder Taps","Body weight",30),
+            Reps_Based("Right Split Squat 5s down 5s up","40 lbm total",6),
             Time_Based("Rest","None",30),
-            Time_Based("Cross Body Toe Taps","Body weight",30),
+            Reps_Based("Alternating Loaded Side Lunges","40 lbm total",16),
             Time_Based("Rest","None",30),
-            Time_Based("4-Way Pushups","Body weight",30),
+            Reps_Based("Left Kneeling Shoulder Press, 10s+5reps","20 lbm total",3),
+            Time_Based("Rest","None",30),
+            Reps_Based("Right Kneeling Shoulder Press, 10s+5reps","20 lbm total",3),
+            Time_Based("Rest","None",30),
+            Reps_Based("Left Front Plank Row","20 lbm total",12),
+            Time_Based("Rest","None",30),
+            Reps_Based("Right Front Plank Row","20 lbm total",12),
             Time_Based("Rest","None",30)
         ]
 
